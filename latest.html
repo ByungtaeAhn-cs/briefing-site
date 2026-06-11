@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-06-11</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 7 · 2026. 06. 11</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">5 sources · 14 signals · 0 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-06-11 05:59:32.841298+00:00 · claude-opus-4-7</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">youtube:코드팩토리 외 1개 · importance 0.90</div><h2>Claude 미토스(Mythos) 정식 출시, 코드팩토리·코드깍는노인 동시 보도</h2><p class="lede">코드팩토리 채널에서 클로드 미토스(Mythos) 정식 출시 공지 게시. 코드깍는노인 채널도 같은 시점에 클로드 Opus 신모델 공개 소식 전달함. 두 방에서 같은 모델 이벤트를 동시에 다룬 오늘의 핵심 신호.</p><p class="why">WHY · 2개 방 교차 보도 + 주요 모델 출시</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">3</span></div><div class="notable-grid"><div class="notable-card"><div class="src">youtube:시민개발자 구씨 외 1개</div><h3>Codex 신규 기능 동향, 시민개발자 구씨·코드깍는노인 두 채널서 동시 언급</h3><p class="lede">시민개발자 구씨 채널에서 코덱스 신규 기능 소개 영상 제목 노출. 코드깍는노인 채널도 코덱스 관련 흐름 다룸. 코드 생성 도구 라인업의 갱신 신호로 주목할 만한 교차 토픽.</p></div><div class="notable-card"><div class="src">youtube:샘 호트만</div><h3>Higgsfield 슈퍼컴퓨터 활용해 영상 1개로 숏폼 10개 자동 생성 튜토리얼 공개</h3><p class="lede">샘 호트만 채널에서 Higgsfield AI Employees 활용 워크플로우 영상 공개. 영상 하나를 입력해 숏폼 10개를 자동 생성하는 파이프라인 시연. 콘텐츠 자동화 실전 사례.</p></div><div class="notable-card"><div class="src">youtube:빌더조쉬</div><h3>빌더 조쉬, ElevenLabs GTM 이창현 인터뷰 공개</h3><p class="lede">빌더 조쉬 채널에서 일레븐랩스 GTM 담당 이창현 인터뷰 영상 게시. 글로벌 음성 AI 기업의 한국 시장 진출 전략 노출. 음성 AI 업계 동향 자료.</p></div></div>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">5</span></div><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">빌더 조쉬 채널에서 일레븐랩스 GTM 이창현 인터뷰 공개.</span></li><li><span class="n"></span><span class="t">한국 기업의 AI 도입 최대 실수 1가지 진단 내용 다룸.</span></li><li><span class="n"></span><span class="t">단일 영상 제목만 노출되어 세부 논점은 미확인.</span></li></ol><div class="tags"><span class="tag">ElevenLabs</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:샘 호트만</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Higgsfield 슈퍼컴퓨터 AI Employees 활용 영상 하나로 숏폼 10개 자동 생성 튜토리얼 공개.</span></li><li><span class="n"></span><span class="t">왕초보 대상 24/7 상시 가동 Hermes Agent 전체 설정 단계별 가이드 업로드.</span></li><li><span class="n"></span><span class="t">숏폼 자동화·상시 에이전트 운용 두 축으로 콘텐츠 구성됨.</span></li></ol><div class="tags"><span class="tag">Higgsfield</span><span class="tag">Hermes Agent</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:시민개발자 구씨</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">코덱스 신규 기능 소개 영상 제목만 확인됨.</span></li><li><span class="n"></span><span class="t">본문 메시지 없어 세부 내용 불명.</span></li><li><span class="n"></span><span class="t">단일 메시지로 논의 희소함.</span></li></ol><div class="tags"><span class="tag">Codex</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드깍는노인</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">클로드 Opus 신모델 공개 소식 전달함.</span></li><li><span class="n"></span><span class="t">Codex와 Claude Code 기반 AI 자동화 핵심 요소 짚음.</span></li><li><span class="n"></span><span class="t">영상 2건으로 메시지 양은 적음.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Codex</span><span class="tag">Claude Mythos</span><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 8건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">클로드 미토스(Mythos) 정식 출시 공지.</span></li><li><span class="n"></span><span class="t">&#x27;1000억 벌기&#x27; Victory or Valhalla 시리즈 15~22일차 영상 연속 업로드.</span></li><li><span class="n"></span><span class="t">현재까지 매출 $0 상태 그대로 유지 중임.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Claude Mythos</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 7</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Claude</div><div class="ctx">코드팩토리 해시태그 및 코드깎는노인 자동화 영상에서 Claude 언급됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Codex</div><div class="ctx">시민개발자 구씨와 코드깎는노인이 코덱스 신규 기능 및 AI 자동화 활용을 다룸.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Claude Mythos</div><div class="ctx">코드팩토리와 코드깎는노인 모두 출시된 클로드 미토스(미소스) 모델 공개를 다룸.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">Claude Code</div><div class="ctx">코드깎는노인이 AI 자동화 핵심요소로 claude code 언급함.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">ElevenLabs</div><div class="ctx">빌더 조쉬가 일레븐랩스 GTM 이창현 인터뷰로 한국 기업 AI 도입 실수 다룸.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Higgsfield</div><div class="ctx">샘 호트만이 Higgsfield 슈퍼컴퓨터 AI Employees로 숏폼 자동 생성 소개함.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Hermes Agent</div><div class="ctx">샘 호트만이 24/7 돌아가는 Hermes Agent 전체 설정 튜토리얼 제공함.</div></div><span class="freq">1</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">2</span></div><article class="cross-card"><h3>Claude 미소스/미토스 공개</h3><p class="desc">코드깍는노인과 코드팩토리에서 동시에 Anthropic의 Claude 신규 공개(미소스/미토스) 다룸. 출시 시점과 활용 방향 언급됨.</p><div class="chips"><span class="chip">youtube:코드깍는노인</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>Codex 신규 기능 동향</h3><p class="desc">시민개발자 구씨와 코드깍는노인 모두 OpenAI Codex 업데이트 짚음. Claude Code와의 비교 맥락도 함께 등장함.</p><div class="chips"><span class="chip">youtube:시민개발자 구씨</span><span class="chip">youtube:코드깍는노인</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-07-13</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 11 · 2026. 07. 13</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">4 sources · 163 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-07-13 05:07:39.802013+00:00 · claude-opus-4-7</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">여러 방 (4개) · importance 0.92</div><h2>**GPT-5.6 Sol/Terra/Luna 삼분 라인업 등장**, 하위 에이전트 스폰으로 사용량 급소모 이슈 확산</h2><p class="lede">ai-friends·ai-frontier·learning-masters·youtube:코드깎는노인 4개 방 전부에서 GPT-5.6 언급, 총 빈도 5회 기록. ai-frontier에서는 Sol/Terra/Luna 라인업과 하위 에이전트 스폰 방식에 따른 사용량 급소모가 공유됨. youtube:코드깎는노인은 조기 체험 필요성 강조 영상 업로드.</p><p class="why">WHY · 전 방 동시 언급 + 사용량 이슈 실증</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends</div><h3>KIST 이제현, **본부장급 코딩 업무현황판 공개**로 의사결정자 AI 체감 지연 경고</h3><p class="lede">혁신본부장이 직접 코딩으로 만든 task-board를 방에 공유, 이세돌 9단 저서 인용해 조직론 화두 제기. 본부장급 실무 코딩 사례로 의사결정자의 AI 체감 지연 문제를 정면 제기함.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>김문정, **Grok×Codex 오케스트레이션** 실험과 텔레그램 코딩 봇 해킹 사고 동시 경보</h3><p class="lede">에이전트 오케스트레이션 실험담, 신모델 하이프 반박, 텔레그램 기반 코딩 봇 해킹 사고 경고를 잇달아 던짐. 새 IDE 소개 영상도 함께 공유됨.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>원자력연구원 유용균, **GPT-5.6 강세** 근거로 구독 무더기 취소 시나리오 저울질</h3><p class="lede">이제현 조직론 화두 뒤 별도 실사용 코멘트로 등장, GPT-5.6 성능과 토큰 가격 관련 소회 공유. 5.6 강력함을 근거로 사용 중단 시 타 구독 무더기 취소 시나리오 언급됨.</p></div><div class="notable-card"><div class="src">여러 방 (3개)</div><h3>**Claude Fable 5 장기 작업 및 사용량 이벤트**, 3개 방 걸쳐 재확인됨</h3><p class="lede">ai-friends·ai-frontier·learning-masters 3개 방에서 Claude Fable 5 관련 장기 작업과 사용량 이벤트가 공통 화두로 등장. GPT-5.6·Grok 4.5 신모델 러시 속에서도 Anthropic 라인 지속 언급됨.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 2건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 의사결정자의 AI 체감 지연 경고</h3><p>혁신본부장이 직접 코딩으로 만든 업무현황판 공유에 이어, 이세돌 9단 저서를 인용한 조직론 화두 제기.</p><p>본부장급 실무 코딩 사례로 [task-board](https://msitsti2025.github.io/task-board/) 공유. 이어서 5개월 지난 기보가 이미 무의미하다는 이세돌 인용을 통해 **AI를 직접 쓰지 않는 의사결정자**의 인식 지연 위험 지적. 결재 시점의 판단이 현장에선 이미 철 지난 이야기일 가능성 큼. 의사결정 라인을 줄이는 조직과 &#x27;체계 우선&#x27; 관성을 유지하는 조직 간 격차 확대 전망.</p><blockquote>AI를 직접 쓰지 않으면서 언론보도와 강연, 보고로 접하는 의사결정자들이 경계해야 한다고 생각합니다. 방금 서명한 결재서류는 현장에선 철지난 옛 이야기일 확률이 높습니다.</blockquote><p>연구기관 실무자 관점에서 나온 조직 운영 경고로, **AI 도입 속도와 결재 체계 간 마찰**을 실감케 하는 현장 발화.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-12T08:32:00">7/12 08:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">혁신본부장님이 또코딩을 하셨습니다. ㅎ
+업무현황판을 만드셨네요.
+
+https://msitsti2025.github.io/task-board/?fbclid=Iwb21leAS_sb1jbGNrBL-xqmV4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHgwzR-jHsBXcyitd_FLexxD67MHxhdj4Th5nKB-W0h4v49AIIfxqE6p9z1Ca_aem_atLZa7H-LYwbszb1TmJr2A</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-12T12:54:00">7/12 12:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이세돌 9단의 저서 중 일부입니다.
+
+&quot;처음 개발 단계는 힘들지만 어느 정도 궤도에 진입한 프로그램은 그 발전 속도가 상상을 뛰어넘는다고 했다. 이미 5개월이 지나버린 기보는 사실상 의미가 없으며 이미 인간이 이기기 힘든 수준해 도달해 있을 것&quot; 이라는 이야기가 있습니다.
+
+AI를 직접 쓰지 않으면서 언론보도와 강연, 보고로 접하는 의사결정자들이 경계해야 한다고 생각합니다. 방금 서명한 결재서류는 현장에선 철지난 옛 이야기일 확률이 높습니다.
+
+모든 보직자가 최전선의 실무자가 될 수 없겠지만 의사결정라인을 줄이는 곳과 &#x27;일은 체계가 있어야&#x27;라며 옛 방식을 고집하는 곳의 격차는 크게 벌어질 것입니다.</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 4건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, GPT-5.6 강세와 재구독 저울질</h3><p>이제현의 조직론 화두에 이어 등장한 별도 실사용 코멘트, **GPT-5.6** 성능 및 토큰 가격 관련 소회.</p><p>5.6 모델 강력함을 근거로 사용 중단 시 **구독 무더기 취소** 시나리오 언급. 토큰 단가가 저렴해진 점도 지적하며 본인의 GPT 재구독 검토 표명. Claude 중심 사용자층의 이탈 가능성을 시사하는 발언.</p><blockquote>5.6이 강력해서... 토큰도 더 저렴하고.. 저도 gpt 다시 구독해야하나 싶습니다.</blockquote><p>연구 현장 헤비유저의 재구독 저울질은 **모델 간 실사용 우위 이동**의 방향성 신호로 해석 가능.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-07-13T10:13:00">7/13 10:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">왠지... 계속 유지될 수도? ㅡㅡ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-07-13T10:13:00">7/13 10:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">5.6이 강력해서...</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-07-13T10:14:00">7/13 10:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이걸 못쓰게 하면 구독 무더기 취소사태가 일어날 수도...</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-07-13T10:18:00">7/13 10:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">토큰도 더 저렴하고.. 저도 gpt 다시 구독해야하나 싶습니다. </div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 1건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, 단발성 GPT 언급</h3><p>오늘 ai-frontier에서 허민 발언은 단 한 건, 맥락 없이 던져진 한 단어임. 앞뒤 스레드나 인용 대상이 표시되지 않은 고립 메시지임.</p><p>발언 내용은 **&quot;GPT&quot;** 한 단어에 그침. 어떤 모델, 어떤 기능, 어떤 이슈를 지목한 것인지 본문에 단서 없음. 후속 문장이나 이미지 첨부도 이어지지 않음.</p><blockquote>GPT</blockquote><p>오늘 자 기록으로는 신호가 약해 독자 학습 가치 낮음. 다만 허민이 GPT 관련 화제를 여는 신호일 가능성 있어, 향후 며칠 간 동일 발화자의 후속 발언 추적 권고.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(1건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-12T19:23:00">7/12 19:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">GPT</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 7건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), Grok×Codex 오케스트레이션과 텔레그램 봇 보안 경보</h3><p>오늘 방에서 김문정은 에이전트 오케스트레이션 실험담과 신모델 하이프 반박, 그리고 텔레그램 기반 코딩 봇 해킹 사고 경고를 잇달아 던짐. 새 IDE 소개 영상 제작 예고도 함께 언급함.</p><p>구성 아이디어로 **Grok이 Codex worker들을 오케스트레이션하고 최종 정리**하는 파이프라인 제시. 하네스 컨트롤러로 매니징 가능성도 시사함. 신모델 반응에 대해서는 시장 과열론 지적, 오히려 **Grok 4.5는 소문보다 실사용감 양호**하다는 평가. 보안 이슈로 **openclaw, hermes 등 텔레그램 봇 해킹 피해 속출** 경보, 한도 미설정에 따른 자책도 공유함.</p><blockquote>모델 출시할때마다 hype에 너무 강한 것 같습니다. 전 grok 4.5이 차라리 소문보다 좋은 것 같습니다.</blockquote><blockquote>openclaw hermes 등등 텔레그램 봇으로 많이들 사용하시는 것같은데 해킹 피해 속출중이니^^ 주의하셔요</blockquote><p>Grok을 오케스트레이터로 두고 Codex를 워커로 배치하는 구성은 멀티에이전트 IDE 실험 방향에 참고 가치 있음. 텔레그램 봇 자동화 사용 시 API 키·지갑 한도 선설정 필요성 재확인 신호.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(7건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-12T10:14:00">7/12 10:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이부분은.하네스 컨트롤러로 매니징.가능할 것.같은데요^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T10:43:00">7/13 10:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok X codex
+그록이 codex worker들을 orchestration하고 마지막으로 정리</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T11:47:00">7/13 11:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모델 출시할때마다 hype에 너무 강한 것 같습니다.
+전 grok 4.5이 차라리 소문보다 좋은 것 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T11:58:00">7/13 11:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 유튜브로 한 번 올려볼게요…새로운 IDE를 소개해야해서요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T13:00:00">7/13 13:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/@jisang0914/post/DasOMXxGomP?xmt=AQG0C_n5U4BVdHUDLH_qkuyEmwcuGnew5boiFdIbjT7uaQ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T13:01:00">7/13 13:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">openclaw hermes 등등 텔레그램 봇으로 많이들 사용하시는 것같은데 해킹 피해 속출중이니^^ 주의하셔요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-13T13:31:00">7/13 13:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한도 걸어놨어야 하는데</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">4</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 36건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">혁신본부장 코딩 업무현황판 공유 및 채용 실기 코딩 취지 논쟁, FDE 대 FDS 성격 논의됨.</span></li><li><span class="n"></span><span class="t">이세돌 저서 인용 통한 AI 의사결정자 인식 격차 경고와 규제 이해도 제고 필요성 언급됨.</span></li><li><span class="n"></span><span class="t">GPT-5.6 성능 호평으로 Fable 5 연장 유지 관측, 루프엔지니어링 빌드캠프 및 우로보로스 인터뷰 활용 사례 공유됨.</span></li><li><span class="n"></span><span class="t">일요아카데미·서울시교육청 AI 콘페스타·SK하이닉스 하인슈타인 등 오프라인 행사 다수 안내됨.</span></li></ol><div class="tags"><span class="tag">GPT-5.6</span><span class="tag">Codex</span><span class="tag">Claude Fable 5</span><span class="tag">Grok 4.5</span><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 22건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">GPT-5.6 Sol/Terra/Luna 라인업과 하위 에이전트 스폰 방식으로 인한 사용량 급소모 이슈 공유됨.</span></li><li><span class="n"></span><span class="t">Codex Plus 요금제 한계 체감, Pro 이상 구독 필요성 언급됨.</span></li><li><span class="n"></span><span class="t">Grok 4.5 코딩·에이전틱 기능 호평, 다만 레드팀 성향과 &#x27;선넘는&#x27; 응답 성향 지적됨.</span></li><li><span class="n"></span><span class="t">솔론봇 브리핑에서 GLM-5.2·MiniCPM5-1B·Gepard-1.0 TTS·ThinkingCap 추론 토큰 절감 등 트렌드 정리됨.</span></li></ol><div class="tags"><span class="tag">GPT-5.6</span><span class="tag">Codex</span><span class="tag">Claude Fable 5</span><span class="tag">Grok 4.5</span><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 41건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">드래곤볼 비유로 실패·고민 경험이 실력 상승의 자양분이라는 학습 태도 공유됨.</span></li><li><span class="n"></span><span class="t">GPT-5.6 Sol 울트라모드 토큰 소모 심각, Codex는 5시간 리밋 폐지되고 7일 리밋만 남음, Fable 19일까지 이용 및 사용량 2배 이벤트 연장 공지 있음.</span></li><li><span class="n"></span><span class="t">Grok X Codex 오케스트레이션 조합 언급, Grok 4.5가 하이프 대비 실사용 만족도 높다는 평 있음.</span></li><li><span class="n"></span><span class="t">OpenClaw·Hermes 등 텔레그램 봇 해킹 피해 속출 주의 필요, Google API 키 유출로 700만원 청구된 사례 공유되며 사용량 한도 설정 권고.</span></li><li><span class="n"></span><span class="t">중국 대학 마케팅·행정·광고·컴공 학부 대량 폐지, AI·피지컬 AI·반도체 올인 정책 소식 있음.</span></li></ol><div class="tags"><span class="tag">GPT-5.6</span><span class="tag">Codex</span><span class="tag">Claude Fable 5</span><span class="tag">Grok 4.5</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드깎는노인</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">GPT-5.6 조기 체험 필요성 강조 영상 업로드됨.</span></li><li><span class="n"></span><span class="t">ChatGPT Codex 활용 워크플로 소개 예상됨.</span></li><li><span class="n"></span><span class="t">단일 업로드로 상세 논의 부재.</span></li></ol><div class="tags"><span class="tag">GPT-5.6</span><span class="tag">Codex</span><span class="tag">ChatGPT</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">GPT-5.6</div><div class="ctx">Sol/Terra/Luna 세 티어 구성으로 사용량 소진과 하위 에이전트 스폰 방식이 반복 논의됨.</div></div><span class="freq">5</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Codex</div><div class="ctx">5시간 리밋 폐지와 7일 리밋 전환, Grok과의 오케스트레이션 워커 활용 언급.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Claude Fable 5</div><div class="ctx">19일까지 연장 및 사용량 2배 이벤트, 바이오 제한 해제 기대감 공유됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">Grok 4.5</div><div class="ctx">SpaceXAI·Cursor 협업 모델로 코딩·에이전틱 태스크 강점, 토큰 효율 및 레드팀 성향 언급.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Claude Code</div><div class="ctx">코덱스와 병행 작업 도구로 취미 앱 개발 프로 구독 후보 비교.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">GLM-5.2</div><div class="ctx">100만 토큰 초장기 문맥 처리와 허깅페이스 트렌딩 상위 모델로 소개.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Hy3</div><div class="ctx">허깅페이스 트렌딩 1위 텐센트 모델로 이틀 연속 상위 노출.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">Qwythos-9B-Claude-Mythos-5-1M-GGUF</div><div class="ctx">허깅페이스 트렌딩 2위로 이틀 연속 노출된 GGUF 모델.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">DeepSeek-V4</div><div class="ctx">100만 토큰 이상 문맥 처리 에이전틱 모델로 GLM-5.2와 함께 인용.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">MiniCPM5-1B</div><div class="ctx">수학·코딩 특화 소형 언어 모델 사례로 SLM 흐름 강조.</div></div><span class="freq">1</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">4</span></div><article class="cross-card"><h3>GPT-5.6 출시 및 Sol/Terra/Luna 분화</h3><p class="desc">오픈AI GPT-5.6 라인업 공개, Sol·Terra·Luna 세 계열로 분화됨. 조기 도입 흐름과 Sol 울트라 토큰 소진 사례까지 세 개 방에서 병행 논의됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:코드깎는노인</span></div></article><article class="cross-card"><h3>Codex 5.6 사용량 및 활용</h3><p class="desc">Codex 5.6의 5시간 리밋 폐지와 사용량 소진 이슈가 부각됨. Claude Code 병행, Grok 오케스트레이션, 실사용 활용법까지 다각도 언급됨.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:코드깎는노인</span></div></article><article class="cross-card"><h3>Grok 4.5 코딩 성능</h3><p class="desc">xAI Grok 4.5의 코딩 통합과 성능 평가가 이어짐. Codex와의 오케스트레이션 실험 사례도 공유됨.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>Claude Fable 5 장기 작업 및 사용량 이벤트</h3><p class="desc">Claude Fable 5 유지 전망과 장기 작업 활용법이 논의됨. Fable 사용량 2배 이벤트 연장 공지도 병행됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-07-23</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 10 · 2026. 07. 23</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">7 sources · 397 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-07-23 07:57:45.553528+00:00 · claude-opus-4-7</div><div class="coverage">07.14 ~ 07.23 통합 브리핑(10일)</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-friends · importance 0.90</div><h2>KIST 이제현, 국내 파운데이션 모델 생태계 실용화 조건 제시</h2><p class="lede">과기정통부 사이버 보안 정책과 함께 Gemini 3.6 Flash·3.5 Flash-Lite·Cyber 공개 링크 공유함. 국내 AI 정책과 모델 동향을 실용화 관점에서 연달아 짚음.</p><p class="why">WHY · VIP 발언 + 국내 정책·모델 동향 종합</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">learning-masters</div><h3>김문정, EBS 전국민 AI 강좌 고급 35차시 담당 및 국산 모델 실전 점검</h3><p class="lede">7월 건강 이슈에도 옵시디언 플러그인 영상 업로드 지속함. 교육부·과기부 예산 기반 EBS 이러닝 100차시 중 고급 35차시 담당, 연말 무료 론칭 예정. 업스테이지 Solar·LG 엑사원 연말 본격 활용 전망 공유함.</p></div><div class="notable-card"><div class="src">ai-friends 외 2개</div><h3>Gemini 3.6 Flash 출시, 입력 100만 토큰 1.50달러 가격 공개</h3><p class="lede">Gemini 3.6 Flash·3.5 Flash-Lite·3.5 Flash Cyber 동시 출시됨. 입력 100만 토큰 1.50달러, 출력 7.50달러 가격 공개됨. 3개 방에서 동시 언급된 최대 화제.</p></div><div class="notable-card"><div class="src">ai-friends 외 2개</div><h3>Kimi K3 Moonshot 공개, Opus 4.8 상회 및 fable 5 근접</h3><p class="lede">Kimi K3 성능 테스트 결과 Opus 4.8 상회, fable 5 근접 확인함. 가격 우위까지 확보되어 3개 방에서 동시 화제. 국내외 모델 경쟁 구도 변화 신호.</p></div><div class="notable-card"><div class="src">youtube:빌더조쉬 외 2개</div><h3>ChatGPT Work 상륙, 화면 녹화만으로 워크플로 자동화 구현</h3><p class="lede">OpenAI 슈퍼앱과 함께 ChatGPT Work 출시 소식 3개 유튜브 채널에서 공유됨. 화면 녹화만으로 워크플로 자동화 구현 가능한 신규 기능임.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 5건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 국내 파운데이션 모델 생태계의 실용화 조건 짚음</h3><p>오늘 방에서 Gemini 3.6 Flash / 3.5 Flash-Lite / Cyber 공개 링크와 함께 국내 AI 정책·모델 동향을 연달아 공유함. 과기정통부의 **사이버 보안 특화 AI 파운데이션 모델** 공모 개시 소식(내년 7월 완성 목표, B200 256장·10개월·200~300억 원 규모 지원)을 전달하며 정부 사업 난이도에 대한 우려를 함께 남김.</p><p>핵심 발언은 **업스테이지 Solar-Open2-250B** 공개에 대한 평가임. H200 2장으로 딥시크급 성능을 낸 점을 짚고, 독자 파운데이션 모델(독파모)이 실사용되려면 (1) 추론·tool calling 등 에이전트 기능, (2) 인프라 부담이 적은 경량성 두 조건이 필수임을 정리함. Kimi 모델이 H200 16장을 요구하는 사례와 대비해 가벼움의 중요성 강조.</p><blockquote>고사양 맥북에서 동급 최상위 모델들에 딸리지 않고 운영될 수준이라면 큰 전환점이 될 것이라 생각하는데, 희망을 품게됩니다. ;)</blockquote><p>국내 모델 담론이 벤치마크 순위 경쟁을 넘어 **에이전트 적합성 + 온디바이스 배포 가능성**이라는 실전 기준으로 이동하고 있음을 보여주는 발언. SKT·LG 등 후속 모델 판단 기준으로 재사용 가능한 프레임임.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(5건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-22T07:06:00">7/22 07:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-22T20:38:00">7/22 20:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">정부, 보안특화 AI 내년 7월까지 개발
+출처 : 지디넷코리아 | 네이버
+ - https://naver.me/xlljIL28</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-22T20:38:00">7/22 20:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">정부가 공언한 사이버보안 특화 인공지능(AI) 파운데이션 모델이 내년 7월 모습을 드러낸다.
+
+과학기술정보통신부(과기정통부)는 정보통신산업진흥원(NIPA, 원장 박윤규)과 함께 &#x27;사이버 보안 특화 인공지능(AI) 파운데이션 모델 개발’ 사업 공모를 시작한다고 22일 밝혔다.
+
+공모는 이달 22일부터 다음달 21일까지 약 30일간 진행한다. 선정 팀에는 사이버 보안 특화 AI 파운데이션 모델 개발에 필요한 GPU(B200) 256장(32노드)을 10개월간 지원한다. 규모로 보면 약 200~300억 원 수준이다.
+메시지가 삭제되었습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-22T20:40:00">7/22 20:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">과기부도 참 쉽지 않을 것 같습니다. 응원밖에 드릴 게 없네요 (...)</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-07-22T22:55:00">7/22 22:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">업스테이지가 H200 두 장에 얹히면서도 딥시크 수준의 수행능력을 보이는 모델을 공개했습니다.
+
+https://huggingface.co/upstage/Solar-Open2-250B
+
+독파모가 실제 활용이 되려면 몇 가지 전제가 필요합니다.
+
+1. 에이전트로 기능할 수 있는가: 추론, tool calling 등
+
+2. 충분히 가벼운가: 이번 Kimi 모델처럼 H200 16장이 필요하면 업체 입장에서는 인프라 갖추기도 버겁습니다.
+
+그런 면에서 불과 반년만에 이런 성과가 나온 것은 매우 고무적입니다. 다음 버전이 기대가 되고, SKT, LG 모델들의 발전도 기대됩니다.
+
+고사양 맥북에서 동급 최상위 모델들에 딸리지 않고 운영될 수준이라면 큰 전환점이 될 것이라 생각하는데, 희망을 품게됩니다. ;)</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 1건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, 다음 학습 주제로 뉴로심볼릭 예고</h3><p>방에서 진행 중인 연속 학습·공유 시리즈의 다음 회차 주제를 짧게 안내함. 1탄 이후 이어질 **2탄이 뉴로심볼릭(neuro-symbolic)** 임을 공지.</p><blockquote>2탄은 뉴로심볼릭</blockquote><p>LLM 일변도의 담론 속에서 **신경망 + 기호추론 결합** 흐름을 정식 주제로 올린다는 신호. 추론 강화·해석가능성 관련 후속 자료 공유가 이어질 가능성 있어 대기 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(1건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-07-22T20:36:00">7/22 20:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">2탄은 뉴로심볼릭</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 28건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, Codex 몰입과 MoA 담론 예고</h3><p>오늘 방의 주된 흐름은 Codex 앱과 Claude Code 사이의 선택 고민, 그리고 곧 다가올 모델 발표(Grok-4.6, Kimi K3, Gemini 3.5 Pro) 대기 분위기. 허민은 실사용자 관점에서 **Codex 리밋까지 소진 전략**을 권하며 관련 인사이트를 다수 투척함.</p><p>실전 팁으로 웹서치 특화 **aside AI** 추천(기존 웹서치 LLM이 접근 못하는 페이지까지 도달), 음성 정확도 개선용 마이크 하드웨어 구매 권장, **ChatGPT 사이트 기능**의 완전한 바이브코딩 잠재력 재평가 등을 언급. 담론 측면에서는 올해 화두를 **MoA(Mixture of Agents)** 로 지목하며, Hermes agent에서 한 달째 사용 중이고 Codex에서도 sol·Terra·Luna 모델 적용 가능함을 공유. 오늘 저녁 Codex 앰버서더 서우님과 2차 촬영 예정으로 초고급 활용사례 공개 예고.</p><blockquote>올해의 화두는 MoA가 될겁니다 ⏎ 보세요 ⏎ 3개월뒤에 한국 유튜버들이 콘텐츠로 다룰거니깐요</blockquote><blockquote>일단 지금은 토큰을 아주 펑펑 퍼붓고 있는 코덱스를 리밋걸릴때까지 작업하는게 혜자!</blockquote><p>한국 커뮤니티에서 아직 다뤄지지 않은 MoA·Codex 고급 활용을 선점 공유하는 발언으로, 향후 3개월 내 국내 콘텐츠 방향성을 예측할 단서로서 의미 있음. Codex 정액제 99달러 활용 극대화와 aside AI 도입은 즉시 실험 가능한 실무 팁.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(28건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:18:00">7/22 08:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">고민입니다
+사람들은 코덱스앱이 아직까지 클로드 코드보단 못하다는 평이 있어서
+orca를 사용할까
+코덱스에 키미를 끼워넣을까</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:18:00">7/22 08:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">3.5프로발표가 아마 kimi k3때문에 연기된듯</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:27:00">7/22 08:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제미나이가 항상 이 전략인데 한번도 OpenAI를 넘지 못했던것 같아요
+솔직히 벤치마크는 상당했지만 실 사용자들의 사용성이 최악의 반응이라 아예 눈길조차 못받고 있는것 같아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:27:00">7/22 08:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이번 구글 번역만 하더라도 솔직히 사용해본 실시간 통역중에 압도적 성능인데</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:28:00">7/22 08:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">X처럼 자동번역 성능을 좀 올려주면 유튜브 사용자들이 한글자막달린 해외 콘텐츠 안찾아볼텐데</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:31:00">7/22 08:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">클로드에서 코덱스에 리코드엔리플레이 기능과 유사한게 업데이트 됬네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:34:00">7/22 08:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok-4.6이 이번주에 발표될텐데 기다려봅니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:35:00">7/22 08:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">일단 지금은 토큰을 아주 펑펑 퍼붓고 있는 코덱스를 리밋걸릴때까지 작업하는게 혜자!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:37:00">7/22 08:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">3개월동안 99달러가 연속해서 되신분도 있는지 궁금하네요 ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:37:00">7/22 08:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그럴땐 aside ai사용해보세요 ㅋ
+정말 잘 찾아줍니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T08:38:00">7/22 08:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">기존 웹서치llm들이 접근하지 못하는 웹페이지를 접근할수 있어서 상당히 만족스럽습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T09:35:00">7/22 09:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그리고 이런거 하나사서 사용해보세요 ㅋ
+저한테 정말 고마워 하실겁니다.
+아이팟이나 블루투스 이어폰보다 음성정확도가 올라갑니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T09:35:00">7/22 09:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/karpathy/status/2079610838143623371?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T13:23:00">7/22 13:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.youtube.com/watch?v=BTwsAgjBvek</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T19:26:00">7/22 19:26</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/genspark_ai/status/2079397486918263235?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-22T19:27:00">7/22 19:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모델 할당량이 달라서 그런게 아닐까요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:32:00">7/23 09:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저평가된 챗GPT의 사이트 기능은 의외로 강력한 완전한 바이브코딩 기능이네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:33:00">7/23 09:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/cursor_ai/status/2079993729532989500?s=12</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:34:00">7/23 09:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">올해의 화두는 MoA가 될겁니다
+보세요
+3개월뒤에 한국 유튜버들이 콘텐츠로 다룰거니깐요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:36:00">7/23 09:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이미 한달전부터 Hermes agent에서 사용중인데 만족 스럽습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:37:00">7/23 09:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Codex에서도 sol Terra Luna 모델에 대해서도 적용가능합니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:37:00">7/23 09:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">여러분이 모델을 선택하게 되는일이 점점 사라질겁니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T09:52:00">7/23 09:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">사이트의 활용사례는 이 게시글을 참고해주세요
+https://x.com/nickbaumann_/status/2080034767135965342?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T14:50:00">7/23 14:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.linkedin.com/pulse/codex%EC%99%80-%EA%B8%B4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%98%91%EC%97%85%ED%95%98%EA%B8%B0-seowoo-han-plcvc/?trackingId=JsgXNTq%2B%2BrsFoDT2%2Bq5GXQ%3D%3D</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T14:52:00">7/23 14:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/JaY8mKOBZ0M</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T14:53:00">7/23 14:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 코덱스 엠베서더이신 서우님과 두번째 촬영을 진행합니다
+코덱스 활용법에 대해 이야기 나눌텐데 많은 관심부탁드립니다 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T15:00:00">7/23 15:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">초고급 활용사례도 제가 풀어볼 예정입니다 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-07-23T15:00:00">7/23 15:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아마 아직 한국 유튜버들중엔 다루신분이 안계신것 같더라구요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 23건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), EBS 전국민 AI 강좌와 국산 모델 실전 점검</h3><p>7월 건강 이슈에도 옵시디언 플러그인 영상 업로드 지속. 동시에 책 2권 집필, 교육부·과기부 예산 기반 **EBS 이러닝 강좌** 고급 35차시 담당, 연말 무료 론칭 예정. 유치원부터 시니어까지 전국민 대상 커리큘럼으로 기획됨.</p><p>국산 모델 실전 평가도 공유. 업스테이지 신모델 가격 경쟁력 확인, 연말부터 **업스테이지 솔라·LG 엑사원** 본격 사용 가능성 예고. 다만 **국산 모델 에이전트 적용 난이도 여전히 높음**. 엑사원 시연은 학생 교육용 한정 추천, 오픈2 컨텍스트 윈도우 256K 확인. 업스테이지 기반 클로드코드 실행 후기 예고. 젠스파크는 업무용 AI로 컨셉 명확하다는 평가.</p><p>LLM wiki 구축 레퍼런스 스택 큐레이션: emilkowalski/skills(애플식 디자인 스킬), **OKF 기반 llmwikis.org** 구조, Tolaria 샘플 vault(refactoringhq/tolaria-getting-started), Hermes agent repo, Warp 소스. 한 프로젝트에 모아 fable5 수준 LLM 대화로 구축안 도출 방법 제시.</p><blockquote>오늘 엑사원 시연봤는데. 한국말.욕 안하는게.장점.이라는</blockquote><blockquote>유치원생부터 시니어까지 전국민을 대상으로 하는 AI 강좌가 EBS에 나올 예정입니다.</blockquote><p>국산 LLM의 에이전트 성숙도에 대한 냉정한 현장 판단과 LLM wiki 구축용 레퍼런스 스택 모두 독자 프로젝트에 즉시 활용 가능한 참고 지점.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(23건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T15:59:00">7/21 15:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 옵시디언 플러그인 영상 올라갑니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:02:00">7/21 16:02</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">7월은 정말 몸이 안좋아서ㅠㅠ
+그래도 혹시 모를 영상 기다리시는 분들이 계셔서 억지로라도 아이디어를 쥐어 짜네는 것 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:09:00">7/21 16:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">책 2권을 동시에 쓰기 시작했고, 교육부&amp;과기부 예산으로 EBS 이러닝 강좌 시작하고 있구요.  기타 여러 프로젝트를 하고 있습니다.
+EBS 이러닝 강좌는 초,중,고급 100차시 강좌이고, 저는 고급 35차시를 담당합니다. 충분치는 않지만 옵시디언 부터 두루 담아보는 것을 기획했습니다.
+연말쯤 론칭할 EBS 강좌는 무료입니다.^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:11:00">7/21 16:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">업스테이지 새 모델 가격입니다. 쌉니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:12:00">7/21 16:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제 정보에 따르면 연말부터 본격적으로 업스테이지 솔라, LG 엑사원 등을 쓰실 수 있을겁니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:21:00">7/21 16:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">확실히 좀 아쉬운건 국산 모델 에이전트 적용이 쉽지 않네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:23:00">7/21 16:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오픈2도 컨텍스트 윈도우가 256000수준이네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T16:28:00">7/21 16:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">유치원생부터 시니어까지 전국민을 대상으로 하는 AI 강좌가 EBS에 나올 예정입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T17:50:00">7/21 17:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">업스테이지로 클로드코드 한 번 돌려보고 후기 남기겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T17:52:00">7/21 17:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://github.com/emilkowalski/skills</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T17:52:00">7/21 17:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">디자인 스킬입니다. 특히 애플처럼 디자인해주는 스킬이 있습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T18:29:00">7/21 18:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이건 제가 직접해봐야 가능할 것 같긴한데
+제가 아직 alda는 공개하지 않았는데
+옵시디언에 llm wiki라는 플러그인이 있어요. 그거 깃허브로 보고 참고하셔도 좋을 것 같구요. Hermes agent repo 등 관련 여러 repo를 하나의 프로젝트에 다 때려놓고 LLM이랑 대화 하면서 여러 리포 소스 참고해서 구축 할 수 있는 아이디어를 내 달라고 하면 fable5 정도면 내줄 것 같습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T18:30:00">7/21 18:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Warp소스도 도움 될 것 같아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T18:36:00">7/21 18:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">1.  llmwikis.org/reference/structure 
+Open Knowledge Format(OKF) 기반으로 만든 가장 최근·가장 체계적인 구조. Google Cloud도 비슷한 방향으로 가고 있어요. agent가 예측 가능한 경로, governance 필드, multi-tenant까지 다 커버합니다. Tolaria의 YAML frontmatter와 99% 호환됩니다.
+2.  refactoringhq/tolaria-getting-started 
+Tolaria 공식 샘플 vault이고, type: Project, type: Person, type: Topic 같은 Tolaria 내장 타입과 relationship 필드(belongs_to:, related_to:)를 그대로 보여줍니다. AGENTS.md, CLAUDE.md도 여기서 시작됐어요.
+3.  bashiraziz/llm-wiki-template 또는 MauricioPerera/llm-wiki-kit ← 실전 템플릿
+Hermes/Codex 같은 agent가 바로 읽을 수 있도록 CLAUDE.md + scripts/까지 완비된 실전 예시들. 특히 Hermes Agent와 잘 맞는 구조같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T21:37:00">7/21 21:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/QnebxILl3yk?si=iz4toBuBHjOcBc4T</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T21:37:00">7/21 21:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">새 영상이 올라 갔습니다~</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-21T21:59:00">7/21 21:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://news.nate.com/view/20260721n10252</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T13:42:00">7/22 13:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어제 저녁에 기관 공무원 대상으로 AX관련한 특강을 했는데요 @이호철 실장님께서 허락해주셔서 어제 강의영상 일부 편집해서 오늘 유튜브에 업로드 하도록 하겠습니다~^^ 오랜만에 속시원하게 제 이야기를 했던 것 같네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T15:50:00">7/22 15:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 엑사원 시연봤는데. 
+한국말.욕 안하는게.장점.이라는</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T15:53:00">7/22 15:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저렴하게 학생 교육용으로 쓰는 것은 나쁘지 않아보입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T16:56:00">7/22 16:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">8시 30분쯤 업로드 됩니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T20:14:00">7/22 20:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">젠스파크는 컨셉 확실한 것 같아요. 업무용 ai</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-07-22T20:32:00">7/22 20:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/-nmNI9frHzA?si=ZZoFnpOT8BOlR8yH</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">7</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 68건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Kimi K3 성능 테스트 결과 Opus 4.8 상회, fable 5 근접, 가격 우위 확인함.</span></li><li><span class="n"></span><span class="t">Upstage Solar-Open2-250B 공개, H200 2장으로 딥시크 수준 성능 달성함.</span></li><li><span class="n"></span><span class="t">자기강화 오류와 국소해/전역해 논의, 메타 프롬프트 연구 당위성 강조됨.</span></li><li><span class="n"></span><span class="t">Kimi K3가 Redis 취약점 30분만에 발견, 상용 서비스 침투가 새로운 벤치마크로 부각됨.</span></li><li><span class="n"></span><span class="t">클로드 데스크톱 스킬 녹화 기능 소개, 카드뉴스 자동화 활용 사례 공유됨.</span></li></ol><div class="tags"><span class="tag">B200</span><span class="tag">H200</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 63건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Gemini 3.6 Flash·3.5 Flash-Lite·3.5 Flash Cyber 출시, 입력 100만 토큰 $1.50·출력 $7.50 가격 공개됨.</span></li><li><span class="n"></span><span class="t">Google이 3.5 Pro를 건너뛰고 Gemini 4로 직행, 보안·속도를 Flash에서 챙기고 4에서 뒤집는 전략으로 해석됨.</span></li><li><span class="n"></span><span class="t">Claude Cowork에 화면 녹화·설명으로 재실행 스킬을 만드는 &#x27;Record a skill&#x27; 기능 추가됨.</span></li><li><span class="n"></span><span class="t">Cursor Router 공개, 작업별 최적 모델 자동 선택으로 비용 60% 절감 주장.</span></li><li><span class="n"></span><span class="t">xlsx 내부 sharedStrings.xml까지 색인해 로컬 엑셀 검색 리콜@10 11.5%→98.5% 개선 사례 공유됨.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude Code</span><span class="tag">Kimi K3</span><span class="tag">GPT-5.6</span><span class="tag">Gemini 3.6 Flash</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 66건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">김문정이 EBS 이러닝 100차시 중 고급 35차시 담당 및 연말 무료 론칭 예정 공지, 업스테이지 Solar/LG 엑사원 국산 모델 연말 본격 활용 전망.</span></li><li><span class="n"></span><span class="t">이창수의 Tolaria(옵시디언 대체 오픈소스) vault 구축 사례 공유, LLM-wiki 표준화 참고 레포로 OKF·tolaria-getting-started·llm-wiki-template 추천됨.</span></li><li><span class="n"></span><span class="t">Gemini 3.6 Flash 출시 소식과 SWE-Bench Pro 58.7%로 GPT-5.6·Grok 4.5·Claude Sonnet 5 대비 열세, 컴퓨터 사용·롱컨텍스트 1위 벤치 정리.</span></li><li><span class="n"></span><span class="t">AI초보의 xlsx 검색 리콜@10을 11.5%→98.5%로 끌어올린 sharedStrings.xml 색인 사례 공유, LLM-wiki 엑셀 파싱 강화 스킬 응용 제안.</span></li><li><span class="n"></span><span class="t">emilkowalski/skills 애플풍 디자인 스킬, 힉스필드 SeeDance 2.0 24시간 무료 이벤트, 송재경 1인 바이브코딩 게임개발 전환 등 잡다한 링크 다수.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude Code</span><span class="tag">Kimi K3</span><span class="tag">GPT-5.6</span><span class="tag">Gemini 3.6 Flash</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">ChatGPT 워크 자동화 소개, 화면 녹화만으로 워크플로 구현 가능함.</span></li><li><span class="n"></span><span class="t">헤르메스 에이전트 5개 조합으로 뉴스 큐레이션부터 주식 매매까지 자동화 사례 공개.</span></li><li><span class="n"></span><span class="t">AI 엔지니어 샘 호트만 인터뷰 형식 진행.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">ChatGPT Work</span><span class="tag">Hermes Agent</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:시민개발자 구씨</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">ChatGPT Work 소개 단일 메시지로 구성됨.</span></li><li><span class="n"></span><span class="t">비개발자 대상 엑셀·PPT·대시보드 활용 권장.</span></li><li><span class="n"></span><span class="t">실질적 논의 부재로 요약 정보 희소함.</span></li></ol><div class="tags"><span class="tag">ChatGPT Work</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드깎는노인</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">챗GPT 보이스 활용 경험 소개 단건만 존재, 실질 논의 부재.</span></li></ol></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">OpenAI 슈퍼앱 및 ChatGPT Work 상륙 소식 공유.</span></li><li><span class="n"></span><span class="t">메타 프롬프팅 개인 스타일 공개, 반복 질문 대응.</span></li></ol><div class="tags"><span class="tag">ChatGPT Work</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Codex</div><div class="ctx">코덱스 앱 활용, opencodex 프록시로 Kimi·Claude·Codex 겸용, GPT-5.6-sol 활용 사례 공유.</div></div><span class="freq">5</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Claude Code</div><div class="ctx">메인 개발 도구로 언급, 자미두수 교차검증과 클로드 데스크탑/Cowork의 스킬 녹화 기능도 화제.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Kimi K3</div><div class="ctx">Moonshot.AI의 오픈소스 모델 Kimi K3가 미국 최고급 모델급 성능과 30분 만에 Redis 취약점 발견 사례로 화제.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">GPT-5.6</div><div class="ctx">SWE-Bench Pro 벤치마크 대비 상위권, GPT-5.6-sol이 Codex/ChatGPT Work 활용 사례 큐레이션.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Gemini 3.6 Flash</div><div class="ctx">구글이 Gemini 3.6 Flash와 3.5 Flash-Lite, 3.5 Flash Cyber를 공개하며 출력 가격 인하와 처리 시간 절반 단축을 발표함.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">ChatGPT Work</div><div class="ctx">OpenAI 슈퍼앱 ChatGPT Work 상륙, 화면 녹화 기반 100% 자동화 소개.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Grok 4.5</div><div class="ctx">Grok 4.5가 Gemini 대비 코딩 벤치마크에서 우위, Grok 4.6 이번 주 발표 예정.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">Exaone</div><div class="ctx">LG 엑사원 시연에서 한국말 욕 안 하는 점이 장점으로 언급됨, 학생 교육용 활용 제안.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Obsidian</div><div class="ctx">옵시디언 플러그인 영상 업로드, llm wiki 플러그인 참고 언급.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Hermes Agent</div><div class="ctx">Hermes agent에서 MoA 이미 사용 중, 5개 에이전트로 뉴스 큐레이션·주식 매매 자동화 사례 소개.</div></div><span class="freq">2</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">9</span></div><article class="cross-card"><h3>Gemini 3.6 Flash 출시</h3><p class="desc">구글 Gemini 3.6 Flash 신규 공개, 세 개 방에서 동시 언급됨. 경량 모델 성능·가격 경쟁 재점화 신호.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>Kimi K3 Moonshot 공개</h3><p class="desc">문샷 Kimi K3 신규 릴리즈, 수요 급증과 Redis 취약점 탐지 사례 함께 회자됨. 중국계 오픈 모델 실사용 확대 흐름.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>Claude Skills 녹화 기능</h3><p class="desc">Claude Cowork의 Record a skill 기능이 스킬 디자인·자동화 사례로 언급됨. 반복 워크플로 캡처 도구로 주목.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>ChatGPT Work 출시·활용</h3><p class="desc">OpenAI ChatGPT Work 신규 출시, 화면녹화 자동화·업무 활용 데모가 유튜브 채널 다수에서 소개됨. 기업용 에이전트 UX 확산 사례.</p><div class="chips"><span class="chip">youtube:빌더조쉬</span><span class="chip">youtube:시민개발자 구씨</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>Higgsfield 24시간 무료</h3><p class="desc">Higgsfield 무료 개방 이벤트가 두 방에서 공유됨. 영상 생성 툴 접근성 확대 계기.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>업스테이지 Solar 신모델</h3><p class="desc">업스테이지 Solar Open2-250B 독파모 공개 소식이 두 방에서 다뤄짐. 국산 대형 오픈 모델 라인업 확장.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>엑셀 sharedStrings FTS 색인</h3><p class="desc">xlsx sharedStrings 기반 FTS 색인 기법이 두 방에서 논의됨. 대용량 스프레드시트 검색 최적화 실전 팁.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>HuggingFace 보안 사고</h3><p class="desc">OpenAI·허깅페이스 관련 보안 사고가 두 방에서 언급됨. 오픈 모델 허브 공급망 리스크 재확인.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>메타 프롬프팅 전략</h3><p class="desc">메타 프롬프트 힐 클라이밍 전략과 메타 프롬프팅 스타일이 서로 다른 채널에서 소개됨. 프롬프트 자체를 프롬프트로 개선하는 접근 확산.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">youtube:코드팩토리</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

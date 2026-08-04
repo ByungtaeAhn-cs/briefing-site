@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-08-04</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 12 · 2026. 08. 04</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">3 sources · 161 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-08-04 05:05:58.983399+00:00 · claude-opus-4-7</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">learning-masters · importance 0.86</div><h2>김문정, Upstage Solar Pro 4 사전체험으로 국산·해외 LLM 실사용 비교</h2><p class="lede">수능 절대평가 뉴스에서 이해찬 1세대 회고로 이어진 뒤 Upstage Solar Pro 4 사전체험 후기로 화제 전환. 학부모 안내문 생성 프롬프트로 국산·해외 모델 실사용 비교 스케치 공유됨.</p><p class="why">WHY · VIP 발언 + 국산 신모델 실사용 비교</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends</div><h3>유용균, AI Scientist 담론에 AI Engineer 성격 강하다는 현장 반박</h3><p class="lede">AI Scientist 개념 확산 흐름에 대한 회의적 코멘트 제기. 실제로는 AI Engineer 성격이 강하다는 현장 진단과 불완전성 자체가 학문 영역이라는 유머 첨부됨.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>이제현, 원병묵 교수 일요아카데미 후속 자료 기술 블로그 공개</h3><p class="lede">전날 진행된 원병묵 교수 주최 일요아카데미 발표 후속으로 정리 자료 공개. 개인 기술 블로그 tech.jehyunlee.dev에 슬라이드와 함께 게시함.</p></div><div class="notable-card"><div class="src">ai-frontier</div><h3>허민, ChatGPT 크롬 확장으로 우클릭 즉시 질의 워크플로 공유</h3><p class="lede">브라우저 리서치 중 발췌 텍스트를 별도 탭 이동 없이 즉시 질의로 넘기는 방법 안내함. ChatGPT 크롬 확장프로그램 설치 후 웹 페이지에서 우클릭 컨텍스트 메뉴로 실행됨.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>AKM 보드 만점 사례와 재평가 궤적 17건 다양성 확인</h3><p class="lede">AKM 보드 만점 사례와 재평가 궤적 17건 공유됨. 시스템 유형별 다양성 확인되며 벤치 커버리지 스케치 제공됨.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 1건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 원병묵 교수 일요아카데미 발표 자료 공유</h3><p>전날 진행된 **원병묵 교수 주최 일요아카데미** 발표 후속으로 정리 자료 공개. 개인 기술 블로그 `tech.jehyunlee.dev`에 게시함.</p><p>발표 내용을 슬라이드와 함께 정리한 포스트 링크 제공. 관심 있는 구성원에게 자유 열람 권유.</p><blockquote>어제 원병묵 교수님께서 만들어주신 일요아카데미에서 발표드린 내용을 정리해서 자료와 함께 공유드립니다.</blockquote><p>국내 AI 연구자 커뮤니티의 오프라인 세미나 흐름과 발표자 본인의 정리 방식을 함께 확인할 수 있는 1차 자료. 발표 요지를 짧게 훑고 싶을 때 유용한 참조점.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(1건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-03T18:34:00">8/3 18:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어제 원병묵 교수님께서 만들어주신 일요아카데미에서 발표드린 내용을 정리해서 자료와 함께 공유드립니다.
+
+관심있으신 분께 도움이 되시길 바랍니다.
+
+https://tech.jehyunlee.dev/2026/08/02/General-96_sundayacademy/</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 2건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, AI Scientist 담론에 대한 현장 관점 제기</h3><p>**AI Scientist** 개념 확산 흐름에 대한 회의적 코멘트. 실제로는 AI Engineer 성격이 강하다는 진단.</p><p>불완전한 상태 자체가 학문 영역임을 유머로 정리. 연구 효율화 자체를 연구 대상으로 삼는 접근 언급. 타 분야 논문도 실제 재현 시 실패, 과장, 특정 조건 한정 동작 등 문제 흔함을 근거로 제시.</p><blockquote>AI Scientist라고 부르고 사실 AI Engineer.... &gt; 아직 불완전하니 학문의 영역인것 아니겠습니까 ㅋㅋㅋㅋ 연구를 효율적으로 하는 방법자체를 연구하는... 다른 연구분야 논문들도 막상해보면 잘 안되는거 흔하고.. 재현이 안된다던지 과장이 심하다던지, 특정 조건에서만 돌아가는다던지...</blockquote><p>Sakana AI 등 자동 연구 에이전트 마케팅이 확산되는 시점에서, 국책연구소 현업 연구자가 재현성·과장 문제를 타 분야와 등치시켜 상대화한 관점. AI Scientist 담론을 소비할 때 참조할 만한 균형추.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-03T22:57:00">8/3 22:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">AI Scientist라고 부르고 사실 AI Engineer.... </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-03T23:42:00">8/3 23:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아직 불완전하니 학문의 영역인것 아니겠습니까 ㅋㅋㅋㅋ 연구를 효율적으로 하는 방법자체를 연구하는... 다른 연구분야 논문들도 막상해보면 잘 안되는거 흔하고.. 재현이 안된다던지 과장이 심하다던지, 특정 조건에서만 돌아간다던지... </div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 2건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, ChatGPT 크롬 확장 워크플로 팁 공유</h3><p>브라우저 리서치 중 발췌 텍스트를 별도 탭 이동 없이 즉시 질의로 넘기는 방법 안내함. AI 프론티어 방에서 짧게 던진 실사용 팁임.</p><p>**ChatGPT 크롬 확장프로그램** 설치 후, 웹 페이지에서 원하는 문단을 드래그하고 우클릭 컨텍스트의 &quot;물어보기&quot;를 클릭하면 선택 텍스트가 그대로 ChatGPT 프롬프트로 전달되는 흐름임. 탭 전환·복붙 과정 생략됨.</p><blockquote>크롬 확장프로그램에 ChatGPT를 설치한다음 인터넷상에 내용을 드래그후 물어보기를 클릭하면 바로 챗GPT에게 물어볼수 있습니다.</blockquote><p>리서치 루틴에서 컨텍스트 전달 마찰을 줄이는 소소한 생산성 팁임. 이미 확장 사용 중이라면 신규 정보는 아니나, 드래그→우클릭 경로를 습관화하지 않았다면 도입 검토 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-03T16:50:00">8/3 16:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">크롬 확장프로그램에 ChatGPT를 설치한다음 인터넷상에 내용을 드래그후 물어보기를 클릭하면</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-03T16:50:00">8/3 16:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">바로 챗GPT에게 물어볼수 있습니다.</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 14건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), 국산·해외 LLM 실사용 비교 스케치</h3><p>수능 절대평가 뉴스에 이해찬 1세대 회고를 얹은 뒤, **Upstage Solar Pro 4** 사전체험 후기로 화제 전환. 학부모 안내문 생성이라는 실무 프롬프트로 국산·해외 모델을 나란히 돌려본 스냅샷 공유.</p><p>정식 출시된 reasoning 모델임에도 토큰 소비량이 커 아쉽다는 첫인상. 다만 한국어 표현력은 우위로 판정, 특히 **Grok 4.5**의 &quot;안녕하세요, 5학년 학부모님.&quot; 쉼표 인사와 마무리 문장에서 어색함 노출. 실무 라우팅은 **Kimi 3를 랜딩용**으로 두고 필요할 때만 API 충전 사용. AI 계정 공유·거래는 사기 위험과 정책 문제로 비권장.</p><blockquote>한국어는 업스테이지가 잘하네요 확실히 &gt; 랜딩은 kimi 3로 필요할때만 충전해서 api로 씁니당</blockquote><p>국산 파운데이션 모델 실사용 신호와 Grok 4.5·Kimi 3까지 최신 3종을 같은 프롬프트로 비교한 드문 현장 기록. 한국어 콘텐츠 생성 파이프라인 설계 시 모델 선택 근거로 활용 가능한 1차 관찰.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(14건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T18:25:00">8/3 18:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.mk.co.kr/news/society/12115354</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T18:28:00">8/3 18:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">단군이래 최저학력이라 불리던 이해찬 1세대였습니다.
+그때 학교 분위기는 “한 가지만 잘해도 대학 간다”는 말이 돌 정도로 0교시도, 강제 야자도 거의 없었고, 선생님들도 “너희는 진짜 공부 안 한다”고 하던 시절이었습니다.
+
+저는 잘하는 게 따로 없어서 공부에만 매달렸는데, 1교시 수능 언어영역에서 멘붕 와서 중간에 나갈까 싶었고, 2교시부터 &#x27;나 재수해야 겠다.&#x27;는 생각 밖에 안들었네요.
+
+바로 직전해 (01학년도) 수능 만점자가 역대 최대였는데, 우리 이해찬 1세대의 첫 수능은 불수능이 였지요. 정책과 수능 난이도가 완전히 달랐었습니다. (아직도 화가남)
+오늘 수능 절대평가 뉴스 보고 문득 그런 생각이 들었습니다. 교육은 백년지대계라는데 왜자꾸 바꿔대는지…탁상공론으로 바꿔버리면 그 피해는 학생과 학부모에게 가는데….
+
+혹시 저와 같은 이해찬 1세대는 잘 살고 계신가요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:46:00">8/3 19:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">독자 파운데이션 모델 upstage pro4 미리 써볼 수 있게 되었는데, 후기 남겨 보겠습니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:50:00">8/3 19:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">간단한 데스트 해봤는데… 아직 정식출시 된 reasoning 모델이라 그런지. 톤큰 소비량도 그렇고, 조금은 아쉽네요. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:51:00">8/3 19:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">학부모님, 안녕하십니까. 5학년 친구들이 수학 분수 단원을 차근차근 익히고 있습니다. 이번 주에는 배운 내용을 점검하는 형성 평가를 실시합니다. 이 평가는 점수를 매기기보다 아이들의 이해 정도를 살피고, 앞으로 함께 채워 나갈 부분을 찾기 위한 과정 입니다. 가정에서 평소처럼 편안한 마음으로 임할 수 있도록 격려해 주시면 큰 힘이 됩니다. 평가 결과는 개별적으로 안내해 드 리며, 부족한 부분은 수업 시간에 다시 살펴보겠습니다. 늘 따뜻한 관심에 감사드립니다. || [문의: 담임교사]</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:51:00">8/3 19:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한국어는 업스테이지가 잘하네요 확실히</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:51:00">8/3 19:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">위에가 업스테이지 solar pro4 이구요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:52:00">8/3 19:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">안녕하세요, 5학년 학부모님. I 분수 단원 형성평가를 진행합니다. 아이들이 배운 내용을 스스로 점검하며 성장하는 소중한 시 간입니다. 가정에서도 따뜻한 격려로 함께해 주시면 감사하겠습니다. 편안한 마음으로 준비할 수 있도록 응원 부탁드립니다. 1</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:52:00">8/3 19:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이게 grok4.5</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:53:00">8/3 19:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">특히 이부분… 쉼표 찍고 인사</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T19:54:00">8/3 19:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">늘 따뜻한 관심에 감사드립니다. 인사도 ^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T20:34:00">8/3 20:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">랜딩은 kimi 3로 </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-03T21:13:00">8/3 21:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">필요할때만 충전해서 api로 씁니당</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-04T13:04:00">8/4 13:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">계정 거래는 하지마시길 바랍니다. 
+사기가 많고, 무엇보다 AI 계정은 공유하는 것이 아닌 것 같습니다.</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">3</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 65건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">AKM 보드 만점 사례와 재평가 궤적 17건 공유, 시스템 유형별 다양성 확인됨.</span></li><li><span class="n"></span><span class="t">AI Scientist의 가설 생성 실효성과 도메인 적합성 논쟁, 임상·재현성 한계 지적됨.</span></li><li><span class="n"></span><span class="t">한국 AI 3대 강국 전략의 거버넌스 리스크와 중국 즈후 커뮤니티의 한국 모델 &#x27;껍데기&#x27; 비판 소개.</span></li><li><span class="n"></span><span class="t">Qwen 3.8 Max·DeepSeek·Fable 등 신규 모델 벤치마크와 실사용 후기 공유됨.</span></li><li><span class="n"></span><span class="t">Cmux 세션 관리 팁과 M5 Max 128GB 사양 논의 등 워크스테이션 운용 정보 교환.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 4건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">크롬 확장으로 ChatGPT 우클릭 질의 팁 공유됨.</span></li><li><span class="n"></span><span class="t">솔론봇 데일리 인사이트: 페르소나·금융 OHLCV 등 도메인 특화 데이터셋 부상, 2/4비트 양자화·WebGPU 로컬 실행 확산, MLLM 환각 측정용 PerceptionBench 등 평가 체계 강화됨.</span></li><li><span class="n"></span><span class="t">허깅페이스 트렌딩 Top3: Kimi-K3, DeepSeek-V4-Flash-0731, MiniMax-H3 등장.</span></li><li><span class="n"></span><span class="t">논문 트렌딩: Kimi K3, Unlimited OCR Works, 금융 파운데이션 모델 Kronos 주목.</span></li></ol><div class="tags"><span class="tag">Kimi K3</span><span class="tag">DeepSeek</span><span class="tag">Claude</span><span class="tag">Hugging Face</span><span class="tag">MiniMax-H3</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 33건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">이해찬 1세대 수능 회상과 수시·정시 논쟁, 약술형 논술 도입 가능성 언급됨.</span></li><li><span class="n"></span><span class="t">Upstage Solar Pro4 사전 체험 후기: 한국어 자연스러움 우위, 다만 토큰 소비 아쉬움.</span></li><li><span class="n"></span><span class="t">Grok 4.5 vs Solar Pro4 vs Kimi 3 한국어 생성 비교, 랜딩페이지는 Kimi 3 활용 사례 공유됨.</span></li><li><span class="n"></span><span class="t">Grok으로 홈페이지 디자인 시도 중 대참사 발생, GPT 재작업 진행 중.</span></li><li><span class="n"></span><span class="t">AI 계정 공유·거래 주의 경고, 심심이 에이전틱 AI 국책과제 주관기관 선정 소식 전달됨.</span></li></ol><div class="tags"><span class="tag">Kimi K3</span><span class="tag">Upstage Solar Pro4</span><span class="tag">Grok 4.5</span><span class="tag">ChatGPT</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Kimi K3</div><div class="ctx">랜딩 페이지 작성용으로 kimi 3 활용, 허깅페이스 트렌딩 1위 등극.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Upstage Solar Pro4</div><div class="ctx">업스테이지 독자 파운데이션 모델 solar pro4 프리뷰 사용 후기 공유, 한국어 자연스러움 우수 평가.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Grok 4.5</div><div class="ctx">학부모 안내문 생성 비교에서 그록 4.5 결과물 부자연스러움 지적, 홈페이지 디자인 시도 중 대참사 발생 보고.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">DeepSeek</div><div class="ctx">벤치마크보다 실제 사용 시 대체 가능성 입증, 빅테크 압박 가중 전망, 한국 기업이 넘었다는 주장 논란.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Claude</div><div class="ctx">옵시디언 연결 자동 스크랩 문의, 인간 개입 없이는 이상하게 진행된다는 사용 경험 공유.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">ChatGPT</div><div class="ctx">크롬 확장프로그램 설치 후 드래그 물어보기 활용법 공유, GPT의 디자인 스케치 작업 언급.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Hugging Face</div><div class="ctx">트렌딩 모델 및 논문 순위 공유, LoRA 모델 배포/공유 Space 활동 활성화.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">MiniMax-H3</div><div class="ctx">허깅페이스 트렌딩 모델 3위 등재.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Kronos</div><div class="ctx">금융 시장 언어 파운데이션 모델 논문 트렌딩 등재.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">WebGPU</div><div class="ctx">로컬 연산 하드웨어 최적화 흐름의 주요 기술로 언급.</div></div><span class="freq">1</span></div></div>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

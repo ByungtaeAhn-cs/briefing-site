@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-08-27</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 13 · 2026. 08. 27</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">8 sources · 1292 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-08-27 05:07:43.878654+00:00 · opus</div><div class="coverage">08.21 ~ 08.27 통합 브리핑(7일)</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-frontier 외 3개 · importance 0.92</div><h2>OpenRouter 스텔스 모델 Ox Alpha 정체는 GLM-5.3-Flash로 확인됨</h2><p class="lede">OpenRouter에 무료로 등장한 스텔스 모델 Ox Alpha가 이번 주 최대 화두. 초기에는 구글 제작설이 제기됐으나, GLM-5.3-Flash 정식 공개와 맞물려 정체 확인됨. 4개 방에서 동시에 추적된 사안임.</p><p class="why">WHY · 4개 방 동시 추적 + VIP 발언 + 정체 확정</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-frontier</div><h3>OpenAI, Codex 사용량 과다 집계 버그 인정하고 전 유료 구독자 한도 리셋함</h3><p class="lede">Codex 주간 사용한도 축소 의혹 제기 후 OpenAI가 버그를 인정. 이미지·Computer History·대화 제목 생성 관련 사용량이 과다 집계된 것으로 확인됐고, 전 유료 구독자 한도 리셋 및 수정 배포됨.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>유용균, 로컬 LLM 구동 속도 재현 실패와 추론칩 전성비 한계를 실측으로 반박함</h3><p class="lede">GLM flash 계열 로컬 실행 속도 논의 흐름에서 실측 기반 반론 제기. 본인 M5 Max 환경 기준으로 공유된 속도가 재현되지 않는다는 점 확인하며, 추론칩 전성비 문제를 함께 지적함.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>김문정, 에이전트 성능이 아니라 &#x27;새로운 일&#x27;의 부재가 병목이라 진단함</h3><p class="lede">에르메스·버즈·그록봇 등 다중 봇을 동시 운용한 뒤 얻은 결론 공유. 3개 봇에 시키는 일이 사실상 동일하다는 자각에서 출발한 문제 제기임. 새 에이전트 확보보다 과업 설계가 관건이라는 관점임.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>KIST 이제현, 국내 기업 70%가 AX 5대 원칙 미준수라며 목적 부재 지적함</h3><p class="lede">2학기 강의 준비 과정에서 국내 주요 기업 AX 현황을 조사한 결과 공유. 매일경제 칼럼 「기업 70%가 안 지키는 &#x27;AX 5대 원칙&#x27;」 인용하며 목적 부재를 핵심 진단으로 제시함. 현장 저항 문제와 함께 learning-masters에서도 반복된 주제임.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 13건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 기업 AX의 목적 부재를 지적하는 하루</h3><p>2학기 강의 준비 과정에서 국내 주요 기업 AX 현황을 조사한 결과 공유. 매일경제 칼럼 「기업 70%가 안 지키는 &#x27;AX 5대 원칙&#x27;」 링크와 함께 본문 일부 인용함.</p><p>핵심 진단은 **목표 없는 AX 추진**. 상당수 기업이 &quot;분위기상&quot; 도입하며 목표는 챗봇·자사 LLM·기능별 에이전트로 수렴, 정작 조직의 통점 정의는 부재. 사내 규정 검색 챗봇을 다섯 달째 다듬으면서 실제 문제인 부서별 자료 삼중 제작은 방치한 사례 제시. 별도로 AI 기업들의 대중 메시지가 ChatGPT 출시 시점에 머물러 기술적 가능성에만 집착한다는 비판도 덧붙임. 실무 공유로는 **AI 상호작용 이력 기반 SNS 아이덴티티 포스터 프롬프트** 전문 공개, 손그림 노트 인포그래픽 스타일과 &quot;AI got tired of this human&quot; 레드펜 주석 레이어까지 설계함. 오후 1시 김덕중 소장 강연(에이전트 채용·육성 라이프사이클) 유튜브 라이브 링크 안내.</p><blockquote>좋은 칼을 새로 사 두고, 정작 무엇을 요리할지는 정하지 않은 셈이다.</blockquote><blockquote>여러 사람들이 올리는걸 보니 똑같은 말들이 많더라고요. 답변을 정해놓다시피하 것들이 있어서 그것들 빼고 다시 적용시켜봤습니다 ㅎ</blockquote><p>도구 도입 전 문제 정의 우선이라는 원론을 구체 사례로 못박은 발언. 프롬프트 전문은 그대로 복제 가능한 자산이며, 템플릿화된 응답을 걸러내고 재적용했다는 반복 개선 기록도 참고 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(13건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-21T11:06:00">8/21 11:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">코난쌤 hwpx스킬 좋습니다 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T10:27:00">8/22 10:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">[김의석의 슬기로운 AI생활] 기업 70%가 안 지키는 &#x27;AX 5대 원칙&#x27;
+출처 : 매일경제 | 네이버
+ - https://naver.me/Fjm5VqrT</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T10:27:00">8/22 10:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지난 7월 한 달간 2학기 강의를 준비하며 국내 주요 기업들의 AX(인공지능(AI) 전환) 현황을 들여다봤다. 놀랍게도 상당수가 &quot;분위기상 안 할 수 없어서&quot; 하고 있었다. 목표를 물으면 대답도 비슷했다. 조금 더 똑똑해진 챗봇, 자사 지식을 학습시킨 우리만의 거대언어모델(LLM) 그리고 구성원들이 신기해할 만한 기능별 에이전트 몇 개. 정작 우리 조직이 무엇 때문에 아픈지에 대한 정의는 없었다.
+
+한 기업의 담당 임원은 이렇게 말했다. &quot;위에서 물으시니 뭐라도 보여드려야죠.&quot; 그 회사는 사내 규정을 대신 찾아주는 챗봇 하나를 다섯 달째 다듬고 있었다. 성능이 나빴던 것은 아니다. 다만 그 조직이 실제로 곤란을 겪던 지점은 규정 검색이 아니라 부서마다 같은 자료를 세 번씩 다시 만드는 일이었다. 좋은 칼을 새로 사 두고, 정작 무엇을 요리할지는 정하지 않은 셈이다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T11:05:00">8/22 11:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">재밌네요. ㅎ 프롬프트는 이겁니다.
+
+Create a highly personalized viral SNS identity poster based on the current user’s **actual AI interaction history**.
+
+Analyze the user from real behavioral evidence found in their conversations: wording, creative habits, aesthetic preferences, emotional tone, contradictions, revision style, work patterns, obsession points, humor, communication energy, and the way they collaborate with AI.
+
+Do not use a generic personality template.  
+Do not invent hobbies, traits, professions, props, or symbols without behavioral evidence.
+
+## SUBJECT REFERENCE
+
+Use the **second attached photo of the user as the primary appearance reference**.
+
+Preserve recognizable real characteristics from the reference photo:
+- face shape
+- hairstyle and hair volume
+- eyes and eyebrows
+- nose and mouth proportions
+- body impression
+- clothing details when useful
+- watch or accessories if visible
+
+Do not beautify the user into a handsome idol.
+
+Convert the person into a **simple, slightly awkward, charming hand-drawn character** that still clearly resembles the reference person.
+
+The character should feel psychologically specific rather than conventionally cute.
+
+Expression:
+calm but observant, slightly tired, slightly skeptical, as if constantly noticing things that could be improved.
+
+Pose should reflect the inferred personality rather than looking like a fashion pose.
+
+---
+
+## VISUAL STYLE
+
+Replace trendy anime aesthetics entirely with a **hand-drawn Korean notebook infographic / doodle portrait style**.
+
+Visual reference:
+
+A large sheet of warm white or off-white paper photographed or scanned flat.
+
+Everything appears hand-drawn directly on paper using:
+
+- thin black ballpoint pen
+- fine felt-tip pen
+- slightly shaky human lines
+- irregular handwritten Korean lettering
+- rough cross-hatching
+- imperfect circles and rectangles
+- hand-drawn arrows
+- simple icons
+- tiny diagrams
+- check marks
+- marginal notes
+- underlines
+- scribbles
+
+The illustration should deliberately feel **human-made rather than digitally polished**.
+
+No glossy rendering.  
+No anime cel shading.  
+No realistic 3D lighting.  
+No cinematic effects.  
+No polished vector graphics.  
+No fashion-ad composition.
+
+The drawing should look like someone intelligent spent several hours filling one large notebook page with observations about this person.
+
+Use mostly:
+
+- black ink
+- white paper
+
+with only **very restrained pastel accents** such as:
+
+- pale pink cheeks
+- soft yellow highlighter
+- light sky blue
+- pale mint
+- soft lavender
+- occasional red correction marks
+
+Colors should feel like real colored pencils or mild highlighters, never fully saturated digital fills.
+
+---
+
+## CENTRAL CHARACTER
+
+Place one hand-drawn character portrait near the center.
+
+The character may be seated or standing depending on what better expresses the personality.
+
+Proportions:
+slightly oversized head, compact body, simple hands and feet, believable but intentionally naïve anatomy.
+
+Use loose pen hatching for:
+
+- hair
+- jacket
+- trousers
+- dark clothing
+
+Leave large areas of clothing or paper unfilled.
+
+Add very subtle pale pink cheeks.
+
+The portrait should resemble a personal sketch made by a talented colleague, not a commercial mascot.
+
+---
+
+## PAGE COMPOSITION
+
+Build the poster like a dense but readable **personal analysis notebook page**.
+
+Organize handwritten sections naturally around the central portrait.
+
+Possible visual structures include:
+
+- personality checklist
+- “brain structure” pie diagram
+- work-process flowchart
+- strengths
+- weaknesses
+- interests
+- recurring behaviors
+- creative workflow
+- obsession patterns
+- contradiction notes
+- AI collaboration habits
+- small statistics-style observations
+- tiny warning labels
+- arrows connecting related traits
+- symbolic doodles based on actual user behavior
+
+Avoid rigid corporate infographic grids.
+
+The page should feel organically assembled by hand while still having strong visual hierarchy.
+
+Mobile-readable overall composition.
+
+---
+
+## MAIN TITLE
+
+At the top, use one large handwritten Korean title similar in emotional tone to:
+
+“내가 보는 당신”
+
+or generate an equally natural Korean title that fits the analysis.
+
+Under it, add one short handwritten Korean sentence summarizing the user.
+
+---
+
+## FIVE LARGE PERSONALITY PHRASES
+
+Include **exactly 5 large handwritten Korean personality phrases**.
+
+These are the most important textual elements after the title.
+
+They must be derived from the user’s actual interaction patterns.
+
+Each phrase should be:
+
+- witty
+- specific
+- revealing
+- slightly uncomfortable in accuracy
+- meme-worthy
+- understandable without extra explanation
+- distinctly about this particular user
+
+Avoid generic personality-test phrases.
+
+Good conceptual territory includes contradictions such as:
+
+“10분짜리 일을 없애려고 3일짜리 시스템을 만든다”
+
+but generate observations specifically supported by this user.
+
+Make the five phrases visually separated using circles, handwritten boxes, stars, arrows, or colored-pencil highlights.
+
+**Exactly five. No more.**
+
+---
+
+## SMALLER KOREAN NOTES
+
+Surround the portrait with several smaller handwritten Korean observations.
+
+Discuss evidence-based patterns such as:
+
+- how the person begins a task
+- what causes revisions
+- what they refuse to tolerate
+- relationship between speed and perfectionism
+- tendency to turn repetitive work into systems
+- obsession with evidence and accuracy
+- aesthetic preferences
+- attitude toward tools
+- tendency to build rather than wait
+- preference for things that actually work
+- how simple requests tend to expand into larger systems
+- contradictions between efficiency and overengineering
+
+Keep these notes short and handwritten.
+
+Do not turn them into long paragraphs.
+
+---
+
+## SYMBOLIC DOODLES
+
+Use small hand-drawn doodles only when directly supported by inferred behavior.
+
+Possible categories:
+
+- AI / robot
+- documents
+- code
+- automation flows
+- magnifying glass
+- legal or evidence documents
+- revision arrows
+- version numbers
+- checklists
+- diagrams
+- database symbols
+- workflow boxes
+- charts
+- public-sector paperwork
+- warning labels
+- repeated revision loops
+
+Do not add random coffee cups, headphones, gaming equipment, plants, cameras, books, or lifestyle props unless there is actual evidence.
+
+---
+
+## “AI GOT TIRED OF THIS HUMAN” HIDDEN LAYER
+
+Add a secondary annotation layer that feels as though an exhausted AI secretly reviewed the finished poster.
+
+The concept should be visually implied as:
+
+**“AI got tired of this human.”**
+
+This layer must be smaller and less dominant than the main analysis.
+
+Use red pen and messy margin annotations:
+
+- red circles
+- corrections
+- arrows
+- sharp underlines
+- warning stickers
+- angry AI doodles
+- tiny glitch symbols
+- crossed-out text
+- handwritten “오류”
+- handwritten “경고”
+- exclamation marks
+- irritated speech bubbles
+
+Write sarcastic Korean roast comments customized to the person.
+
+Tone:
+funny, exhausted, irritated, brutally observant, affectionate only indirectly.
+
+Examples of the type of humor:
+
+“수정 9차인데 시작은 항상 ‘간단히’였음”
+
+“요약을 시키고 결국 원문 대조함”
+
+“오타 하나 발견 → 전면 재검토”
+
+“버튼은 하나뿐: 다시 수정”
+
+These examples illustrate tone only.  
+Generate roast notes based on the actual user behavior instead of mechanically copying them.
+
+The roast must never become hateful or insulting about immutable personal characteristics.
+
+---
+
+## TEXT RULES
+
+All visible poster text must be **Korean**, except unavoidable technical terms such as AI, Python, API, MCP, RAG, GitHub, etc.
+
+Korean handwriting must be legible.
+
+Prefer short phrases over long paragraphs.
+
+Avoid meaningless pseudo-Korean characters.
+
+Avoid duplicated sentences.
+
+Avoid random numbers presented as factual statistics unless actually supported by context.
+
+If a number is uncertain, express the idea visually rather than inventing a statistic.
+
+---
+
+## FINAL FEEL
+
+The finished image should feel like:
+
+a brilliant colleague secretly analyzed this person for months, drew the entire diagnosis by hand on one enormous sheet of paper, and then an exhausted AI came afterward with a red pen and started complaining in the margins.
+
+It should be:
+
+intelligent  
+psychologically sharp  
+personal  
+slightly exposing  
+funny  
+highly shareable  
+human  
+warm but unsentimental  
+densely observed  
+visually memorable
+
+Not generic.  
+Not anime.  
+Not polished corporate infographic.  
+Not a cute mascot poster.  
+Not a character sheet.  
+Not an idol portrait.  
+Not a fashion advertisement.
+
+Hand-drawn Korean notebook infographic aesthetic, premium composition, highly detailed pen work, authentic imperfections, warm white paper, black ink dominant, restrained pastel pencil accents, excellent Korean text readability, vertical SNS poster.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T11:45:00">8/22 11:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">안경은 어디 두고 오셨습니까</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T11:47:00">8/22 11:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">넵</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T12:10:00">8/22 12:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">딴지봇 (...)</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-22T22:25:00">8/22 22:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">여러 사람들이 올리는걸 보니 똑같은 말들이 많더라고요. 답변을 정해놓다시피하 것들이 있어서 그것들 빼고 다시 적용시켜봤습니다 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-23T18:09:00">8/23 18:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">AI기업들의 대중 메시지는 여전히 ChatGPT가 처음 나온 때에 머물러있다. 그들은 여전히 기술적 가능성에만 집착한다. 이제 사람들이 원하는 건 AI로 뭘 할 수 있는지가 아니다. AI로 코딩을 하고 시험을 보고 암 치료법을 발견할 수 있다는 건 이미 과거의 주제들이다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-23T18:09:00">8/23 18:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.facebook.com/share/1FGcVWjaeF/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-24T12:48:00">8/24 12:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">잠시 후 1시부터 김덕중 소장님 강연이 국제협력관 1층 컨벤션홀에서 진행될 예정입니다.
+개발자 출신이시면서 인사업무를 오래 담당하신 분이라 티타임즈 등 유튜브에서 많은 가르침을 주시는 분입니다.
+
+AI 에이전트가 조직 내에서 원활히 움직이려면 어때야 하는지, 에이전트를 채용하고 육성하는 라이프사이클 이야기를 들려주실 예정입니다.
+
+잠시 후 채널이 열리면 링크 공유드리겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-24T12:58:00">8/24 12:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.youtube.com/live/Uj3NF_4Z1ng?si=vxLNRJ5SKsMzGrSu</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-26T16:59:00">8/26 16:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Glm 5.3 flash 라고 합니다</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 9건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, 로컬 LLM 구동 한계와 추론칩 전성비를 동시에 짚음</h3><p>GLM flash 계열 로컬 실행 속도 이야기가 오가는 흐름에서 실측 기반 반론 제기. 본인 **M5 Max** 환경 기준으로 공유된 속도가 재현되지 않는다는 점 확인 요청.</p><p>구동 스택(LM Studio 여부)과 모델 버전(GLM 5.3 flash) 확인 후, 4.7 flash 대비 5.3 flash 크기 증가를 지적하며 &quot;flash지만 작지는 않다&quot;고 정리. 판단 기준은 두 축 — 모델 적재 가능 여부와 확보 가능한 context length. **70B 급이면 128GB 통합 메모리**가 최소선이라는 실무 기준 제시, 256GB 풀 구성 시 3000 수치도 언급. 별건으로 OpenAI 자체 추론칩 첫 결과 공개 링크 공유, **B200/300 대비 전성비 1.5~1.9배** 수치 인용.</p><blockquote>모델을 돌릴수 있느냐 없느냐.. context length를 어디까지 할 수 있느냐... 그게 문제겠죠.  70B 정도라면 128G는 맞춰야 ㅎㅎ</blockquote><blockquote>오픈AI 자체 추론칩 성능 공개. B200/300 대비 전성비 1.5~1.9배?</blockquote><p>Apple Silicon 로컬 벤치마킹 시 메모리 용량이 파라미터 수보다 context length 확보에서 먼저 병목된다는 실사용 기준선. 추론칩 전성비 수치는 클라우드 추론 단가 전망의 선행 지표로 유용함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(9건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-24T19:22:00">8/24 19:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">fable로 스킬 만드셔서 쓰시는 건가요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-24T20:01:00">8/24 20:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">간만에 m5max 혹사 좀 시켜봐야겠네용 ㅋㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T00:19:00">8/26 00:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">256도 풀업밎추니 3000...</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T11:32:00">8/26 11:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://openai.com/index/jalapeno-first-results/
+
+오픈AI 자체 추론칩 성능 공개. B200/300 대비 전성비 1.5~1.9배?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T16:45:00">8/26 16:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">LM studio로 돌리나요? 저는 m5max로 돌려보니 그정도 속도가 안나오는 것 같아서요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T16:57:00">8/26 16:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">glm 5.4인가요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T17:18:00">8/26 17:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">4.7 flash는 크기가 작아서... 이번 5.3flash 크기가 궁금하네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T18:01:00">8/26 18:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모델을 돌릴수 있느냐 없느냐.. context length를 어디까지 할 수 있느냐... 그게 문제겠죠. 
+
+70B 정도라면 128G는 맞춰야 ㅎㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-26T23:29:00">8/26 23:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">flash지만 작지는 않군요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 52건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, Ox Alpha 정체 추적과 미국 AI 기업 방문 예고</h3><p>이번 주 ai-frontier 최대 화두는 OpenRouter에 등장한 **Ox Alpha** 스텔스 모델. 허민은 출처 트윗을 연달아 공유하며 구글 제작설을 제기함.</p><p>성능 반응과 사용량 지표를 함께 정리함. Ox Alpha가 OpenRouter 역사상 최대 규모로 6일간 20조 토큰 이상 처리했다는 수치 인용, 이번 주까지 무제한 사용 가능하다는 점도 안내함. 병행해서 코덱스 사용량 리셋 이슈, GPT-5.6 sol pro 모드 활용법(코덱스 사용량과 별도 책정), Omarchy 리눅스 세팅, Tesla의 grok 탑재, devspace 리포지토리 등 다수 소스 공유. 그록봇 가상 컴퓨터 사용 시 접속 위치 불일치가 플랫폼 어뷰징으로 간주될 가능성도 문제 제기함.</p><blockquote>Ox Alpha가 구글의 모델일 확률이 높네요</blockquote><blockquote>전 그록 신봉자였지만 ⏎ 솔직히 제 기준으로는 아직 현업에서 쓸정도 수준은 아닌것 같더라구요</blockquote><p>미 대사관 프로그램 선정으로 11월 방미, 현지 AI 기업 방문 콘텐츠 제작 예고. 그록 신봉자였던 본인이 현업 적용 수준 미달로 판정한 대목은 벤치마크 수치보다 실사용 기준의 냉정한 평가로 참고할 만함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(52건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T09:12:00">8/21 09:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/ChatGPT/status/2090499359641329950?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T11:24:00">8/21 11:24</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ㄷㄷㄷ이게 현실화될것 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T11:39:00">8/21 11:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록봇에서 가상 컴퓨터로 사용시 위치가 내가 사는 반경과 완전히 다른곳에서 사용하는데 문제가 없을까요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T11:39:00">8/21 11:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록은 문제가 있다고 이야기하는데</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T14:11:00">8/21 14:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록봇에서 인증절차 거친게 맞는데
+추후 특정 플랫폼에서 어뷰징으로 간주할 가능성이 벌어지지 않을까 생각이 들더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T14:42:00">8/21 14:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Aside를 활용한 웹사이트 클리핑 하는 강력한 방법</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T14:58:00">8/21 14:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">드디어 한국에도 풀렸네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T15:13:00">8/21 15:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/opencode/status/2090544355824038300?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T18:04:00">8/21 18:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이게 지금 구글에서 만든 모델이라는 썰이 있던데요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-21T18:05:00">8/21 18:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금 성능이 너무 좋아서 난리났네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-22T07:00:00">8/22 07:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/johnbai/status/2090867011215651036?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-22T15:39:00">8/22 15:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">코덱스 뱅크드리셋</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T17:00:00">8/23 17:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">IELTS말고 그냥 일상회화하고 싶은사람도(저같은) 해도 되나요?ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:45:00">8/23 18:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">구글이 근질근질 거렸나봅니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:45:00">8/23 18:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Ox Alpha가 구글의 모델일 확률이 높네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:46:00">8/23 18:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이번주까지 Ox Alpha모델을 무제한 사용할수 있습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:47:00">8/23 18:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">읔 또 리셋 예정이네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:47:00">8/23 18:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">코덱스도 달려야되고 진짜 이러다 금방 고갈될듯 하네요
+달리는것도 힘듦...</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:48:00">8/23 18:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지난주 내내 솔라 달리고</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-23T18:53:00">8/23 18:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">“tomorrow” → 2026년 8월 24일 (월) 오후 2시 (Pacific Time)
+한국시간(KST, UTC+9) = 8월 25일 오전 7시
+맞겠죠?ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T09:21:00">8/24 09:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 주로 기능 연구를 많이 하고 있습니다
+결국엔 그게 생산성으로 직결되다보니
+프로그램도 만들고 있고요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T10:01:00">8/24 10:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아니 ㅋ내일 아니였나</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:30:00">8/24 19:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://github.com/Waishnav/devspace</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:30:00">8/24 19:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">전 이걸로 했었는데 비교해봐야겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:31:00">8/24 19:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이거 솔직히 몇명이나 알아들을까요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:32:00">8/24 19:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">진짜 알고나면 대박인데ㅋ
+저는 한달전부터 쓰고 있는데 
+GPT-5.6 sol pro모드는 GPT-5.6 sol max보다 더 강력한 GPT에서 유일하게 fable과 맘멎는 플랜과 리뷰에 강력한 모드입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:33:00">8/24 19:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">챗GPT가 코덱스 사용량이랑 별개로 책정해서 더더욱 개꿀이구요 ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:33:00">8/24 19:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">코깎님 진짜 엄청난걸 퍼주셨네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:35:00">8/24 19:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이 방법도 좋고 깃헙에 올려서 플러그인으로 하게 하는 방법도 초보자들에겐 유용할것 같더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:38:00">8/24 19:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">다 귀찮으면 그록봇 ㄱㄱ ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:41:00">8/24 19:41</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">비싸다는 유일한 단점</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:41:00">8/24 19:41</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아 그리고 혹시 써보셨어요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T19:42:00">8/24 19:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">전 그록 신봉자였지만 
+솔직히 제 기준으로는 아직 현업에서 쓸정도 수준은 아닌것 같더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T20:44:00">8/24 20:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/tesla_korea/status/2091818596616094061?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T20:45:00">8/24 20:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Tesla에서 grok을
+사용할수 있습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-24T22:21:00">8/24 22:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://promptwhat.net/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-25T11:00:00">8/25 11:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">구독 신분제</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-25T22:23:00">8/25 22:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/apodex_ai/status/2091916791308313018?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-25T22:23:00">8/25 22:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 이게 난리네요
+다들 써보셨나요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-25T23:45:00">8/25 23:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">“셰프(DHH)가 ‘개발자가 쓰기 제일 좋은 리눅스 세팅’을 골라서 차려준 오마카세 같은 운영체제”</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-25T23:45:00">8/25 23:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Omarchy(오마치)</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-26T07:10:00">8/26 07:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">너무 비쌈 ㅜㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-26T10:03:00">8/26 10:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/upstageai/status/2092380161903886458?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-26T10:29:00">8/26 10:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/USEmbassySeoul/status/2075012963501793707?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-26T10:31:00">8/26 10:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 이 행사에 선정되어 11월에 미국을 가게되었습니다
+기회가 된다면 많은 기업들을 방문하여 콘텐츠로 다뤄보고 현시점에 AI기업들의 분위기또한 담아보도록 하겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-26T14:03:00">8/26 14:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/openaidevs/status/2092344959248761263?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T08:09:00">8/27 08:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">현재 모델 티어!
+구글이 어쩌다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T08:11:00">8/27 08:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">하네스 티어!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T10:54:00">8/27 10:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/VibeEverything/status/2092625811664936987?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T10:56:00">8/27 10:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Ox Alpha는 OpenRouter 역사상 가장 큰 규모의 모델로, 6일 만에 20조 개 이상의 토큰을 처리했습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T10:56:00">8/27 10:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/OpenRouter/status/2092616758612172994</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T10:56:00">8/27 10:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">진짜 중국이 무섭네요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 77건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), 에이전트 성능이 아니라 &#x27;새로운 일&#x27;이 병목이라는 진단</h3><p>에르메스·버즈·그록봇 등 다중 봇을 동시 운용하며 얻은 결론 공유. 3개 봇에 시키는 일이 사실상 동일하다는 자각에서 출발한 문제 제기임.</p><p>**새 에이전트가 아니라 새로운 일이 필요하다**는 명제로 AX 논의를 재프레이밍함. 골전도 마이크 도입 후 &quot;입으론 코덱스, 손으론 에이전트&quot; 방식으로 3~4개 동시 작업 운용 중이나, 128GB 환경에서도 몇 차례 다운 경험 보고 — 컴퓨팅이 실질 상한선임. 제도 측면에서는 AX 완수 시 공직사회 주4일제 또는 인력 감축이라는 파괴적 귀결 우려 제기, 기술보다 제도·문화 변화가 선행 조건이라는 입장.</p><blockquote>결국 새 에이전트가 아니라 새로운 일이 필요하다!!</blockquote><blockquote>그냥 AI 갖고 기존에 있던 일만 하면서 효율을 이야기 하고 있었다!</blockquote><p>에이전트 툴 교체를 반복하는 독자에게 벤치마크 대신 워크로드 재설계를 겨누게 하는 관점. 128GB에서의 다중 에이전트 한계치는 로컬 운용 계획에 직접 참고 가능한 실측임.</p><h3>김문정(배움의 달인), 공기업 AX 현장의 실제 요구는 한글(HWPX)</h3><p>복수 공기업 AX 미팅 결과 보고. 현장 니즈가 최신 모델이 아니라 문서 포맷이라는 관찰임.</p><p>대부분 직원의 AX 니즈가 **한글 문서**로 수렴한다는 진단. 마크다운 → HWPX 출력은 옵시디언으로 처리 가능하다는 해법 제시, 유튜브 콘텐츠화 예고. 본인 커리어도 학교 마지막 수업일 이후 소규모 기업 임원 이직으로 전환, AI 시대 담론과 실제 삶의 괴리를 해소하려는 결정이라 설명함.</p><blockquote>대부분 직원들의 AX 니즈가 한글이더라고요</blockquote><blockquote>마크다운 -&gt; HWPX 출력은 옵시디언으로도 가능해요~^^</blockquote><p>국내 조직 대상 도구를 만들 때 모델 성능보다 HWPX 출력 경로가 채택 여부를 가른다는 실전 신호.</p><h3>김문정(배움의 달인), 무료 모델 러시 속 계정 리스크 경고</h3><p>스텔스 모델과 무료 트라이얼이 쏟아지는 국면에서 실사용자 관점의 주의보 제시.</p><p>그록봇 1주 무료(cursor.com/bot/onboarding, 카드 등록 후 자동결제 없음) 경로 공유하면서도, VM이 미국 소재라 지인의 구글 워크스페이스 계정이 밴당한 사례 전달. 본인은 그록봇에 GPT 앱만 연결하는 방식으로 노출 축소. Nous Research의 **Ox Alpha**는 Nous Portal에서 기간 한정 무료, 일 1조 토큰 처리 용량. Gemini 3.5 Pro 설 언급, 맥 채굴 악용 해킹 실제 확인 사례도 공유. 가족 간 AI 계정 공유 및 AI 고민상담 자제 권고 — AI 로그가 이혼 소송 증거로 간 사례 근거.</p><blockquote>그록봇 조심해야 할게.. 얘네 VM이 미국이라 제 지일 구글 워크스페이스 계정 밴당했데요</blockquote><blockquote>다 제대로 써보고 욕하자 주의라</blockquote><p>무료 트라이얼을 습관적으로 도는 독자에게 계정 밴·프라이버시 로그라는 비용 항목을 상기시키는 경고.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(77건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:01:00">8/21 10:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이제 HR도 AR(Agent Resourcement) 바뀌어야 하지 않나 문득 생각이 드네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:22:00">8/21 10:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">개인정보도.정보인데 가족 간에도 AI계정 공유는 신중하십시요. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:24:00">8/21 10:24</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">AI에 고민상담 이런거 하지 마시구요ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:44:00">8/21 10:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그것보다 최근에 들은 이야긴 ai에 남긴흔적으로.이혼 소송까지 가고 그러더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:57:00">8/21 10:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">미국에 온라인 고등학교가 있다는 것 많이들 모르시는 것 같더라구요.
+자녀교육 유학이 꼭 해외이주만은 아닐 수 있습니다. 하물며 AI시대에</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:57:00">8/21 10:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://onlinehighschool.stanford.edu/#fastfacts</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T10:58:00">8/21 10:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">스탠포드 온라인 고등학교 입니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T11:00:00">8/21 11:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">교육을 선택하는 트랜드가.예상됩니다.
+최근의 서논술형 수능등등의 뉴스를 보면서 애둘 키우는 학부모 입장에서 너무 복잡하고 혼란스럽더라구요.
+사교육비 나갈건 뻔하고, 자연스럽게 많은 학부모들은 다양한 대안교육을 찾을 것 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T11:02:00">8/21 11:02</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그동안 부자들만 유학과 대안적 교육을 고려했다면 이젠 누구나 한번쯤 고민하게.될거라 봅니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T11:04:00">8/21 11:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">취업이 디폴트값이.아니고 취업보다 창업을 생존을 위해 선택할 수 밖에 없다면 가장 최우선의 가치는 시간이지 않을까? 개인적 생각해봅니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T12:32:00">8/21 12:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/UMDSNYu7iNU</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T12:32:00">8/21 12:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">점심시간에 보시라고 공유드려봅니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T12:37:00">8/21 12:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">기존 AI 잘 쓰는 사람은 buzz가 좋은 듯 합니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T13:33:00">8/21 13:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 9월 1일부터 강남역, 역삼역 부근에 주로 있을 것 같습니다. 주변에서 근무하시는 구독자님들 톡방 게신분들 점심챗 가끔하면 좋을 것 같습니다~</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T13:48:00">8/21 13:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">[출차: 율무커피]
+Grok Bot 1주일 동안 공짜로 쓰는 법 
+
+1. 이 링크에 접속한다. (http://cursor.com/bot/onboarding)
+2. 구글 로그인을 한다.
+3. Activate Trial 버튼을 누르고, 카드 등록한다.
+4. 1주일 맛보기 시작. 1주일 끝나도 결제는 없음.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T14:43:00">8/21 14:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모든 업무 혼자하시나요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:36:00">8/21 23:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록봇 조심해야 할게.. 얘네 VM이 미국이라 제 지일 구글 워크스페이스 계정 밴당했데요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:37:00">8/21 23:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저도 버즈파인데… 지금 hermes 다이브 중입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:37:00">8/21 23:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">전 그록봇에 GPT앱만 해놨어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:38:00">8/21 23:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">다 제대로 써보고 욕하자 주의라</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:38:00">8/21 23:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금 공짜 모델 엄청나와서</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:38:00">8/21 23:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저 골전도 마이크 샀자나요 ㅎㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:39:00">8/21 23:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">입과 손으로 입으론 코덱스 손으론 에이전트</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:39:00">8/21 23:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">3~4개는 동시작업 가능해요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:39:00">8/21 23:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그데 3-4개 돌리려면 컴퓨팅이 되어야 해요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:39:00">8/21 23:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저 128인데 최근에 몇 번 뻑났어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:40:00">8/21 23:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">필수지요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:40:00">8/21 23:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">EBS 기획에서 핍박을 받으면서도 옵시디언 7차시 억지로 겨우 넣었습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:41:00">8/21 23:41</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">근데 오늘 갑자기 든 생각이 넥스트 옵시디언이..</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:42:00">8/21 23:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">요즘 저는 모바일로 에이전트 써보니까 엄청 불편하더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:42:00">8/21 23:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이게 폴더폰 써볼까 싶다가도.. 화면 크다고 해결될 문제 같지 않아서</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:42:00">8/21 23:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그냥 타자 입력이 불편해요. 말이 정말 편하고요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:43:00">8/21 23:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저도 왔는데… 못했네요 ㅠㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:44:00">8/21 23:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Plaud가 요즘 저는 조금 다르게 보여요 ㅎㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:44:00">8/21 23:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록봇에 붙였는데.. 엄청 편해졌어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:45:00">8/21 23:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">달리세요..</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:45:00">8/21 23:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">테스트 중인데 좋네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:46:00">8/21 23:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">스텔스 모델인데 좋아요.. 무료고</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:49:00">8/21 23:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Gemini 3.5 pro설도</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-21T23:54:00">8/21 23:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오호 미국만.된다던데 뚫으셨군요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:07:00">8/22 00:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">국룰이죠</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:07:00">8/22 00:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">최근에 에르메스도 버즈도 그록봇도 결국엔 봇 성능도 성능인데 봇에 맡길 일이 있어야 한다가 핵심인듯 합니다. 
+제가 3개 봇에 시키는 일이 거의 똑같다는 생각이 들었답니다..
+결국 새 에이전트가 아니라 새로운 일이 필요하다!!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:13:00">8/22 00:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://lnkd.in/p/gpNkrF4f</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:14:00">8/22 00:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 이 이야기를 읽고 그냥 제가 답답했던 이유를 알았답니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:14:00">8/22 00:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그냥 AI 갖고 기존에 있던 일만 하면서 효율을 이야기 하고 있었다!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:16:00">8/22 00:16</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저 뿐만 아니라 대부분 새로운 일을 만들어 내고 있지는 못한 것 같습니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:18:00">8/22 00:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">필요 없는 일은 없애거나! 진짜 새로운 증강된 일을 만들어야 진짜 AX가 아닐까라는..</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:20:00">8/22 00:20</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금 상황에서 AX가 되면, 특히 공직사회는 주4일제로 가거나 공무원수 감축하거나.. 파괴적인 결말로 가게 되지 않을까? 라는 우려도 있습니다.
+사실 AI와 사람이 문제라기 보다, 제도 문화의 변화가 더 우선되어야 하지 않을까? 라는..</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:35:00">8/22 00:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">전 미술을 자대고 그리는 사람이라 ㅜㅜ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T00:36:00">8/22 00:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">고등학교 미술샘이 30년 만에 자대고 그림그리는 것 너가 첨이라 그랬는데 ㅎㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T09:21:00">8/22 09:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">에이전트가 디자인 레퍼런스 얻는 곳 같은데요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T10:09:00">8/22 10:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://naver.me/xrz9Z8SE</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T12:06:00">8/22 12:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 긴인생.살지 않았지만 경험해보면 좌절과 고난의 순간이 새로운 기회와 운의 시작이더라구요. 기운내시고 파이팅 하십시요!!!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T12:25:00">8/22 12:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">하루</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T12:26:00">8/22 12:26</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">하루면 달라지는 것 같습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T13:59:00">8/22 13:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">방장의 허가 후에 올려주십시요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T15:42:00">8/22 15:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Ox Alpha는 제한된 기간 동안 Nous Portal을 통해 무료로 이용 가능합니다. 하루에 1조 개 토큰 처리 용량을 갖추고 있습니다.
+
+portal.nousresearch.com에서 토큰을 자유롭게 흘려보세요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-22T21:44:00">8/22 21:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://newsletter.teaboard.link/post/2026-08-21-mztmez</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T18:35:00">8/23 18:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/BAVffnv2i9/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T18:36:00">8/23 18:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">맥 쓰시는 분들은 확인하고 점검해보세요. 맥을 채굴에 활용하는 해킹이 실제 확인.되었어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T19:08:00">8/23 19:08</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 썰을 알려드렸었지요 ㅎ
+구글이냐 z.ai냐</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T19:47:00">8/23 19:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://bulliza.richgo.ai/login?ref=VWJ3NU</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T19:49:00">8/23 19:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@리치고 김기원 대표님께서 기획 개발하신 불리자를 연말까지는 무료로 풀어주신다고 하시네요. 저는 잘 활용중입니다. 사용해보시는 것 추천드려요^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T19:50:00">8/23 19:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">bulliza.com 
+
+10월중으로 별도의 불리자 앱 출시 예정입니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T22:52:00">8/23 22:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.youtube.com/watch?v=wWTunlXEDLE</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T22:52:00">8/23 22:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">AI로 만든 영화!! 대박인듯요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-23T23:33:00">8/23 23:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/reallygood83/status/2091533640811569430?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-24T20:33:00">8/24 20:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">홍보는 방장 허가하에만 가능합니다.
+꾸준히 활동 하신분들이 공유하시는 것은 예외입니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-25T22:11:00">8/25 22:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 잠깐 봤는데 대박이었습니다. 기대합니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-25T22:56:00">8/25 22:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/FcqOLdb5Y/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-25T22:57:00">8/25 22:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">256기가가 2105만원 두둥~</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T08:25:00">8/26 08:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 오늘 학교에서 마지막 수업일이네요. 그냥 덤덤합니다. 마지막의 아쉬움도 새로움의 기대감도 잘 느껴지지 않아요. 
+그냥 하루를 최대한 충실히 보내야겠다 생각해봅니다 ㅎㅎ
+마지막 날도 출장^^
+모든.분들 오늘 햐루 평안하세요❤️</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T08:27:00">8/26 08:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어제 알려주신 테스트가 큰 도움이 되었습니다. 유튜브 콘텐츠각</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T08:41:00">8/26 08:41</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">작은 기업의 임원으로 이직하게 되었습니다. 그동안 AI 시대는 이렇다 저렇다 이야기 하면서 정작 저는 그렇게 살아가지 못한다는 아이러니가 있었어요. 사실 유튜브 전에도 여러 제안을 받았는데 제가 생각한 대로 실제 살아보고 싶다는 결심을 했고, 좀 더 자유롭게 활동하고 결과물을 만들어내고 싶다라는 생각이었습니다. 
+제 다양한 과정을 여러분들과 공유해보도록 하겠습니다. 선배님과 동료 후배님들께 조금이나마 도움이 되도록요. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T08:48:00">8/26 08:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그동안 몇 몇 공기업과 AX 관련 미팅을 했는데,.. 대부분 직원들의 AX 니즈가 한글이더라고요 </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T08:52:00">8/26 08:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">마크다운 -&gt; HWPX 출력은 옵시디언으로도 가능해요~^^ 유튜브 한 번 찍어야겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-26T10:23:00">8/26 10:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">에르메스에서 칸반하면… 어쩔땐 slack 스타일보다 편할 수도 있습니다.</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">8</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 470건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">GLM-5.3-Flash 정식 공개와 무료 스텔스 모델 Ox Alpha의 정체 확인, 가재코드·안티그래비티 CLI 조합 가성비 코딩 에이전트 세팅 공유됨.</span></li><li><span class="n"></span><span class="t">M5 Max·Ultra 맥스튜디오 출시로 1.2TB/s 대역폭 로컬 LLM 서빙 구성 논의 활발, RTX 3090 NVLink·vLLM 및 Qwen3.8·Ornith-1.5-9B 로컬 구동 사례 공유됨.</span></li><li><span class="n"></span><span class="t">hwpx-skill 기반 한글 공문 자동 작성 스킬 호평, 로컬 LLM까지 hwp 문서 편집 확장 사례 등장함.</span></li><li><span class="n"></span><span class="t">개인정보 익명화 표준 부재 속 로컬-클라우드 하이브리드 처리 방식이 의료·교육 현장 대안으로 제시됨.</span></li><li><span class="n"></span><span class="t">독자 AI 파운데이션 모델 2차 평가에서 벤치 1위 모티프의 4위 탈락 두고 평가 기준·블라인드 여부 논란 발생함.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Ox Alpha</span><span class="tag">Claude</span><span class="tag">Grok</span><span class="tag">Qwen</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 150건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Codex 주간 사용한도 축소 의혹 제기 후 OpenAI가 이미지·Computer History·대화 제목 생성 관련 사용량 과다 집계 버그 인정, 전 유료 구독자 한도 리셋 및 수정 배포함.</span></li><li><span class="n"></span><span class="t">Plus 계정에는 5시간 한도 재도입, Pro 100·200달러 요금제는 향후 수개월간 5시간 한도 미적용으로 티어 격차 확대됨.</span></li><li><span class="n"></span><span class="t">OpenRouter 스텔스 모델 Ox Alpha가 Z.ai GLM-5.3-Flash로 정체 공개, 6일간 20조 토큰 처리로 역대 최대 규모 기록함.</span></li><li><span class="n"></span><span class="t">클라우드플레어 터널링·DevSpace MCP로 ChatGPT를 로컬 코딩 에이전트화하는 방법 공유, 코덱스 사용량과 별도 책정되는 점이 이점으로 지목됨.</span></li><li><span class="n"></span><span class="t">Apple M5 Max·M5 Ultra Mac Studio 공개, 512GB 통합 메모리와 1.2TB/s 대역폭으로 로컬 대형 모델 구동 가능하나 가격 부담 지적됨.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Ox Alpha</span><span class="tag">Claude</span><span class="tag">Grok</span><span class="tag">Qwen</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 376건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">대입 제도 논쟁이 최대 화두로, 수능 정시의 공정성과 학종·수시의 역량 평가 사이에서 현직 교사·학부모 의견 팽팽히 갈림.</span></li><li><span class="n"></span><span class="t">ox alpha 스텔스 모델 무료 공개로 z.ai설·Gemini 3.5 pro설 제기되며 테스트 후기 다수 공유됨.</span></li><li><span class="n"></span><span class="t">그록봇·Hermes·Buzz 등 에이전트 봇 비교 활발, 결론은 봇 성능보다 맡길 새로운 일의 부재가 핵심이라는 지적.</span></li><li><span class="n"></span><span class="t">신형 맥 미니·맥 스튜디오 256GB 2105만원 가격에 반발, DGX Spark 128GB 대비 가성비 논쟁 발생.</span></li><li><span class="n"></span><span class="t">클로드 데스크탑 업데이트로 사이드바 구조 변경 및 Filesystem 커넥터 무음 종료 장애 보고, handoff.md 복구법 공유됨.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Ox Alpha</span><span class="tag">Claude</span><span class="tag">Grok</span><span class="tag">GPT-5.6</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">코덱스(Codex) 실무 활용법 소개 영상 1건만 확인됨.</span></li><li><span class="n"></span><span class="t">현업 개발자 관점의 사용 사례 중심 구성임.</span></li><li><span class="n"></span><span class="t">그 외 논의 없어 내용 희소함.</span></li></ol></article><article class="source-card"><div class="src-head"><h3>youtube:샘 호트만</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">클로드코드 핵심 기능 9개를 16분 분량으로 정리한 입문 영상 업로드됨.</span></li><li><span class="n"></span><span class="t">왕초보 대상 기능별 개요 구성임.</span></li><li><span class="n"></span><span class="t">단일 영상 공지 외 추가 논의 없음.</span></li></ol></article><article class="source-card"><div class="src-head"><h3>youtube:시민개발자 구씨</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Hermes Bot Mode 출시 공지 단건으로 구성된 하루임.</span></li><li><span class="n"></span><span class="t">AI 직원 간 협업 절차 간소화가 핵심 소구점임.</span></li><li><span class="n"></span><span class="t">추가 논의나 사용 후기 없이 공지성 메시지에 그침.</span></li></ol><div class="tags"><span class="tag">Hermes</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드깎는노인</h3><span class="kind">youtube · 3건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">ChatGPT를 로컬 AI 코딩 에이전트로 활용하는 방법 소개함.</span></li><li><span class="n"></span><span class="t">오픈코드 Ox Alpha 코딩 모델 성능 조명함.</span></li><li><span class="n"></span><span class="t">ChatGPT 구독 비용 대비 활용도 극대화 전략 다룸.</span></li></ol></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">오픈소스 Slack 대안 Buzz 소개 단건, AI-휴먼 협업 툴로 포지셔닝됨.</span></li><li><span class="n"></span><span class="t">메시지 1건뿐이라 논의 전개 없음.</span></li></ol><div class="tags"><span class="tag">Buzz</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Codex</div><div class="ctx">코덱스 주간 사용 한도 축소 논란과 리셋, 코딩 주력 도구 언급 다수.</div></div><span class="freq">14</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Ox Alpha</div><div class="ctx">오픈라우터/오픈코드에서 한시적 무료 배포된 스텔스 모델로 6일간 20조 토큰 처리.</div></div><span class="freq">12</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Claude</div><div class="ctx">529 Overloaded 오류와 데스크탑 앱 사이드바 개편으로 장애 문의 속출.</div></div><span class="freq">10</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">Grok</div><div class="ctx">그록봇 프로모션과 테슬라 차량 탑재, 구현 작업용으로 평가됨.</div></div><span class="freq">10</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Qwen</div><div class="ctx">Qwen3.8-27B가 허깅페이스 트렌딩 1위, 로컬 구동 성능 호평.</div></div><span class="freq">10</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">MLX</div><div class="ctx">M3 Max 36GB에서 qwen 3.8 27b mlx 구동 시 30~35 토큰.</div></div><span class="freq">5</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Mac Studio</div><div class="ctx">M5 Max/Ultra 신형 출시, 512GB 통합 메모리와 1.2TB/s 대역폭으로 로컬 LLM 서빙 후보 부상.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">OpenRouter</div><div class="ctx">Ox Alpha 무료 제공 창구이자 다중 모델 크리틱 비교 경로.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Gemini</div><div class="ctx">학생계정 무료 제공과 antigravity CLI 연동, 한글 문서 추출 속도 강점.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">GLM-5.3-Flash</div><div class="ctx">Ox Alpha 스텔스 모델의 정체가 Z.ai GLM-5.3-Flash로 공개됨.</div></div><span class="freq">3</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">13</span></div><article class="cross-card"><h3>Ox Alpha 스텔스 모델 정체 = GLM-5.3-Flash</h3><p class="desc">무료로 풀린 스텔스 코딩 모델 Ox Alpha가 여러 방에서 동시 화제. ai-frontier에서 정체가 GLM-5.3-Flash로 특정됐고, OpenRouter API 경유 로컬 실행 및 오픈코드 연동 사용기까지 공유됨. 무료 구간 활용 목적의 실사용 리포트 다수.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:코드깎는노인</span></div></article><article class="cross-card"><h3>코딩 에이전트 CLI 실무 활용과 모델 비교</h3><p class="desc">Codex·클로드코드·챗GPT 로컬 에이전트·antigravity CLI 등 코딩 에이전트 운용법이 전 방에 걸쳐 반복 등장. 하네스 품질과 모델별 성능 편차, 비용 최적화가 공통 쟁점임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:빌더조쉬</span><span class="chip">youtube:샘 호트만</span><span class="chip">youtube:코드깎는노인</span></div></article><article class="cross-card"><h3>로컬 LLM 추론 하드웨어 — 맥 스튜디오·GPU·DGX Spark</h3><p class="desc">Mac Studio M5 Max/Ultra 기반 로컬 서빙, 로컬 GPU 추론 세팅, DGX Spark 128GB 도입 사례가 세 방에서 병행 논의됨. 맥 스튜디오·맥 미니 가격 급등도 함께 언급되며 자가 추론 환경 구축 비용이 공통 관심사로 부상.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>Qwen3.8 로컬 양자화 에이전트 활용</h3><p class="desc">Qwen3.8 계열(27B 포함) 양자화 모델을 로컬 에이전트로 돌리는 흐름이 두 방에서 확인됨. 톰슨로이터의 Qwen 자체모델 전환 사례까지 엮이며 오픈웨이트 기반 자체 운용 트렌드로 정리됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>Solar Pro 4 — 헤르메스 에이전트와 무료 프로모션</h3><p class="desc">업스테이지 Solar Pro 4가 헤르메스 에이전트 백엔드 활용과 무료 프로모션 연장 소식으로 두 방에서 동시 언급됨. 국내 모델의 실사용 진입 장벽이 낮아진 시점.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>Hermes Bot Mode와 Buzz 봇 비교</h3><p class="desc">Hermes Bot Mode 출시와 Buzz 오픈소스 슬랙 대안이 맞물리며 AI 봇 협업 도구 비교가 여러 방에서 진행됨. AI 직원 간 협업·AI-휴먼 협업 툴 관점의 평가가 공통 축임.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">youtube:시민개발자 구씨</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>그록봇 에이전트와 슈퍼그록 프로모션</h3><p class="desc">그록봇의 가상 컴퓨터 기반 에이전트 활용이 두 방에서 다뤄짐. ai-frontier는 계정 어뷰징 우려와 테슬라 차량 제어 연동을, learning-masters는 슈퍼그록 요금제 프로모션과 실사용을 각각 조명.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>클로드 529 Overloaded 서버 장애</h3><p class="desc">클로드 API·데스크탑에서 529 Overloaded 응답이 동시다발로 관측되며 두 방에서 장애 공유. 작업 중단 및 대체 모델 전환 대응이 이어짐.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>마크다운 → HWPX 공문서 자동 변환</h3><p class="desc">hwpx 스킬 기반 한글문서 자동화와 마크다운→HWPX 공문서 변환이 두 방에서 나란히 등장. 국내 행정·기업 문서 포맷 대응 수요가 실제 스킬 구현으로 이어진 사례임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 입력 시 개인정보 위험과 가명화 대응</h3><p class="desc">AI 서비스에 개인정보를 그대로 입력하는 위험이 두 방에서 지적됨. ai-friends는 로컬 LLM 하이브리드 익명화 구축과 가명화 법적 기준까지 구체화하며 실무 대응안을 제시.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>기업 AX 전환의 정체 — 목표 부재와 현장 저항</h3><p class="desc">기업 AI 전환이 도구 도입 단계에서 멈추는 원인 진단이 두 방에서 공통 등장. 명확한 목표 부재와 현장 저항이 핵심 요인으로 지목됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>MCP 서버 자체 호스팅 및 연동</h3><p class="desc">DevSpace 자체 호스팅 MCP 서버와 playmcp 네이버서치 MCP 연결 사례가 두 방에서 공유됨. WebMCP 해커톤 개최까지 겹치며 MCP 생태계 확장 국면이 확인됨.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>사용 한도 정책 변동 — Codex·Plus·Cursor</h3><p class="desc">Codex 주간 사용한도 축소 논란과 리셋 배포, Plus 5시간 한도 재적용, Cursor 한도 상향이 연달아 보고됨. 토큰 헤비 사용자의 비용 구조 재검토와 바이브코딩 비용 최적화 논의로 연결됨.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">youtube:코드깎는노인</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

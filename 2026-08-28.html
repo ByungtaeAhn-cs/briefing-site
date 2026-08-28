@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-08-28</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 13 · 2026. 08. 28</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">4 sources · 117 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-08-28 06:36:49.742716+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">learning-masters · importance 0.92</div><h2>엔비디아의 허깅페이스 129억 달러 인수, 오늘 최대 화제</h2><p class="lede">엔비디아가 허깅페이스를 129억 달러(약 13조 원)에 인수한다는 소식이 learning-masters 최대 화제로 부상함. 허깅페이스는 ai-friends, ai-frontier까지 세 개 방에서 동시 언급된 유일한 기술명임. AI 반도체·인프라 인수와 국가 투자 논의로 확장됨.</p><p class="why">WHY · 3개 방 동시 언급 + 인프라 지형 변화</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends</div><h3>모티프 코딩 실사용 혹평, Solar Pro 4가 체감상 압도적 우위</h3><p class="lede">모티프 모델 실사용 평가에서 코딩 작업 중 에러 반복 및 자가 수정 실패가 보고됨. 동일 작업 비교에서 Solar Pro 4가 체감상 압도적 우위라는 후기 공유됨. Solar Pro 4는 ai-frontier에서도 거론되며 방을 넘어선 관심사로 확인됨.</p></div><div class="notable-card"><div class="src">ai-frontier</div><h3>무료 LLM 코딩 활용 문의에 비추천 의견 우세, 허민이 선 그음</h3><p class="lede">무료 LLM으로 코딩이 가능한지 묻는 질문에 오픈라우터·Groq·코파일럿·DeepSeek·Kimi가 경로로 거론됨. 다만 무료 모델 코딩 사용은 비추천이라는 의견이 우세했고, VIP 허민이 명확히 선을 그음. 오마치 서울 밋업 공지와 Upstage 링크 공유 흐름 속에서 나온 발언임.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>Solar 계열 버전 혼선, 유용균이 solar4와 solar pro 구분 정리</h3><p class="lede">국산 LLM 공개 소식에서 어떤 모델이 실제로 공개됐는지 혼선이 있던 흐름임. 원자력연구원 유용균이 solar4와 solar pro 계열의 버전 구분을 교정함. 국산 모델 네이밍 자체가 방 전체 화제로 이어짐.</p></div><div class="notable-card"><div class="src">youtube:빌더조쉬</div><h3>에이전트 수 증가로 사람 역할은 실행에서 판단 기준 설계로 이동</h3><p class="lede">에이전트 수가 늘어나면서 사람이 직접 수행하는 역할은 축소된다는 관측 제기됨. 대신 에이전트가 따를 판단 기준을 설계하는 일이 핵심 과제로 남는다는 지적임. ai-frontier의 에이전트 실전 운용 논의와 맞닿는 주제임.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 2건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 모델명 오인 에피소드로 풀어낸 잡담</h3><p>국산 모델 네이밍 화제 중 &#x27;샤갈&#x27;이라는 이름을 두고 나온 반응. 기술 논의보다 명명 자체에 대한 인상 공유임.</p><p>처음 들었을 때 문맥상 다른 단어로 오인했다는 점 언급, 이어서 &quot;샤워하고 갈래&quot;라는 축약형 농담으로 확장함. 모델 브랜딩이 한국어 화자에게 어떻게 들리는지에 대한 즉흥적 반응임.</p><blockquote>저도 샤갈 들었을때 다른것보다 문맥상 욕이 올 자리라 ㅎ</blockquote><p>기술적 정보값은 낮지만, 국내 모델 네이밍이 실사용자 사이에서 어떻게 수용되는지 보여주는 사례. 제품명 선정 시 한국어 음성적 충돌 고려 필요성 시사함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-28T09:09:00">8/28 09:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저도 샤갈 들었을때 다른것보다 문맥상 욕이 올 자리라 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-28T09:10:00">8/28 09:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">샤워하고 갈래 (???)</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 3건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, Solar 계열 모델 버전 구분 정리</h3><p>국산 LLM 공개 소식에 대해 어떤 모델이 실제로 풀렸는지 혼선이 있던 흐름에서 나온 교정 발언임. 처우 관련 가벼운 질문 이후 본론 진입.</p><p>**solar4**와 **solar open**은 서로 다른 모델이라는 점 명확히 구분함. 공개된 쪽은 open2 계열이고, solar4는 그 업그레이드 버전이라는 계보 설명 추가함. 즉 공개 가중치와 상용 최신판이 동일하지 않다는 정리임.</p><blockquote>solar4하고 solar open하고 모댈이 다를꺼에요</blockquote><p>오픈웨이트 발표를 최신 플래그십 공개로 오해하기 쉬운 지점에 대한 실무 경고. 국산 모델 벤치마킹 시 어떤 체크포인트를 받았는지 확인이 선행되어야 함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(3건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-27T16:10:00">8/27 16:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">처우가 궁금하네여</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-28T13:06:00">8/28 13:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">solar4하고 solar open하고 모댈이 다를꺼에요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-28T13:49:00">8/28 13:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">독파모 공개란 모델은 open2 인가 그렇고 solar4는 그거 업글 버전</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 13건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, 무료 모델 코딩 활용에 대한 명확한 선긋기</h3><p>방 안에서 무료 LLM으로 코딩 작업이 가능한지 묻는 질문에 대한 응답으로 나온 발언임. 오마치(Omarchy) 서울 밋업 공지와 Upstage 관련 링크를 잇달아 공유하던 흐름 속에서 나온 실사용 조언임.</p><p>용도별 구분을 전제로 한 권고임. 코딩 용도의 무료 모델 사용은 **완전 비추천**, 단순 텍스트 작업이나 시험 삼아 돌려보는 수준이면 OpenRouter 무료 모델로 충분하다는 입장임. 이어 **Solar Pro 4**가 현재 Hermes에서 무료로 제공 중이며 OpenRouter에서도 대폭 할인 적용 상태라는 구체적 정보를 덧붙임. 한국 사용자 비중이 높아 생긴 현상인지에 대한 추측도 함께 제기함.</p><blockquote>어느수준으로 하실꺼냐에 따라 다른데 무료 모델을 코딩에 하시는건 완전 비추입니다 그냥 텍스트 작업정도면 모를까 혹은 그냥 시험삼아 테스트 수준이면 위에분 말씀하신데로 오픈라우터 무료모델 추천드립니다</blockquote><p>무료 티어 벤치마킹을 고려 중인 독자에게 실질적 분기점 제공임. 특히 Solar Pro 4의 Hermes 무료 제공은 국산 모델 실측 기회로, 유효 기간이 한정적일 가능성이 높아 조기 확인 권장.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(13건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T15:16:00">8/27 15:16</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/tbpn/status/2092819633430564983?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T17:47:00">8/27 17:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/OmarchyMac/status/2092600725310492724?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T19:40:00">8/27 19:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://luma.com/e6b115nm</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T19:40:00">8/27 19:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오마치 서울밋업이 열리네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-27T20:46:00">8/27 20:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://lnkd.in/p/gaYSK22N</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T00:14:00">8/28 00:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/GeekNewsHada/status/2092778831933514047?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T07:39:00">8/28 07:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">또 초기화 됬나보내요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T12:30:00">8/28 12:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어느수준으로 하실꺼냐에 따라 다른데
+무료 모델을 코딩에 하시는건 완전 비추입니다
+그냥 텍스트 작업정도면 모를까
+혹은 그냥 시험삼아 테스트 수준이면 위에분 말씀하신데로 오픈라우터 무료모델 추천드립니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T12:59:00">8/28 12:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/upstageai/status/2093150612846481470?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T13:00:00">8/28 13:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">현재 Solar Pro 4가 hermes에서 무료고
+오픈라우터에서 90%gkfdlswnddlfrjdpdy</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T14:13:00">8/28 14:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/SungKimUp/status/2093102815489167470?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T14:14:00">8/28 14:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그런가요?한국 사용자들이 많이 사용해서 그런가?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-28T14:33:00">8/28 14:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/u655r8mOxGw?si=XSB1eA2YK_iQZKeA</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 4건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), FSD 체험담에서 차내 생산성 아이디어까지</h3><p>Threads 링크 공유와 함께 테슬라 **FSD** 실사용 소감 제시. 자율주행 완성도 체감이 이어지며 이동 중 시간 활용이라는 다음 질문으로 전개됨.</p><blockquote>Fsd대박이네요</blockquote><blockquote>진짜 이젠 차안에서 할 수 있는 무엇인가를 연구해봐야.할.듯 합니다</blockquote><p>이어 국내 스타트업의 향방을 두고 지분 투자 가능성을 언급하며, 결과와 무관하게 상징적 의미가 있다는 관점 제시.</p><blockquote>알 수 없지만 비즈니스는 생물이지요</blockquote><p>운전 시간이 유휴 시간에서 작업 가능 시간으로 전환될 때 생길 서비스 공백을 짚은 대목으로, **차내 AI 워크플로** 기획 관점에서 참고할 만한 신호임.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-27T22:44:00">8/27 22:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Fsd대박이네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-27T22:49:00">8/27 22:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/_lyniOIg1/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-27T23:05:00">8/27 23:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">진짜 이젠 차안에서 할 수 있는 무엇인가를 연구해봐야.할.듯 합니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-28T08:04:00">8/28 08:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">알 수 없지만 비즈니스는 생물이지요
+지분 투자를 받지 않을까요?
+헌데 어떤 결정을 하던 우리나라 스타트업의 희망이 될듯요</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">4</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 42건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">모티프 모델 실사용 평가 공유됨 — 코딩 작업에서 에러 반복 및 자가 수정 실패, Solar Pro4가 체감상 압도적 우위라는 비교 후기.</span></li><li><span class="n"></span><span class="t">Solar 계열 모델 구분 논의 — 독파모 공개 모델은 open2 계열, Solar4는 그 업그레이드 버전이라는 정리.</span></li><li><span class="n"></span><span class="t">과기정통부 국민AI서비스 인력 채용 공고 및 심플랫폼 전문연구요원 모집 공유, 예산 18~19조 규모 언급.</span></li><li><span class="n"></span><span class="t">Claude Cowork 설치부터 스킬 호출까지 초보자용 영상 강의 공유됨.</span></li><li><span class="n"></span><span class="t">신조어 &#x27;샤갈&#x27;의 욕설 여부를 컷오프 이전 학습 모델이 문맥만으로 판별 가능한지에 대한 논의, GPT 24년 6월 컷오프 엔진은 미인지로 확인됨.</span></li></ol><div class="tags"><span class="tag">허깅페이스</span><span class="tag">Solar Pro 4</span><span class="tag">엔비디아</span><span class="tag">모티프</span><span class="tag">GitHub</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 30건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">무료 LLM 코딩 활용 문의에 오픈라우터·Groq·코파일럿·DeepSeek·Kimi 거론, 다만 무료 모델 코딩 사용은 비추천 의견 우세.</span></li><li><span class="n"></span><span class="t">Upstage Solar Pro 4가 OpenRouter 일일 1,000억 토큰 돌파 및 무료 프로모션 지속, 실사용 테스트에서는 응답 속도 저하 지적됨.</span></li><li><span class="n"></span><span class="t">Omarchy Mac v4.0.1 릴리스와 9월 12일 Omarchy 서울 밋업 001 공지 공유됨.</span></li><li><span class="n"></span><span class="t">S++ 하네스 Pi의 토큰 절감 원리는 캐시 재사용과 초기 컨텍스트 축소이며, RAG는 BM25와 LLM 질의 재작성만으로도 상당 부분 해결 가능하다는 GeekNews 논지 공유됨.</span></li><li><span class="n"></span><span class="t">HuggingFace 트렌딩 Qwen3.8-Flash-Next·GLM-5.3-Flash 및 리셋 이슈 언급 있음.</span></li></ol><div class="tags"><span class="tag">허깅페이스</span><span class="tag">Solar Pro 4</span><span class="tag">Hermes</span><span class="tag">GitHub</span><span class="tag">OpenRouter</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 18건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">엔비디아의 허깅페이스 129억 달러(약 13조 원) 인수 소식이 최대 화제였음.</span></li><li><span class="n"></span><span class="t">엔비디아가 국내 AI 반도체 기업 리벨리온과도 인수 협상 중이나, 정부 직접 투자 이력 탓에 실현 가능성 낮다는 관측과 함께 엑싯 정당성 논쟁 발생함.</span></li><li><span class="n"></span><span class="t">맥 미니 단일 머신에서 클로드·헤르메스를 영역 분리해 전담 업무별 리소스를 배분 중이라는 운영 사례 공유됨.</span></li><li><span class="n"></span><span class="t">상호 감시 구조 제안에 대해 데스 스파이럴과 무한 프리징 위험을 이유로 분업화 선택했다는 반론 나옴.</span></li><li><span class="n"></span><span class="t">테슬라 FSD 장착 후기와 차량 내 그록 &#x27;논쟁적&#x27; 모드 활용, 스마트폰 음성 코딩 전망 언급됨.</span></li></ol><div class="tags"><span class="tag">허깅페이스</span><span class="tag">엔비디아</span><span class="tag">Hermes</span><span class="tag">FSD</span><span class="tag">리벨리온</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">에이전트 수 증가에 따른 사람 역할 축소, 대신 판단 기준 설계 필요성 제기됨.</span></li><li><span class="n"></span><span class="t">Arize AI 이승민·진상열 참여 세션 소개 1건뿐인 저활동 하루임.</span></li></ol></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">허깅페이스</div><div class="ctx">엔비디아의 129억 달러(약 13조 원) 인수 합의 보도가 여러 방에서 동시에 공유됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Solar Pro 4</div><div class="ctx">OpenRouter 하루 1,000억 토큰 돌파와 무료 프로모션 소식, 모티프3 대비 코딩 성능 우위 평가와 속도 지연 체감 보고가 동시에 나옴.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">엔비디아</div><div class="ctx">허깅페이스 인수에 이어 리벨리온 인수 협상설까지 제기되며 생태계 장악 시도로 해석됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">모티프</div><div class="ctx">모티프3 코딩 작업에서 에러 다발과 배시 커맨드 대기 문제 지적, 사용성 불편 사례 요구 있음.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Hermes</div><div class="ctx">맥미니에서 오픈클로와 병행 운용하며 리소스 분업 중이라는 사례, 현재 Solar Pro 4 무료 제공처로도 언급됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">GitHub</div><div class="ctx">양팔 OMX-AI 코드 저장소 공유, CodeSolar는 저장소 등록만으로 버그 탐지 제공.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">OpenRouter</div><div class="ctx">무료 코딩 모델 질문에 오픈라우터 무료 모델이 테스트 용도로만 추천됨.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">FSD</div><div class="ctx">YL 출고 후 FSD 장착 완료 보고와 차량 내 활용 방안 논의.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Omarchy</div><div class="ctx">Omarchy Mac v4.0.1 릴리스와 9월 12일 서울 밋업 공지 공유됨.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Claude Cowork</div><div class="ctx">설치부터 스킬 호출까지 다루는 초보자용 영상 시리즈 공유.</div></div><span class="freq">1</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">5</span></div><article class="cross-card"><h3>Solar Pro 4 코딩 성능 및 무료 제공</h3><p class="desc">업스테이지 솔라 4가 두 방에서 동시에 화제. ai-friends는 코딩 성능 우위 평가, ai-frontier는 무료 제공 정책과 실사용 성능 검증 중심으로 언급됨. 국산 모델 중 코딩 용도 실전 투입 가능성 논의됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>무료 코딩 LLM 확보 경로</h3><p class="desc">비용 없이 쓸 수 있는 코딩 모델 탐색이 공통 관심사. ai-frontier는 OpenRouter 무료 티어와 모델 추천 목록, ai-friends는 솔라4 무료 활용을 거론함. 유료 구독 대체 수단으로서의 실효성 점검임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>로컬 AI 실행 환경 구성</h3><p class="desc">자체 하드웨어에서 모델을 돌리는 구성 논의가 복수 방에서 등장. learning-masters는 맥미니 리소스 분배와 오픈클로·헤르메스 이중화, ai-frontier는 컨텍스트 캐시 절감 하네스를 다룸. 클라우드 의존도 축소가 공통 동기임.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 에이전트 실전 운용과 판단 기준</h3><p class="desc">에이전트를 실제 업무에 붙일 때의 기준과 한계가 교차 주제. youtube:빌더조쉬는 사람 역할 변화와 판단 기준 수립, Arize AI 사례를 제시하고, ai-frontier는 에이전트 벤치마크 데이터셋 동향으로 접근함. 평가 체계 부재가 공통 문제의식임.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">youtube:빌더조쉬</span></div></article><article class="cross-card"><h3>AI 반도체·인프라 인수 및 국가 투자</h3><p class="desc">AI 인프라 자본 흐름이 두 방에서 병렬로 다뤄짐. learning-masters는 엔비디아의 허깅페이스·리벨리온 인수 협상, ai-friends는 국가 AI 예산 19조와 독자 파운데이션 모델 공개를 언급함. 민간 인수와 공공 투자가 같은 국면에 놓임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

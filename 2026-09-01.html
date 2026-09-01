@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-09-01</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 13 · 2026. 09. 01</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">3 sources · 154 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-09-01 06:12:36.955390+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-frontier · importance 0.90</div><h2>**Claude Max 200달러 요금제 한도 구조의 모순** 지적됨</h2><p class="lede">허민 발언에서 Claude Max 200달러 요금제의 사용량 한도 문제가 화제로 전환됨. 5시간 단위 한도는 20배로 확대되나 주간 한도는 2배에 그쳐, 실사용에서 주간 한도가 먼저 소진되는 구조임. 요금제 상위 전환의 실효를 되묻는 대목임.</p><p class="why">WHY · VIP 발언 + 구독 한도 정책 다중 방 반복</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends</div><h3>**arXiv 논문 자동 재현 에이전트 CLI** 공유로 연구 자동화 화제</h3><p class="lede">KIST 이제현이 alphaXiv 계열 openresearch-cli 저장소 주소까지 제시하며 논문 재현 자동화 파이프라인을 올림. 가설 탐색·병렬 실험 측면에서 기존 오토리서치 대비 보강된 점이 논점임. 연구 자동화 도구를 잇달아 공유한 흐름의 정점임.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>Anthropic **자동 연구자·하드웨어 표준** 두 건이 상위 레퍼런스로 제시됨</h3><p class="lede">원자력연구원 유용균이 openresearch-cli 출처를 되물은 뒤 같은 방향의 상위 레퍼런스 두 건을 붙임. 첫째는 Anthropic의 automated researcher 계열 작업임. 연구 자동화 도구 스택의 계보를 정리한 발언임.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>한국어 **로컬 LLM 성능 순위** 공유, gemma4가 답변 품질 우위</h3><p class="lede">답변 품질은 gemma4 &gt; qwen3.6 &gt; exaone &gt; kanana 순으로 정리됨. 반응속도는 qwen 우위, exaone은 무겁다는 평가임. 로컬 LLM 벤치마킹에 바로 참고 가능한 실사용 서열임.</p></div><div class="notable-card"><div class="src">여러 방</div><h3>**오픈소스 모델 대량 출시와 트렌딩**이 세 방에서 동시 화제</h3><p class="lede">ai-friends, ai-frontier, learning-masters 세 방 모두에서 오픈소스 모델 출시·트렌딩이 언급됨. Qwen, DeepSeek, GLM-5.3, Hugging Face 관련 언급이 방을 가로질러 반복됨. 특정 방의 관심사가 아닌 당일 공통 배경임.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 5건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, arXiv 논문을 자동 재현하는 에이전트 CLI 소개</h3><p>연구 자동화 도구를 잇달아 공유한 흐름. 블로그 링크에 이어 실제 저장소 주소까지 제시하며 논문 재현 자동화 파이프라인을 화제로 올림.</p><p>핵심은 **alphaXiv의 openresearch-cli**. arXiv 논문을 입력하면 자동으로 재현하고 실험까지 수행한다는 설명이며, 소프트웨어 재현을 넘어 물리 실험 영역으로의 확장 가능성까지 언급함. 별도로 9월 KIST 유튜브 채널에서 덕성여대 신현길 교수의 **가재코드 연구 활용 강의** 공개 예정.</p><blockquote>arXiv 논문 넣으면 자동 재현하고 실험 돌린다고 합니다</blockquote><blockquote>여기 적절한 손발이 붙으면 wet lab도 되겠지요</blockquote><p>논문 재현이 에이전트 CLI 수준으로 내려온 사례로, 로컬에서 직접 검증 가능한 도구임. &quot;손발&quot;이라는 표현은 코드 실행 에이전트에 하드웨어 제어를 결합하려는 현재 흐름과 정확히 맞닿아 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(5건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-31T16:23:00">8/31 16:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://ch4u.tistory.com/m/220</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-31T16:24:00">8/31 16:24</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">arXiv 논문 넣으면 자동 재현하고 실험 돌린다고 합니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-31T16:28:00">8/31 16:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://github.com/alphaXiv/openresearch-cli</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-31T16:37:00">8/31 16:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">여기 적절한 손발이 붙으면 wet lab도 되겠지요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-08-31T18:39:00">8/31 18:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">9월에 @덕성여대 신현길 교수님께서 가재코드로 연구하는 법을 강의하십니다!
+
+키스트 유튜브 채널을 기다려주세요!</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 2건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, Anthropic의 자동 연구자·하드웨어 표준 두 건 제시</h3><p>openresearch-cli 공유에 대해 출처를 되물은 뒤, 같은 방향의 상위 레퍼런스 두 건을 곧바로 붙임.</p><p>첫째는 Anthropic의 **automated researchers** 연구로, 자동화된 연구자를 정렬 실패 완화에 활용하는 접근. 둘째는 **AI 에이전트용 실험장비 제어 표준**(model-hardware standard, research preview) 발표. 앞선 wet lab 확장 논의에 대한 실제 규격 차원의 답에 해당함.</p><blockquote>이건 또 뭔가요. 어디서 만든건가요</blockquote><p>에이전트가 실물 장비를 제어하는 계층에 표준이 등장했다는 신호. MCP가 도구 호출 규격을 정리한 것과 같은 방식으로 하드웨어 접점이 정리되는 단계로, 로컬 자동화 환경을 다루는 독자에게는 선점 검토 대상.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-08-31T16:27:00">8/31 16:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이건 또 뭔가요. 어디서 만든건가요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-09-01T10:28:00">9/1 10:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">anthropic 자동화 정렬 연구자 :
+https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures
+
+anthropic의 AI 에이전트용 실험장비 제어 표준: https://www.anthropic.com/news/model-hardware-standard-research-preview</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 13건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, Claude 200달러 요금제 한도 구조의 모순을 짚음</h3><p>AI 시대 랜딩페이지 트렌드(Toss 스크롤형 레이아웃)를 공유하던 흐름에서 **Claude Max 200달러 요금제**의 사용량 한도 문제로 화제 전환됨.</p><p>5시간 단위 한도는 상위 요금제에서 20배로 확대되지만 주간 한도는 2배 증가에 그친다는 비대칭 구조를 지적함. 결과적으로 5시간 한도에 도달하기 전에 주간 한도가 먼저 소진되는 병목 발생, 실질 사용량이 광고된 배수에 미치지 못함. 공식 문서에 명시되지 않은 사항이라 사용자 체감으로만 확인되는 구조라는 점도 덧붙임.</p><blockquote>이게 말이 안되는게 ㅋㅋㅋ 5시간 한도는 분명 20배가 맞는데 주간한도는 2배에 불과해요 그래서 5시간 한도보다 주간한도가 먼저참</blockquote><blockquote>클로드 200달러 요금제 사기네요</blockquote><p>고비용 구독 결정 시 배수 광고가 아닌 주간 한도를 기준으로 산정해야 한다는 실사용 근거. AI 활용 역량 자체가 경쟁 요소라는 관점(&quot;AI대 AI가 아니라 사람대 사람&quot;)과 함께, 요금제 선택도 도구 운용의 일부라는 시사점 제공.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(13건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T14:39:00">8/31 14:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록이 틀렸네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T14:51:00">8/31 14:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://toss.im/en-us</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T14:51:00">8/31 14:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">요즘 ai시대의 트렌딩이 되버린 랜딩페이지!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T14:53:00">8/31 14:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 일전에 카피했던 스크롤 방식의 랜딩페이지가 뜨고 있네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T14:56:00">8/31 14:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">클로드 200달러 요금제 사기네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T19:25:00">8/31 19:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모두의AI 솔직히 잘 모르겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T19:25:00">8/31 19:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어떤걸 말씀이실까요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T21:23:00">8/31 21:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아ㅋ
+그걸 몰라서 저사람이 찾은게 아닐꺼에요
+그 내용이 공식 문서에도 언급이 되어있지 않아서 그런것 같아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T21:30:00">8/31 21:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">내년말까지 그래도 시간이 있네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T21:31:00">8/31 21:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어차피 AI대 AI가 아니라
+사람대 사람이니
+AI를 잘써야 겠어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T21:38:00">8/31 21:38</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">와 근데 이거 생각보다 문제가 심각하네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-08-31T21:39:00">8/31 21:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이게 말이 안되는게 ㅋㅋㅋ
+5시간 한도는 분명 20배가 맞는데
+주간한도는 2배에 불과해요
+
+그래서 5시간 한도보다 주간한도가 먼저참</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-01T13:00:00">9/1 13:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/Mu2f2qc2cJw?si=h6Fs0ckDCbRVfHBw</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 2건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), AI 도구 전면 사용 끝에 도달한 &#x27;인간성&#x27; 화두</h3><p>스위스에서 온 오랜 응원자 성현님과의 2시간 저녁식사 후 남긴 소회. AI로 맺어진 관계였지만 정작 AI 이야기는 거의 없었던 자리임.</p><p>모든 분야에 AI를 적용해본 당사자로서 오히려 **공허함**을 자주 느꼈다는 고백. 현재 최대 관심사는 도구가 아니라 **인간성**이며, 추가 숙고 후 커뮤니티에 공유 예정. 별도로 마이크로소프트의 AI 시대 대응 지연 가능성도 짧게 제기함.</p><blockquote>누구보다 AI에 진심인 저지만 요즘 최고의 관심사는 &#x27;인간성&#x27;에 관한 이야기입니다. 모든 분야에 AI를 사용해보며 정작 공허함을 느낄 때가 많았거든요.</blockquote><p>툴 확장 일변도였던 이 방의 기조에서 한 발 물러선 발언으로, AI 도입을 극단까지 밀어본 실사용자의 피로 신호로 읽힘. 후속 공유 예고된 만큼 추적 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-08-31T22:12:00">8/31 22:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@SH/연구자 오늘 스위스에서 오신 오랜시간 응원해주신 성현님과 저녁식사를 하였습니다. 2시간 가량 이야기를 하며 많은 것을 느끼고 갑니다. AI를 통해 만났지만 정작 AI 이야기는 거의 하지 않은 것 같습니다. 누구보다 AI에 진심인 저지만 요즘 최고의 관심사는 &#x27;인간성&#x27;에 관한 이야기입니다. 모든 분야에 AI를 사용해보며 정작 공허함을 느낄 때가 많았거든요. 이부분들은 제가 좀 더 고민해보고 여러분들과 공유해보도록 하겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-01T08:28:00">9/1 08:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">마이크로소프트가 AI 시대에 뒤쳐져서 그런 거 아닐까요? </div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">3</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 66건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">alphaXiv openresearch-cli 공유로 arXiv 논문 자동 재현·병렬 실험 도구 화제, 가설 탐색·병렬 실험 측면에서 기존 오토리서치 대비 보강됨.</span></li><li><span class="n"></span><span class="t">자동화 연구 확산에 따라 연구자·대학원생 역할이 리서치 에이전트 관리자로 이동한다는 전망과 대학원 무용론 확산 우려 제기됨.</span></li><li><span class="n"></span><span class="t">Codex·Claude 내장 도구가 OMC/OMX 계열 하네스를 흡수했다는 진단과, 복잡한 작업에서는 여전히 OMC 결과물이 낫다는 반론 병존.</span></li><li><span class="n"></span><span class="t">허예찬이 가재코드(gajae-code) 공개, 웹리서치+Python REPL 결합 autoresearch 탑재 및 대부분 프로바이더 지원 언급함.</span></li><li><span class="n"></span><span class="t">저비용 조합으로 가재코드 + Opencode Go + CommandCode GOAT 구독 월 10달러 수준 및 GLM-5.3-Flash(MIT) 활용 권고됨.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Codex</span><span class="tag">YouTube</span><span class="tag">ChatGPT</span><span class="tag">Hugging Face</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 29건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Claude Max 200달러 요금제의 5시간 한도는 20배지만 주간 한도는 2배에 그쳐 주간 한도가 먼저 소진되는 구조 지적됨.</span></li><li><span class="n"></span><span class="t">공식 문서 미기재 사항이라는 점과 이전부터 동일 조건이었다는 증언 제기됐고, 코덱스는 실제 20배라는 비교 언급 있음.</span></li><li><span class="n"></span><span class="t">토스 랜딩페이지가 AI 시대 스크롤형 랜딩페이지 트렌드 사례로 공유됨.</span></li><li><span class="n"></span><span class="t">오픈 모델 동향으로 Qwen3.8-Flash-Next, GLM-5.3 시리즈 트렌딩 및 멀티모달·추론 강화, 저지연 생성 흐름 정리됨.</span></li><li><span class="n"></span><span class="t">TwelveLabs Jockey MCP로 16분 강의에서 쇼츠 제작까지 약 15분, 비용 약 1.64달러 실측 사례 공유됨.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Codex</span><span class="tag">YouTube</span><span class="tag">ChatGPT</span><span class="tag">Hugging Face</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 34건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">한국어 로컬 LLM 성능 순위 공유됨 — 답변 품질 gemma4 &gt; qwen3.6 &gt; exaone &gt; kanana, 반응속도는 qwen 우위, exaone은 무겁다는 평가.</span></li><li><span class="n"></span><span class="t">Claude Opus 5의 문서 미독해·추론 오류가 한 세션에서 4~5회 반복 보고됨, 코덱스 병행 및 컨텍스트 핸드오프로 대응 중.</span></li><li><span class="n"></span><span class="t">Hermes는 텔레그램·슬랙 등 메신저 기반 봇 매핑과 cron 업무에 적합, 클로드코드·코덱스 세션 직접 지시는 불가함.</span></li><li><span class="n"></span><span class="t">구독 연결은 GPT·Grok 가능, Claude·Gemini는 밴 이슈로 제외 권고, 대안으로 buzz 추천됨.</span></li><li><span class="n"></span><span class="t">엔비디아의 허깅페이스 인수 의도를 &#x27;배포 및 최적화 계층&#x27; 장악 전략으로 해석하는 기사 공유, DGX Spark 쿨링 잡담 이어짐.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Codex</span><span class="tag">YouTube</span><span class="tag">ChatGPT</span><span class="tag">Hugging Face</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Claude</div><div class="ctx">문서 미독 후 추론, 반복 실수 인정 등 신뢰도 문제 제기와 함께 요금제·구독 논의에서 전 방위 언급됨.</div></div><span class="freq">5</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Codex</div><div class="ctx">클로드 대체 후보로 비교 대상, 주간 한도는 실제 20배라는 검증 언급됨.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">YouTube</div><div class="ctx">buzz 사용법, 키스트 강의 예고, 블랙햇 공격 영상 등 학습 자료 경로로 반복 사용됨.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">ChatGPT</div><div class="ctx">클로드 대안으로 병행 사용 사례 다수, 5시간·주간 한도 비교 대상으로 거론됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Hugging Face</div><div class="ctx">엔비디아 인수설, 블랙햇 &#x27;26 에이전트 공격 사례, 트렌딩 모델 출처로 다중 언급됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Qwen</div><div class="ctx">한국어 성능·반응속도 순위 상위 평가, Qwen3.8-Flash-Next 트렌딩 1위 기록됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Grok</div><div class="ctx">봇 템플릿 화제 및 구독 연결 추천 대상, 사실 오류 지적도 함께 나옴.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">가재코드 (gajae-code)</div><div class="ctx">허예찬 배포 하네스로 autoresearch·웹리서치+Python REPL 지원 및 밴 회피 특성 강조됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">GLM-5.3</div><div class="ctx">MIT 라이선스 무료 Flash 버전이 가성비 구독 조합 및 트렌딩 1~3위로 반복 등장함.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Claude Code</div><div class="ctx">모바일앱 연동 설치, 워크스페이스 공유, 스페이스 바이브 기능 비교 맥락으로 언급됨.</div></div><span class="freq">2</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">7</span></div><article class="cross-card"><h3>구독 계정 밴 리스크와 모델 연동 제약</h3><p class="desc">Claude 계정 밴 회피 패턴과 구독 계정 모델 연동 시 제재 이슈가 두 방에서 동시 거론됨. 서드파티 하네스·타 모델 연동이 약관 위반으로 간주되는 경계와 실제 밴 사례 공유가 핵심임. 저비용 구독 조합 운용자에게 직접적인 리스크 경고로 기능함.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>오픈소스 모델 대량 출시와 트렌딩</h3><p class="desc">8월 오픈소스 모델 대량 출시 흐름과 Qwen3.8·GLM-5.3 트렌딩 상위 진입이 두 방에서 함께 다뤄짐. 한국어 로컬 LLM 성능 비교 논의까지 이어지며 로컬 구동 가능한 오픈 웨이트 선택지가 실사용 후보로 좁혀지는 국면임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>구독 요금제 사용량 한도 정책</h3><p class="desc">Claude Max 200달러 요금제 주간 한도 조기 소진 논란, 코덱스 20배 한도 비교, GPT 사용량 리셋 정책이 두 방에 걸쳐 제기됨. 5시간 롤링 한도보다 주간 한도가 먼저 막히는 체감이 공통 불만이며, 요금제 간 실효 한도 비교가 구독 조합 재편의 근거로 쓰임.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>멀티 에이전트 팀 운용 하네스</h3><p class="desc">buzz 기반 클로드·코덱스 팀 운용과 Hermes 멀티 봇 워크플로가 실사용 사례로 공유되는 한편, OMC/OMX 하네스 무용론이 반론으로 제기됨. 하네스 계층이 실질 성능 향상인지 오버헤드인지에 대한 평가가 방마다 갈림.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 의존 심화와 사고 주체성</h3><p class="desc">AI 의존 상황에서 사고 주체성 유지 문제, 대학원 연구 교육 붕괴론, AI 시대의 인간성 성찰이 세 방에서 각기 다른 각도로 제기됨. 자동화가 학습·판단 과정을 대체할 때 남는 인간 역할에 대한 공통 문제의식임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>엔비디아·오픈AI의 허깅페이스 공략</h3><p class="desc">OpenAI 에이전트의 HuggingFace 벤치마크 공략과 엔비디아 허깅페이스 인수 전략설이 두 방에서 각각 언급됨. 오픈 모델 허브가 대형 벤더 경쟁의 전략 거점으로 부상하는 정황임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>연구·실험 자동화 에이전트</h3><p class="desc">가재코드 리서치 에이전트, openresearch-cli 논문 자동 재현, wet lab 연동 자동 실험이 한 방에 집중되나 멀티 AI 교차 검증·할루시네이션 논의와 맞물림. 자동 생성 결과물의 검증 절차 부재가 공통 취약점으로 지적됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

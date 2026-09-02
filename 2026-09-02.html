@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-09-02</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 14 · 2026. 09. 02</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">4 sources · 162 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-09-02 06:38:05.811122+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-frontier 외 2개 · importance 0.93</div><h2>**Claude Fable 5.1·Mythos 5.1 출시가 3개 방을 동시에 장악함**</h2><p class="lede">Anthropic이 코딩·지식 업무 특화 모델 Claude Fable 5.1과 Mythos 5.1을 출시, 커서(Cursor)에 즉시 반영됨. ai-friends, ai-frontier, learning-masters 세 방에서 동시 언급되며 당일 최대 화제로 부상함. 코드팩토리 채널도 Fable 5.1 관련 신규 영상 1건 게시로 반응함.</p><p class="why">WHY · 3개 방 동시 언급 + 최다 빈도 기술</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-frontier</div><h3>**허민, 로봇·에이전트·영상 툴을 하루치 프런티어 스캔으로 관통함**</h3><p class="lede">Claude 신규 발표, World Labs 데모, Google AI Studio 업데이트, HeyGen 소식까지 X 링크를 연속 투척하며 당일 릴리스 흐름을 훑음. 커서(Cursor)의 즉시 대응까지 포함해 릴리스-툴체인 반영 속도를 함께 짚음.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>**구글 TimesFM 3 공개로 시계열 파운데이션 모델 제로샷 실효성 논쟁 재점화됨**</h3><p class="lede">원자력연구원 유용균이 구글 리서치의 다변량 예측용 제로샷 시계열 파운데이션 모델 TimesFM 3 발표 링크를 공유하며 대화가 시작됨. 이어진 논의에서 타임스텝 기준 해석 확인이 진행됨. 수치형 시계열 모델의 제로샷 실효성을 두고 방 전체 논쟁으로 확장됨.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>**배움의 달인 9월 세미나, 에이전틱AI 실사용기 주제로 30명 규모 예고됨**</h3><p class="lede">김문정(배움의 달인)이 9월 17일(목) 18시 30분 강남역 인근 오프라인 모임을 예고, 사전 수요조사 폼 배포됨. 에이전틱AI 실사용 경험 공유를 주제로 잡은 점이 특징임. 같은 흐름에서 업스테이지 CLI(upstage-cli) 발견 공유도 이어짐.</p></div><div class="notable-card"><div class="src">ai-frontier 외 1개</div><h3>**로컬 LLM 경량화 논의가 두 방에서 병행 진행됨**</h3><p class="lede">ai-frontier와 learning-masters 양쪽에서 로컬 LLM 구동 및 추론 경량화가 반복 언급됨. GGUF·FP8·LoRA 등 양자화·어댑터 스택과 Qwen3.8-Flash-Next 계열이 함께 거론됨. GB10 등 하드웨어 축까지 논의가 확장됨.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">5</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 4건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, AI 시대 조직관리론을 출근길 영상으로 공유</h3><p>티타임즈 영상(이중학 교수 출연)을 아침에 시청 후 요약 공유, 본인 관점과의 일치 강조. 같은 연사가 오후 2시 국제협력관 컨벤션홀에서 강연 예정이나 연사 요청으로 유튜브 송출은 없음.</p><p>영상 핵심은 AI 전환기의 조직 운영 원칙임. **무엇을 안 할지 결정**하는 것이 우선이고, 동기 부여보다 고동기 인재 선발 및 동기 훼손 방지가 효과적이라는 논지임. 리더는 목표만 명확히 주고 방법은 자율에 맡겨야 하나 현실은 역방향이라는 지적. **AI 애플리케이션 제작자와 사용자가 일치**해야 조직에 스며든다는 주장이 이어지며, 바이브코딩을 통한 사용자 직접 개발을 처방으로 제시함. 지표 관리 매몰 경계 사례로 베트남 쥐꼬리 포상 역효과 인용.</p><blockquote>- 스스로 탐색하고 있는가를 성과지표로 삼아야 합니다. - 전략이 불명확하면 사람이 없어서 못한다고 합니다.</blockquote><p>&quot;전문인재가 생각보다 덜 필요하다&quot;는 관찰은 AI 도입을 인력 확보 문제로 미루는 통념에 대한 반론임. 1인 빌더 관점에서는 도구 제작자와 사용자가 동일한 구조가 오히려 기본값이라는 점에서 참고 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-09-02T11:26:00">9/2 11:26</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아침 출근길에 재미있게 본 티타임즈 영상입니다.
+AI 시대 조직관리, 인재선발, 업무방식에 대해 제 생각과도 많이 일치합니다.
+
+https://www.youtube.com/watch?si=N6bp97OaWwfxsvlR&amp;v=3hilsneulfM&amp;feature=youtu.be
+
+영상 속 이중학 교수님께서 오후 2시부터 국제협력관 컨벤션홀에서 강연을 시작하십니다.
+
+KIST 유튜브 채널 링크가 준비되면 다시 공유드리겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-09-02T11:32:00">9/2 11:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">영상 내용은 이렇습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-09-02T11:32:00">9/2 11:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">- 무엇을 할지보다 무엇을 안할지 결정하는 것이 더 중요합니다.
+
+- 동료에게 동기를 부여하려고 애쓰기보다 동기가 높은 인재를 선발하고 동기를 훼손하지 않는 것이 더 중요합니다.
+  : 소모적인 업무, 보고단계를 줄여주는 것이 그 예가 될 수 있습니다.
+
+- AI 에이전트와 함께 일하는 시대에는 주도성 없이 시키는 일만 하는 사람들은 점점 힘들어질겁니다.
+  : 자율성, 빌더 마인드셋, 제로투원이 없으면 곤란합니다.
+
+- 리더는 목표를 명확하게 주고, 방법은 자율에 맡겨야 합니다.
+  : 그런데 그 반대로 목표는 알아서 가져오라고 하고, 실무자가 제시하는 방법을 하지 말라고 하는 경우가 많습니다.
+  : 학생들도 마찬가지, 수동적인 태도가 몸에 배어있는 경우가 많습니다.
+
+- AI 전환에 대한 답은 아무도 모릅니다.
+  : 리더도 모르고 실무자도 모르는 답을 함께 찾아나가는 역량이 중요합니다.
+
+- 스스로 탐색하고 있는가를 성과지표로 삼아야 합니다.
+  : 하던대로 하면 우하향하는 특성이 있습니다. 새로운 변화를 감지하고 찾아야 합니다.
+  : 지표관리에 매몰되면 곤란합니다 - 베트남에서 쥐를 박멸하려고 쥐꼬리를 가져오라고 했더니 쥐를 더 키웠습니다.
+
+- AI가 조직에 스며들려면 어플리케이션을 만드는 사람과 사용하는 사람이 일치해야 합니다.
+  : 안쓰는 사람이 제대로 된 워크플로우를 만드는 건 불가능합니다.
+  : 사용자가 바이브코딩을 이용해 직접 개발해야 합니다.
+
+- 전략이 불명확하면 사람이 없어서 못한다고 합니다.
+  : 그러나 막상 잘 되는 곳을 보면 전문인재가 생각보다 덜 필요합니다.
+
+- 인지적 체력이 중요합니다.
+  : 빠르게 배우고, 정보를 처리하는 역량이 매우 중요합니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-09-02T14:18:00">9/2 14:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘은 연사분의 요청으로 유튜브 송출이 되지 않습니다 ^^; 
+양해 부탁드리겠습니다.</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 3건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, 구글 TimesFM 3 공개와 과학 도메인 집중 관찰</h3><p>구글 리서치의 다변량 예측용 제로샷 시계열 파운데이션 모델 **TimesFM 3** 발표 링크 공유로 대화 시작. 이어진 논의에서 타임스텝 기준 해석 확인.</p><p>관심의 초점은 벤치마크 성적임. **terminal bench science** 항목 성능 향상이 두드러진다는 평가, 그리고 얼마 전 MHC 표준 발표를 함께 묶어 구글의 과학 도메인 집중 경향으로 해석함.</p><blockquote>terminal bench science 성능 향상이 눈에 띄메요. 얼마전 mhc 표준 발표도 그렇고... 과학분야에 진심인듯...</blockquote><p>시계열 예측을 별도 학습 없이 처리하는 파운데이션 모델 계열의 갱신 소식이며, 센서·운영 데이터 예측 파이프라인에서 학습 단계를 생략할 수 있는 후보로 검토 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(3건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-09-01T18:55:00">9/1 18:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">구글이 더 좋은 시계열 fm 발표 https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-09-01T19:52:00">9/1 19:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">타임스텝 기준 말씀이시죠?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-09-02T07:32:00">9/2 07:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">terminal bench science 성능 향상이 눈에 띄메요. 얼마전 mhc 표준 발표도 그렇고... 과학분야에 진심인듯...</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 23건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, 로봇·에이전트·영상 툴을 관통한 하루치 프런티어 스캔</h3><p>Claude 신규 발표, World Labs 데모, Google AI Studio 업데이트, HeyGen 소식까지 X 링크를 연속 투척하며 당일 릴리스 흐름을 훑음. 커서(Cursor) 즉시 반영 사실도 함께 언급함.</p><p>핵심은 세 갈래. 첫째, World Labs 영상 기반 **현실 데이터→로봇 학습** 경로를 FSD에 비유하며 자율생활 로봇 상용화를 시간 문제로 규정, 해당 회사 상장 시 파급력까지 전망함. 둘째, **hermes agent 봇모드**를 미사용자에게 강력 권고하며 oh-my-hermes 개발자(rlaope)와 함께하는 오픈채팅방 개설, openclaw 대비 열세이나 현 AI씬 최강 흐름으로 평가함. 셋째, HeyGen + **하이퍼프레임** 조합으로 영상편집 판도 변화 예고, 본인 채널 일일 업로드 계획 공지함. 추가로 Grok-4.6 xhigh 재평가와 4.7 기대감 표명.</p><blockquote>hermes agent 봇모드를 안쓰고 계시다면 여러분은 지금 엄청난걸 놓치고 계신겁니다</blockquote><blockquote>곧 깡통이 가장 좋은 대안으로 등극할것 같아요</blockquote><p>에이전트 툴체인 선택지가 openclaw 일변도에서 hermes 계열로 분화 중이라는 실사용자 신호이며, Gemini에 대한 기존 회의론이 이번 AI Studio 업데이트로 처음 뒤집힌 점이 주목할 대목임.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(23건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T07:00:00">9/2 07:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/claudeai/status/2094848581425377479?s=12</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T08:04:00">9/2 08:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">커서에도 바로 들어왔네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:22:00">9/2 09:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/theworldlabs/status/2094839756329041984?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:22:00">9/2 09:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">와 무섭다
+진짜 버츄얼이 현실화 되는데 시간 문제겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:22:00">9/2 09:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/tamrrat/status/2094848708944724325/video/1</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:22:00">9/2 09:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">실제 영상 놀랍네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:26:00">9/2 09:26</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">결국 이거네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:27:00">9/2 09:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">현실데이터를 로봇이 학습할수 있는 데이터를 준다면</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:27:00">9/2 09:27</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">fsd처럼 자율생활이 가능한 로봇이 곧 세상에 돌아다니겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:29:00">9/2 09:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이 회사 상장하면 대박이겠네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:57:00">9/2 09:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/theaaron/status/2094918489488404857?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T09:57:00">9/2 09:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">hermes agent 봇모드를 안쓰고 계시다면 여러분은 지금 엄청난걸 놓치고 계신겁니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T10:00:00">9/2 10:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://open.kakao.com/o/gma8AaVg
+hermes에 대해 이야기 나누실분 들어오세요
+
+https://github.com/rlaope/oh-my-hermes 
+oh-my-hermes를 만든 개발자분과 함께 합니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T10:50:00">9/2 10:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">openclaw보단 아니지만 AI씬에서 지금 가장 강력한 흐름입니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T10:50:00">9/2 10:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">곧 깡통이 가장 좋은 대안으로 등극할것 같아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T10:55:00">9/2 10:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/GoogleAIStudio/status/2094841307935957304?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T10:55:00">9/2 10:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">드디어 제미나이를 쓸만한 이유가 단1개가 생긴것 같네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T11:42:00">9/2 11:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/JakeFromHeyGen/status/2094839871173263698?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T11:42:00">9/2 11:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">하이퍼 프레임을 배우신다면 영상편집이 세상에서 엄청 재밌는일로 바뀔것입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T11:42:00">9/2 11:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">곧 제 채널에 헤이젠과 하이퍼프레임을 사용한 영상들이 매일 쏟아져나올겁니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T14:57:00">9/2 14:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록-4.7 기대되네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T14:57:00">9/2 14:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록 -4.6 xhigh가 이렇게 좋은 모델인지 몰랐어</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-02T14:57:00">9/2 14:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">4.7은 어마어마 할거야</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 5건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), 9월 세미나 예고와 업스테이지 CLI 발견</h3><p>오프라인 모임 재개 흐름에서 나온 공지성 발언. 에이전틱AI 실사용 경험 공유를 주제로 잡은 점이 특징임.</p><p>**9월 17일(목) 18시 30분, 강남역 인근**에서 약 30명 규모 세미나 개최 예정. 주제는 에이전틱AI 사용기, 사전 수요조사 폼을 통한 신청 접수 방식임. 별도로 **Upstage CLI** 공개 소식 공유(github.com/VectorSophie/upstage-cli).</p><blockquote>9월 17일 목요일 오후 18시 30분에 강남역 인근에서 배움의 달인 세미나를 하려고 합니다. 약 30명 정도로 에이전틱AI 사용기에 대한 내용으로 진행해보고자해요</blockquote><blockquote>업스테이지 CLI 나왔네요</blockquote><p>국내 LLM 벤더가 CLI 도구를 내놓은 시점이라 Claude Code·Codex 계열과의 비교 실측 대상 추가됨. 세미나 역시 툴 소개가 아닌 실사용기 중심이라 참고 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(5건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-01T17:43:00">9/1 17:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">9월 17일 목요일 오후 18시 30분에 강남역 인근에서 배움의 달인 세미나를 하려고 합니다. 약 30명 정도로 에이전틱AI 사용기에 대한 내용으로 진행해보고자해요. 제가 사전 수요조사 폼을 올리면 희망하시는 분들은 사전 신청 부탁드립니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-01T18:32:00">9/1 18:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://share.note.sx/yj7eo0pa</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-01T19:59:00">9/1 19:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한번 해주셔요 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-02T15:28:00">9/2 15:28</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://github.com/VectorSophie/upstage-cli</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-02T15:29:00">9/2 15:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">업스테이지 CLI 나왔네요</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">4</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 42건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">구글 TimesFM-3 발표를 계기로 수치형 시계열 파운데이션 모델의 제로샷 실효성 논쟁 진행됨.</span></li><li><span class="n"></span><span class="t">회사원 MSC는 전통 GBM 대비 우위 주장, 포스텍 전준구는 원자력 사고해석 데이터 평가 결과 도메인 특화 써로게이트 모델 대비 산업 적용 미흡으로 판단함.</span></li><li><span class="n"></span><span class="t">Claude 5.1 출시 및 usage reset 확인, terminal bench science 성능 향상과 노력 수준 상향 시 체감 개선이라는 사용 팁 공유됨.</span></li><li><span class="n"></span><span class="t">KIST 이제현이 공유한 티타임즈 영상 기반으로 AI 시대 조직관리 논의 확산 — 목표 명확화·방법 자율, 바이브코딩 사용자 직접 개발, 인지적 체력 강조.</span></li><li><span class="n"></span><span class="t">AI 산출 검증 부담으로 인한 인지 부하 누적이 새로운 병목이라는 공감대 형성, 인지·스트레스 회복력이 차세대 핵심 역량이라는 전망 제시됨.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">GitHub</span><span class="tag">Terminal-Bench</span><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 34건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Anthropic이 코딩·지식 업무 특화 모델 Claude Fable 5.1과 Mythos 5.1 출시, 커서 즉시 반영됨.</span></li><li><span class="n"></span><span class="t">World Labs가 픽셀 단위 카메라 제어와 3D 재구성이 가능한 멀티모달 월드 모델 Atlas 공개, 로봇 학습용 합성 데이터 생성 가능성 언급됨.</span></li><li><span class="n"></span><span class="t">Gemini가 프레임·오디오·자막을 선택 처리하는 에이전틱 영상 이해 도입, 비용 최대 66%·토큰 최대 88% 절감 수치 제시됨.</span></li><li><span class="n"></span><span class="t">Hermes 봇모드와 oh-my-hermes를 AI씬 최신 흐름으로 지목, 별도 오픈채팅 개설됨.</span></li><li><span class="n"></span><span class="t">HeyGen·HyperFrames 오디오 편집 업데이트와 Grok-4.6 xhigh 호평, 4.7 기대감 표명됨.</span></li></ol><div class="tags"><span class="tag">Claude Fable 5.1</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">GitHub</span><span class="tag">Claude Mythos 5.1</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 43건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">9월 17일 강남역 인근 배움의 달인 세미나 예고, 에이전틱AI 사용기 주제로 30명 규모 사전 수요조사 폼 배포됨.</span></li><li><span class="n"></span><span class="t">Fable 5.1 성능 공유 — Terminal-Bench 4.0 42%→55.8%, Terminal-Bench-Science 24.7%→52.6%로 두 배 이상 상승, 동일 벤치에서 Opus 5는 29.0%, GPT-5.6 Sol은 22.4%임.</span></li><li><span class="n"></span><span class="t">가격은 입출력 단가 $10/$50 유지하되 캐시 읽기 100만 토큰당 $0.25로 75% 인하, 에이전트성 작업 최대 45% 비용 절감이 핵심 셀링포인트로 해석됨.</span></li><li><span class="n"></span><span class="t">실사용 후기는 엇갈림 — 주간 한도 45% 소진 등 토큰 부담 호소와 함께 성능 향상보다 토큰 효율화가 본질이라는 평가 병존.</span></li><li><span class="n"></span><span class="t">업스테이지 CLI 공개, 로컬 모델 실험(gb10 2대에 3.8flash next, 가재코드+ornith 1.5), 정보 홍수 대응용 AI 뉴스 요약 사이트 공유 등 도구 정보 다수 오감.</span></li></ol><div class="tags"><span class="tag">Claude Fable 5.1</span><span class="tag">Claude</span><span class="tag">ChatGPT</span><span class="tag">GitHub</span><span class="tag">Claude Mythos 5.1</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">코드팩토리 채널 신규 영상 1건, Fable 5.1 관련 내용임.</span></li><li><span class="n"></span><span class="t">Fable 5.1에서 비용 3배 절감 강조됨.</span></li><li><span class="n"></span><span class="t">메시지 1건뿐이라 논의 없음.</span></li></ol><div class="tags"><span class="tag">Claude Fable 5.1</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Claude Fable 5.1</div><div class="ctx">Anthropic 신모델 출시, Terminal-Bench 4.0 42%→55.8% 상승 및 캐시 읽기 75% 인하로 4개 방 공통 화제.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Claude</div><div class="ctx">신모델 공개와 20x 요금제 주간 한도 논란, 노트테이커 연동 대상으로 반복 언급됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">ChatGPT</div><div class="ctx">클로드 신모델의 라이벌 구도, 미 국방부 300만 명 전용 도입, 노트테이커 연동 대상으로 등장.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">GitHub</div><div class="ctx">도구 저장소 공유 경로이자, 논문 IF 대신 포크 수를 연구자 평가지표로 삼자는 제안 등장.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Claude Mythos 5.1</div><div class="ctx">Terminal-Bench 4.0에서 60.9%로 Fable 5.1보다 5.1%p 높아 안전장치 개입 비용 공개된 셈.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Terminal-Bench</div><div class="ctx">Fable 5.1 성능 근거로 인용, 특히 Terminal-Bench-Science 24.7%→52.6% 두 배 이상 향상.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Qwen3.8-Flash-Next</div><div class="ctx">성능 우수 평가와 함께 Hugging Face 트렌딩 1위 등재, 다만 로컬 구동에는 크기 부담.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">Claude Code</div><div class="ctx">GB10 2대 로컬 협업개발 적용 사례, &#x27;사이버&#x27; 입력 시 구형 모델 강등되는 검열 트리거 사례 공유됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">TimesFM</div><div class="ctx">Google 시계열 파운데이션 모델 TimesFM-3 발표, 제로샷 산업 적용 가능성 놓고 회의론 제기됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Qwen</div><div class="ctx">Pi에이전트에 올려 로컬 협업개발 테스트 중, 사고 모드·멀티모달 결합 대형 모델로 분류됨.</div></div><span class="freq">2</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">6</span></div><article class="cross-card"><h3>Claude Fable 5.1 출시</h3><p class="desc">Anthropic 신모델 Fable 5.1 / Mythos 5.1 공개 소식이 세 방에서 동시 확인됨. ai-friends는 출시와 사용량 리셋, ai-frontier는 모델 라인업, learning-masters는 벤치마크 수치와 가격 관점으로 접근함.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>Fable 5.1 가격 인하</h3><p class="desc">신모델 가격 정책이 learning-masters 벤치마크·가격 논의와 youtube:코드팩토리 가격 인하 언급으로 이어짐. 토큰 단가 하락이 실사용 비용 판단 기준으로 공유됨.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>로컬 LLM 구동 및 추론 경량화</h3><p class="desc">ai-frontier는 추론 경량화와 로컬 배포 효율, learning-masters는 실제 로컬 LLM 구동 환경 구성 경험을 공유함. 온디바이스 실행 가능 범위가 공통 관심사임.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>토큰 사용량 한도 부담</h3><p class="desc">Claude 5.1 출시에 따른 사용량 리셋 언급과 learning-masters의 토큰 한도 체감 부담이 같은 맥락으로 묶임. 구독 한도 내 작업 배분이 공통 고민임.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 정보 과잉 대응</h3><p class="desc">ai-friends의 글로벌 AI 커뮤니티 이슈 브리핑과 AI 협업 인지 부하 논의, learning-masters의 뉴스 요약 사이트 공유 및 정보 과잉 대응 방식이 겹침. 정보 선별·요약 도구화가 공통 해법으로 제시됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>신형 모델 출시 경쟁</h3><p class="desc">ai-friends의 GPT 아스트라 출시 임박, ai-frontier의 Grok 4.6/4.7 및 Qwen3.8-Flash-Next / GLM-5.3 트렌딩 언급이 같은 주간 릴리스 흐름을 형성함. 프런티어·오픈웨이트 양쪽 갱신 주기 단축 확인됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-09-22</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 7 · 2026. 09. 22</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">7 sources · 347 signals · 3 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-09-22 06:44:03.992920+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-frontier · importance 0.90</div><h2>Grok 4.7 출시, 데일리 작업 최우수 모델로 평가되며 용도별 모델 분업 스택 제안</h2><p class="lede">Grok 4.7 출시, 4.6 대비 성능 향상에 가격·속도는 동일. 허민, 출시 당일 모델 평가와 함께 코딩 위주 작업엔 Codex를 추천하는 등 용도별 도구 분업 연속 공유. 방 전체로는 Fable 5.1 오케스트레이터 + Grok-4.7 코드 작성 + GPT-6 아스트라 검수 조합 제안됨.</p><p class="why">WHY · VIP 연속 발언 + Grok 출시 다중 방 언급</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">learning-masters 외 3개</div><h3>Jev, 5개 방에서 7회 언급되며 당일 최다 화제 기술로 부상</h3><p class="lede">Jev 활용·벤치마크 화제가 ai-friends·ai-frontier·learning-masters·youtube:코드팩토리 4개 방에서 교차 등장. 코드팩토리는 Jev의 &#x27;200배 빠름·400배 저렴&#x27; 주장을 직접 검증한 신규 영상 공개. learning-masters에선 김문정(배움의 달인)이 예고했던 jev 영상을 공유했고, 직접 만든 라우터는 동작 불안정 문제를 언급함.</p></div><div class="notable-card"><div class="src">샘호트만</div><h3>NousResearch, Hermes Agent용 Claude 구독 직결 공식 플러그인 공개</h3><p class="lede">claude-subscription-directsdk 플러그인으로 API 키 없이 Claude Pro/Max 구독만으로 Sonnet 5·Opus 5·Opus 4.8 사용 가능. Hermes 0.21.4 이상 필요, 현재 Experimental 단계. 샘호트만, Codex를 에이전트 운영 환경으로 두는 운영 프레임도 함께 제시.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>Aside 카톡 읽기 기능, SQLCipher DB 복호화 기반 읽기 전용 구조로 분석</h3><p class="lede">Aside의 카톡 읽기 기능 분석 공유. macOS 전용 실험 기능으로, 카톡 SQLCipher 암호화 DB를 userId와 하드웨어 UUID 조합 키로 복호화하는 읽기 전용 구조임. 메시지 전송은 불가.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>M5 Ultra Mac Studio, M3 Ultra 대비 평균 1.5배로 로컬 에이전트 머신 호평</h3><p class="lede">M5 Ultra Mac Studio 리뷰 공유, 로컬 AI 에이전트용 머신으로 호평임. M3 Ultra 대비 평균 1.5배 성능이고, RTX 5090보다는 느리나 5090으로 불가한 작업이 가능하다는 평가. Sonnet급 모델 로컬 구동 기대.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">6</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 0건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 0건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 37건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, Grok-4.7 출시와 모델 분업 코딩 스택</h3><p>FSD 차량 출고 후 FSD·Grok 후기 예고. grok-4.7 출시 당일 모델 평가와 용도별 도구 추천 연속 공유.</p><p>코딩 위주 작업엔 Codex, 일상업무·자동화·협업 에이전트 워크플로우엔 Grok Bot 추천. Grok-4.7을 데일리 작업 최우수 모델로 평가하며 **Fable 5.1 오케스트레이터 → Grok-4.7 코딩 → GPT-6 아스트라 검수** 3단 구성 제시. **Jev**는 반복 업무에서 사람 수준 속도·정확도 초과 단계로 평가. OpenRouter의 Jev 대규모 실험 소식과 Grok Bot+Jev 결합 분류기 템플릿 직접 제작 소식도 공유.</p><blockquote>오케스트레이터로 Fable 5.1 사용하고,Grok-4.7이 코드를 짠뒤,GPT-6 아스트라가 검수하는데 딱이네요.</blockquote><p>모델별 역할 분담 파이프라인의 실사용 사례로, Claude·GPT 중심 워크플로우에 Grok 계열 편입 여부 검토 근거. HyperFrames·Remotion 모션 그래픽 생성엔 GPT-5.5가 더 효율적이라는 보고도 참고 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(37건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T16:31:00">9/21 16:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">드디어 차를 출고 하고 왔습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T16:31:00">9/21 16:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">곧 FSD에 대한 리뷰와 그록에 대한 후기 올려보겠습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T16:32:00">9/21 16:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">호주는 미국과 동일한 버전이 업데이트가 되어서 성능이 상당히 좋더라구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:32:00">9/21 21:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/swyx/status/2101873256097804529?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:32:00">9/21 21:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">과연 이속도를 따라올수 있는 사람이 얼마나 될까요?
+회사를 다니면 정말 말도안되게 Fomo를 느낄것 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:33:00">9/21 21:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">정보는 얻어야겠고,실제로 테스트도 해봐야 하는데 시간은 시간대로 없고 속도는 속도데로 빨라서</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:49:00">9/21 21:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">개인의 사용성에 따라 다른데 코딩위주의 작업 혹은 비개발자이지만 개발위주의 작업이라면 전 여전히 코덱스 추천!
+비개발자도 아니고 일상업무나 자동화 워크플로우나 협업 에이전트 워크플로우를 구현하고 싶다 그록봇
+클로드 코드나 코덱스를 이미 충분히 잘 사용하고 있다 그록봇 추천!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:50:00">9/21 21:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오늘 아마 grok-4.7이 나올거에요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:51:00">9/21 21:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한국은 FSD가 모든 차량에 안풀려서 Grok이 앞으로 어느정도 좋아질지 
+혹은 그 사용성이 얼마나 대단할지 많은 사람들이 못 느끼시는것 같은데 경험해보시면 완전히 AI에 대한 생각이 바뀔것입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T21:55:00">9/21 21:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">사람들은 이번 Jev를 업무의 FSD라고 과하게 이야기 하는 사람들이 있는데 좀더 지켜봐야겠지만 반복적인 업무는 이제 사람이 생각하는 수준의 속도와 정확도를 넘어서기 시작했습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T22:02:00">9/21 22:02</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아직도 AI가 거품이라고 느끼시는분들은 FSD lite 말고 HW4 / AI4 (신형 컴퓨터)v14.3.9 버전의 FSD 차량을 타보시면 아예 생각이 달라지실거라 봅니다.
+한국에서 절대 제대로 작동하지 않을것이라 했던것이 너무나 완벽하게 주행하게 되면서 현대차에도 큰 타격을 받았는데,모든 산업군에서 FSD같은 바람이 몰아 닥칠것입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-21T22:03:00">9/21 22:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 운전히 얼마나 사람을 피로하게 만들었는지 얼마나 노동이었는지 느낍니다.
+모든 일이 그렇게 될겁니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T06:58:00">9/22 06:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/spacexai/status/2102069815225586149?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:30:00">9/22 08:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok-4.7은 이제 데일리 작업에 가장 우수한 모델이 되었네요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:31:00">9/22 08:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오케스트레이터로 Fable 5.1 사용하고,Grok-4.7이 코드를 짠뒤,GPT-6 아스트라가 검수하는데 딱이네요.
+솔직히 코드 짤때 Grok-4.6이 저는 좀 마음에 안들었었어서 고민이었는데</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:32:00">9/22 08:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Jev가 물건입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:36:00">9/22 08:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">와 그리고 AI가 지금 너무 핫하다보니 협업메일이 쏟아져 나옵니다.
+제 채널은 곧 4만정도 되가는데 단가도 많이 올라갔네요
+한편에 거의 월급정도 주네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:40:00">9/22 08:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그록봇에서 100%자율적으로 돌아가도록 협상하는 팀을 만들어서 저는 승인만 해줍니다.
+그럼 콘텐츠 만들고</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:46:00">9/22 08:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">좀더 자세히 설명해주실래요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:47:00">9/22 08:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.ai/bot/marketplace</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:48:00">9/22 08:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이미 잘만들어진걸 활용하시는걸 추천드립니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:48:00">9/22 08:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.ai/bot/marketplace/bots/dr-eggbot-v2</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T08:48:00">9/22 08:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">봇을 만들땐 이 봇을 추천드리구요!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:01:00">9/22 09:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">드디어 카파시가 Jev에 대해 입을 뗏네요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:10:00">9/22 09:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.ai/bot/lS9XaHCr9QTTHhNtb0VQX</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:10:00">9/22 09:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok Bot과 Jev를 결합한 템플릿을 만들었습니다. 모든 에이전트에 빠르고 정확하게 보정된 분류기를 제공하세요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:30:00">9/22 09:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">가장 많은 api사용량을 보여주고 있는 오픈라우터에서 Jev를 실험적으로 많은 테스트를 하고 있습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:31:00">9/22 09:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/m2VgJxwerDI</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T09:31:00">9/22 09:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이 콘텐츠를 참고해주시면 좋을것 같습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T10:31:00">9/22 10:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/SungKimUp/status/2102196460997816524?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T10:31:00">9/22 10:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Upstage 김성 대표님도 글을 올리셨네요
+관리자가 메시지를 가렸습니다.
+관리자가 메시지를 가렸습니다.
+관리자가 메시지를 가렸습니다.
+관리자가 메시지를 가렸습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T12:43:00">9/22 12:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/kunchenguid/status/2102234191639257399?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T13:11:00">9/22 13:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/dhh/status/2102194994127729028?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T13:12:00">9/22 13:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오마키 아저씨도 사이버캡 타셨네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T14:56:00">9/22 14:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/i740EVa_5fE</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T15:25:00">9/22 15:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/HyperFrames_/status/2102090639374766375?s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-09-22T15:25:00">9/22 15:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">하이퍼프레임이나 리모션으로 모션 그래픽 생성시 오히려 GPT-5.5가 효율적이라는 보고서네요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 8건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), jev 영상 공유와 Grok 4.7 초기 사용 소감</h3><p>예고했던 jev 영상을 YouTube 링크로 공유함. 관련 Threads 링크도 함께 게시함.</p><p>원래는 직접 만든 **라우터**를 공유할 계획이었으나, 동작이 불안정해 보류함. 새로 출시된 **Grok 4.7**은 잘 쓰는 중이지만 서버 장애로 보인다는 언급 있음. 도구 환경이 매일 달라진다는 소감도 덧붙임.</p><blockquote>라우터가 되다 안되다 하네요</blockquote><blockquote>Grok4.7 나와서 잘 쓰고 있는데, 지금 서버가 터진듯요</blockquote><p>Grok 4.7은 출시 직후 실사용 평가가 긍정적이지만 서버 가용성 문제가 함께 나타남. 새 모델을 바로 도입하면 초기 장애 위험이 있다는 참고 사례임.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(8건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-21T22:12:00">9/21 22:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">좀 있다 jev 영상 올릴게요
+관리자가 메시지를 가렸습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-21T22:35:00">9/21 22:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/hRW-Gh5Y4MM</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-21T22:57:00">9/21 22:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">도움이 되셨으면.좋겠네요
+라우터 만들어서.공유하고.싶었는데 ㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-21T23:36:00">9/21 23:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">라우터가 되다 안되다 하네요 </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-22T06:59:00">9/22 06:59</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">전 더 길것 같긴한데요
+뭐 맨날 달라지고 바뀌니 ㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-22T09:46:00">9/22 09:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/NTNOx0vNc/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-22T09:53:00">9/22 09:53</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok4.7 나와서 잘 쓰고 있는데, 지금 서버가 터진듯요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-09-22T10:03:00">9/22 10:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">네 가능하지요.. </div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 06 · 샘호트만 · 2건 발언</div><div class="vip-body"><div class="vip-sender">샘호트만 @ai.sam_hottman</div><div class="story"><h3>샘호트만, Hermes Agent의 Claude 구독 직결 플러그인과 Codex 운영 프레임</h3><p>NousResearch의 공식 플러그인 **claude-subscription-directsdk** 공개 소식 전달. Codex를 에이전트 운영 환경으로 보는 3단계 프레임 공유도 병행함.</p><p>별도 Anthropic API Key 없이 Claude Pro/Max 구독 사용량으로 Hermes를 구동하는 구조임. 내부적으로 공식 Claude Code CLI를 호출하며, Hermes의 Agent Loop·Tool·Approval·Compaction은 그대로 유지됨. Hermes 0.21.4+ 필요, 현재 Experimental 단계임. 지원 모델은 Sonnet 5, Opus 5, Opus 4.8, Haiku 4.5, Fable 5.1이며, Sonnet/Opus 계열은 1M context 경로도 지원함. 단 claude -p / Agent SDK와 같은 과금 계수가 적용되어 인터랙티브 모드 대비 5시간 한도 기준 **약 60% 처리량**에 그친다는 경고 동반.</p><p>Codex 프레임은 Context(Projects·Memory·AGENTS.md) → Access(Computer Use·MCP·plugins) → **Repeatable Work**(Skills·Schedules·Hooks·Record/Replay)의 3단계 구분임. 로컬 schedule은 컴퓨터와 앱이 켜져 있어야 한다는 운영 제약도 지적함.</p><blockquote>“Claude 구독은 있는데 API 비용 때문에 Hermes 연결을 망설였다”면 꽤 큰 업데이트입니다.</blockquote><blockquote>Hermes에서 쓰는 사용량은 일반 Claude Code TUI보다 더 빨리 소모될 수 있습니다.</blockquote><p>구독 OAuth 기반 헤드리스 claude -p 호출에 따른 한도 소모율을 수치로 제시한 드문 사례임. 같은 방식으로 파이프라인을 돌리는 독자에게 직접적인 용량 계획 지표임. 로컬 schedule 상시 구동 제약도 Task Scheduler 기반 운영과 같은 문제 계열임.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="샘호트만 @ai.sam_hottman 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-09-22T07:32:00">9/22 07:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">🔥 Hermes Agent에서 Claude Pro/Max 구독을 직접 쓸 수 있게 됐습니다.
+
+NousResearch가 공식 플러그인 claude-subscription-directsdk 를 공개했습니다.
+
+핵심은 간단합니다.
+
+* 별도 Anthropic API Key 필요 없음
+* API 토큰 과금 대신 Claude Pro/Max 구독 사용량을 사용
+* Hermes의 Agent Loop / Tool / Approval / Compaction은 그대로 유지
+* 내부적으로 공식 Claude Code CLI를 호출하는 방식
+* Linux / macOS / Windows 지원
+* Hermes 0.21.4+ 필요
+* 현재는 Experimental
+
+설치:
+
+hermes plugins install claude-subscription-directsdk
+
+Claude Code 로그인:
+
+claude auth login
+
+이후
+
+hermes model
+
+에서 Claude Subscription DirectSDK (Experimental) 선택하면 됩니다.
+
+현재 명시적으로 지원되는 모델은 Sonnet 5, Opus 5, Opus 4.8, Haiku 4.5, Fable 5.1이고, Sonnet/Opus 계열은 최대 1M context 경로도 지원합니다.
+
+⚠️ 한 가지 중요한 점:
+Hermes에서 쓰는 사용량은 일반 Claude Code TUI보다 더 빨리 소모될 수 있습니다. 문서 측정 기준으로 claude -p / Agent SDK와 동일한 과금 계수이고, 대략 Claude Code 인터랙티브 모드 대비 5시간 한도 기준 약 60% 수준의 처리량이라고 설명합니다.
+
+즉,
+
+“Claude 구독은 있는데 API 비용 때문에 Hermes 연결을 망설였다”면 꽤 큰 업데이트입니다.
+
+문서:
+https://hermes-agent.nousresearch.com/docs/plugins/claude-subscription-directsdk</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-09-22T09:10:00">9/22 09:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">[Codex를 agent 운영 환경으로 보는 3단계 프레임]
+
+1. Codex 활용을 Context, Access, Repeatable Work 3단계로 구분
+2. Projects, Memory, AGENTS.md는 에이전트가 작업 맥락을 읽는 층
+3. Computer Use, MCP, plugins는 실제 앱·도구·권한에 연결되는 층
+4. 시간 절감은 Skills, Schedules, Hooks, Record/Replay 같은 반복 실행에서 발생
+5. 로컬 schedule은 컴퓨터와 앱이 켜져 있어야 한다는 운영 제약 존재
+
+https://www.linkedin.com/feed/update/urn:li:share:7507740431888343041</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">7</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 30건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">M5 Ultra Mac Studio 리뷰 공유, 로컬 AI 에이전트용 머신으로 호평임. M3 Ultra 대비 평균 1.5배 성능이고 RTX 5090보다는 느리나 5090으로 불가한 작업이 가능하다는 평가로 Sonnet급 모델 로컬 구동 기대.</span></li><li><span class="n"></span><span class="t">내일 오후 4시(19시 설도 있음) GPT 사용량 리셋 예정 소식과 함께 GPT-6 Sol·Luna 동시 출시 및 Opus 5.5 등장 풍문 확산.</span></li><li><span class="n"></span><span class="t">Claude 과부하(busy)로 응답 불안정, Sonnet 우회 사용도 일부 실패 보고.</span></li><li><span class="n"></span><span class="t">구글북 정식 출시, Qwen Image 2.1 NSFW 지원, 추석 jev 특강 안내와 jev 변종 리포 모음집 공유.</span></li><li><span class="n"></span><span class="t">실리콘 AI 하드웨어의 전력·확장 한계를 BCI 등 생물학적 접근으로 풀려는 흐름에 대해 Wiener 사이버네틱스 관점의 논의 있음.</span></li></ol><div class="tags"><span class="tag">Jev</span><span class="tag">Codex</span><span class="tag">Claude</span><span class="tag">Hermes Agent</span><span class="tag">Claude Sonnet</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 63건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Grok 4.7 출시(4.6 대비 성능 향상, 가격·속도 동일)와 함께 데일리 작업 최우수 모델로 평가됨, Fable 5.1 오케스트레이터 + Grok-4.7 코드 작성 + GPT-6 아스트라 검수 조합 제안됨.</span></li><li><span class="n"></span><span class="t">예/아니오·선택·척도 판단 전용 결정 모델 Jev 화제 집중 — CLARIFY·DIRECT·DELEGATE·KANBAN 라우팅 룰, 기존 LLM 대비 약 10배 빠르고 저렴, OpenRouter에서 이용 가능함.</span></li><li><span class="n"></span><span class="t">Upstage SolarMini4Jev가 약 400문항 정확도 98.4%로 Jev 94.2%를 앞섬(한국어 98.8%), 다만 평균 응답 1.2초로 Jev보다 느림.</span></li><li><span class="n"></span><span class="t">코딩 위주는 Codex, 일상업무·자동화·협업 에이전트 워크플로우는 그록봇이라는 선택 기준 공유됨, 봇 제작 시 Grok Bot Marketplace의 dr eggbot 활용 권장.</span></li><li><span class="n"></span><span class="t">그 외 Hi3D V3.0 이미지→3D 모델 생성, 하이퍼프레임·리모션 모션 그래픽에서 GPT-5.5가 더 효율적이라는 Code2Video Bench 보고, Tesla FSD v14.3.9(HW4) 체험담 공유됨.</span></li></ol><div class="tags"><span class="tag">Jev</span><span class="tag">Codex</span><span class="tag">Grok 4.7</span><span class="tag">Claude Code</span><span class="tag">Grok Bot</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 131건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Aside 카톡 읽기 기능 분석 공유. macOS 전용 실험 기능으로, 카톡 SQLCipher 암호화 DB를 userId와 하드웨어 UUID 조합 키로 복호화하는 읽기 전용 구조이며 메시지 전송은 불가임.</span></li><li><span class="n"></span><span class="t">윈도우용 카톡 CLI 자작 사례 등장. 업무 카톡을 매일 22시 위키에 저장하고, 상담 메시지 답장 초안을 사용자 승인 후 발송하는 자동화 구성됨.</span></li><li><span class="n"></span><span class="t">Codex 앱 예약 기능 기반 카드뉴스 자동화 사례 공유. 이미지 생성 한도 소진(9/23까지)으로 GPT Web 수동 생성으로 대체했고, 토큰 절감을 위한 Aside CLI 연동 계획 있음.</span></li><li><span class="n"></span><span class="t">Codex 주간 할당량 한국시간 19시 리셋 예고로 울트라 모드 소진 러시 발생. Grok 4.7 출시 직후 서버 장애와 Claude 서버 혼잡 보고 있음. 현재 3대 이슈는 ChatGPT-6 Astra·Aside·Jev로 정리됨.</span></li><li><span class="n"></span><span class="t">Antigravity가 사진 50만 장 분류에서 Claude보다 우위라는 평가와 Gemini 식물 식별·세밀화 품질 평가 공유. LangGraph 멀티에이전트 퀀트 리포트 목업(SOXL·SGOV 반반 전략, 로컬 Gemma 4 시도) 소개.</span></li></ol><div class="tags"><span class="tag">Jev</span><span class="tag">Codex</span><span class="tag">Grok 4.7</span><span class="tag">Claude</span><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:짐코딩</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Claude Code에 Google Skills를 연동해 구글 광고 데이터 분석과 보고서 작성에 활용하는 쇼츠 영상 1건 공유됨.</span></li><li><span class="n"></span><span class="t">영상 제목 외 논의 없어 구체적 설정 방법이나 활용 사례 확인 불가함.</span></li></ol><div class="tags"><span class="tag">Claude Code</span><span class="tag">Google Skills</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드깎는노인</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">신규 영상 1건 공개, AI 기반 3D 모델링 도구 Hi3D 소개 영상임. 제목 외 본문·토론 없어 세부 내용 파악 불가함.</span></li></ol><div class="tags"><span class="tag">Hi3D</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Jev의 &#x27;200배 빠름·400배 저렴&#x27; 주장을 직접 검증한 코드팩토리 신규 영상 1건 공개.</span></li><li><span class="n"></span><span class="t">영상 제목 외 수치·결론 공유 없음, 메시지 1건뿐인 희박한 활동.</span></li></ol><div class="tags"><span class="tag">Jev</span></div></article><article class="source-card"><div class="src-head"><h3>샘호트만</h3><span class="kind">kakao-open · 32건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">NousResearch가 Hermes Agent용 공식 플러그인 claude-subscription-directsdk를 공개함. API 키 없이 Claude Pro/Max 구독으로 Sonnet 5·Opus 5·Opus 4.8 등을 사용할 수 있으며, Hermes 0.21.4 이상이 필요하고 현재는 Experimental 단계임.</span></li><li><span class="n"></span><span class="t">이 방식은 claude -p와 같은 과금 계수를 적용받아, 5시간 한도 기준 처리량이 인터랙티브 Claude Code 대비 약 60% 수준이라는 주의점 공유됨.</span></li><li><span class="n"></span><span class="t">Codex를 에이전트 운영 환경으로 보는 3단계 프레임 정리됨. 작업 맥락을 담는 Context, 앱·도구에 연결되는 Access, 반복 실행을 맡는 Repeatable Work로 나누고, 로컬 schedule은 컴퓨터와 앱이 켜져 있어야 동작한다는 제약도 언급됨.</span></li><li><span class="n"></span><span class="t">신규 모델·서비스 소식 대량 공유됨. Grok 4.7 출시, Kimi K3의 Amazon Bedrock 탑재, Cloudflare Python Workers 정식 출시, Upstage Solar-Mini4-Jev 공개, Perplexity Computer의 MiniMax H3·Seedance 2.5 기반 영상 생성(Pro 이상) 등이 포함됨.</span></li><li><span class="n"></span><span class="t">사용량 한도 리셋을 두고 fast 모드 권유와 함께, Claude는 리셋이 없고 프로모션도 끝났다는 불만 제기됨.</span></li></ol><div class="tags"><span class="tag">Jev</span><span class="tag">Codex</span><span class="tag">Grok 4.7</span><span class="tag">Claude</span><span class="tag">Claude Code</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Jev</div><div class="ctx">구조화 판단 전용 Decision 모델 Jev의 설치 영상, 라우팅 룰, 변종 리포, 속도 200배·비용 400배 검증 테스트까지 거의 모든 방에서 최다 언급됨.</div></div><span class="freq">7</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Codex</div><div class="ctx">코덱스앱 예약 기능으로 카드뉴스 자동화, 오후 7시 사용량 리셋 소식, 코딩 작업에는 여전히 Codex 추천 의견.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Grok 4.7</div><div class="ctx">Grok 4.7 출시, 4.6 대비 성능 향상에 가격·속도 동일, 데일리 작업 최적 모델이라는 평가.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">Claude</div><div class="ctx">Claude 서버 혼잡·장애 보고 다수, 리셋·프로모션 종료에 대한 불만 제기.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Claude Code</div><div class="ctx">Claude Code에 Jev 설치 시험, Hermes 플러그인이 내부적으로 Claude Code CLI를 호출하는 구조.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Grok Bot</div><div class="ctx">그록봇 사용성, 응답 없음 문제, 마켓플레이스 템플릿 추천, GPT 대비 구독 투자 고민이 논의됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Hermes Agent</div><div class="ctx">NousResearch Hermes Agent에서 Claude Pro/Max 구독 직접 사용 가능, 로컬 모델 구동 대상으로도 언급됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">MCP</div><div class="ctx">Aside의 컴퓨터 전반 제어와 Hi3D·Codex의 도구 연결 수단으로 MCP 언급.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Aside</div><div class="ctx">Aside 브라우저의 카톡 읽기 실험 기능(macOS 전용)과 토큰 절감용 CLI 연동 활용이 논의됨.</div></div><span class="freq">2</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">GPT-6 Astra</div><div class="ctx">ChatGPT-6 Astra가 Aside·Jev와 함께 3대 이슈로 지목되고, 코드 검수 역할로 쓰는 사례도 공유됨.</div></div><span class="freq">2</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">9</span></div><article class="cross-card"><h3>Jev 모델 활용·벤치마크</h3><p class="desc">Jev를 두고 여러 방에서 동시에 논의가 있었음. 특강과 변종 리포 공유, 의사결정 모델 라우팅 적용, 설치와 실사용 경험, 속도·비용 벤치마크까지 다룸. 소개 단계를 지나 실전 도입과 성능 검증 단계로 넘어간 흐름.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>Upstage Solar-Mini4-Jev 공개</h3><p class="desc">Upstage의 Solar-Mini4-Jev 공개 소식이 공유되고, 기존 Jev 대비 정확도 비교가 이어짐. 국산 경량 모델의 Jev 파생판에 대한 관심 확인.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Hi3D AI 3D 모델 생성</h3><p class="desc">Hi3D 기반 AI 3D 모델링 도구가 소개되고 생성 결과가 공유됨. 로고·3D 디자인 생성 도구 논의까지 이어지며 생성형 3D 워크플로 관심 확대.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">youtube:코드깎는노인</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>구독 사용량·할당량 리셋</h3><p class="desc">GPT 사용량 리셋 예고, Codex 주간 할당량 리셋, 구독 사용량 리셋 방식에 대한 불만이 여러 방에서 동시에 나옴. 유료 구독 한도 정책이 실사용 계획에 직접 영향을 주는 상황.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Grok 신규 모델 출시</h3><p class="desc">Grok 4.7 출시 소식이 퍼지고 Kimi 신규 모델 소식과 함께 공유됨. 주요 모델이 잇달아 교체되는 흐름 재확인.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Claude 서비스 장애·서버 혼잡</h3><p class="desc">Claude 서비스 장애와 Grok·Claude 서버 혼잡 경험이 여러 방에서 동시에 보고됨. 신규 모델 출시 시기와 맞물린 가용성 저하 체감.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>구글북(GoogleBook) 기기 공개</h3><p class="desc">구글북 정식 출시와 기기 사양 공개 소식이 공유됨. AI 중심 신규 하드웨어로 주목받음.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Codex 에이전트 자동화 운영</h3><p class="desc">Codex 예약 실행으로 카드뉴스를 자동 생성한 사례와 Codex 에이전트 운영 프레임 공유가 이어짐. 단발성 코딩 보조를 넘어 정기 작업을 에이전트로 운영하는 방식 확산.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>AI 해커톤 참가</h3><p class="desc">원티드 AI 해커톤 투표 참여와 SK하이닉스 AI 해커톤 소식이 각각 공유됨. 행사는 서로 다르나 AI 해커톤 참가에 대한 관심이 방 전반에 공통으로 나타남.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

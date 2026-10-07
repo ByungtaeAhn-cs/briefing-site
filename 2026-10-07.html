@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-10-07</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 8 · 2026. 10. 07</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">6 sources · 248 signals · 4 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-10-07 10:18:49.409409+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">ai-frontier · importance 0.90</div><h2>허민, Gemini 실사용 혹평하며 Opus 5.5로 대피 선언</h2><p class="lede">Gemini 실사용 성능 논쟁에서 허민이 실사용·리더보드 반응 모두 부진하다고 평가하고 Gemini 4 Pro의 발표 후 미공개를 지적함. 발언은 모델 선택 기준과 본인의 Claude Code 전환으로 이어짐. 방 전반은 벤치마크 점수보다 실사용 효용이 중요하다는 쪽으로 의견 수렴.</p><p class="why">WHY · VIP 발언 + 모델 선택 기준에 대한 방 내 합의</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends 외 3개</div><h3>Codex 사용량 한도 리셋, 4개 방 동시 화제</h3><p class="lede">Codex 사용량 한도 리셋 화제가 ai-friends·ai-frontier·learning-masters·샘호트만 4개 방에서 동시 언급됨. Codex는 당일 기술 언급 빈도 6회로 Claude와 함께 최다 기록.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>KIST 이제현, OpenAI 수학 성과 공개에 &#x27;무섭다&#x27; 반응</h3><p class="lede">KIST 이제현이 OpenAI 공식 게시물(sharing-ai-progress-in-mathematics) 링크를 별도 설명 없이 공유하며 화제 제기함. 해당 수학 성과 공개에 &#x27;무섭다&#x27;는 반응을 남김. openai/math 언급은 ai-friends와 샘호트만 2개 방에서 확인됨.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>Google Drive, 마크다운 파일 변환 없이 직접 열람 지원</h3><p class="lede">김문정(배움의 달인)이 Threads 게시물 링크와 함께 구글드라이브의 마크다운 문서 열람 기능을 알리고, 실제 .md 파일 공유 링크로 동작을 직접 시연함. Google Docs 변환 불필요하며 댓글·공유 기능 포함. 점진적 롤아웃 진행 중.</p></div><div class="notable-card"><div class="src">ai-friends 외 2개</div><h3>Claude 스킬과 Krea 에이전트로 AI 영상 제작 화제 3개 방 확산</h3><p class="lede">ai-friends에서 조남경이 영상 제작용 Claude 스킬을 GitHub로 공유했고, 정승연이 Claude에 깃헙 링크만 전달해 영상이 즉시 생성됨을 확인함. 샘호트만 방에서는 Krea의 After Effects 플러그인(자동 에이전트 편집)이 공유됨. ai-frontier 포함 3개 방에서 같은 주제 언급.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">6</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 2건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, OpenAI 수학 성과 공개에 &quot;무섭다&quot; 반응</h3><p>OpenAI 공식 게시물(openai.com/index/sharing-ai-progress-in-mathematics/) 링크를 별도 설명 없이 공유하며 화제 제기.</p><p>이어 GitHub 저장소 **openai/math** 링크를 추가 공유함. 발표 글과 공개 저장소를 묶어 제시한 구성이며, 구체적 모델명·수치 언급은 없음.</p><blockquote>무섭네요...</blockquote><p>짧은 한마디지만 **AI 수학 진전** 속도에 대한 화자의 체감 신호. 세부 내용은 대화에 없으므로 링크 2건 원문 직접 확인 필요.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(2건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-10-07T12:07:00">10/7 12:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://openai.com/index/sharing-ai-progress-in-mathematics/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-10-07T12:09:00">10/7 12:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">무섭네요...
+
+https://github.com/openai/math</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 0건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 39건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, Gemini 실사용 혹평과 Opus 5.5 대피 선언</h3><p>Gemini 실사용 성능 논쟁에서 시작해 모델 선택 기준과 본인의 Claude Code 전환까지 이어진 발언.</p><p>Gemini는 실사용·리더보드 반응 모두 부진, 제미나이 4 프로는 발표 후 미공개라는 지적. 상용 모델 성능 제한과 바이오 투자 집중이 배경이라는 추정. 하루 종일 테스트한 결과 **제작은 Opus 5.5 압도적**, 편집은 GPT도 무난하다는 결론. GPT-6.1-sol 대비 모션그래픽에서도 Opus 5.5 우위.</p><blockquote>제작은 opus 5.5가 압도적이고 편집은 GPT도 나쁘지 않아요</blockquote><blockquote>지금은 잠시 opus-5.5로 대피하는데 최선책일듯</blockquote><p>**Claude Code 전환** 후 사용량 호평, claude.md 불필요론도 전달. **Grok Bot**은 워크숍 재개(10/6~15, 6회)와 OpenAI 제외 최고 모델 채택 약속 소식 공유.</p><p>벤치마크가 아닌 실사용·코딩 능력 기준의 직접 비교 결과. 제작·편집 용도별 모델 분리 운용의 참고 근거.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(39건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T15:44:00">10/6 15:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://codex-resets.com/tibo-28</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:07:00">10/6 17:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">실사용 성능 자체가 안좋아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:08:00">10/6 17:08</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">리더보드 자체에도 사람들 반응이 안좋구요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:08:00">10/6 17:08</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제미나이 4 프로가 나오면 모를까
+이번에도 발표후 아직도 공개하지 않은걸 봐서는 이런 부분이 좀 아쉬워요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:09:00">10/6 17:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">사람들이 원하는건 실생활에서 쓰기 훌륭하기만하면 솔직히 제미나이건 뭐건 이제 신경 안써요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:09:00">10/6 17:09</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">벤치마크점수가 그닥 이제 중요하지 않고 실생활에 얼마나 도움될지가 중요합니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:10:00">10/6 17:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그것들도 요즘 다 코딩으로 하다보니 그래서 코딩 능력이 중요합니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:11:00">10/6 17:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">성능이 떨어지는게 아니라 일부러 상용화 모델에 성능 제한을 두는것 같아요
+엔터프라이즈는 또 제미나이가 평이 나쁘지 않은걸로 봐선</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:11:00">10/6 17:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그렇진 않아요 ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:11:00">10/6 17:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">회사가 큰거지 AI연구에 대한 개발비가 큰건 아닙니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:12:00">10/6 17:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제미나이는 실사용에 굳이 크게 연연하지 않는 느낌입니다.
+그거아니여도 먹고사는데 충분하니
+그리고 더큰 문제를 풀려고 하는것 같아요
+다른 모델 회사에서 범접할수 없는</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:13:00">10/6 17:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">바이오쪽에 더 많은 투자를 하는것처럼 보여요
+그게 확실히 규모가 장난아니다 보니</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:13:00">10/6 17:13</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이건 제가 하루종일 연구해보고 테스트한 입장으로 제작이냐 편집이냐에 따라 다른데
+제작은 opus 5.5가 압도적이고 편집은 GPT도 나쁘지 않아요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:31:00">10/6 17:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">공부 많이 하셔야 합니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T17:32:00">10/6 17:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한번 놓치면 따라오기가 쉽지 않습니다
+지금이 그 어느때보다 범람하고 있는데 이 홍수는 계속 더더더 범람할것 같아요
+모델 성능이 좋아지면 질수록 더 많은 서비스와 업데이트 속도가 빨라지고 있어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T18:31:00">10/6 18:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/chetaslua/status/2107234675110666594?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T18:31:00">10/6 18:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금은 잠시 opus-5.5로 대피하는데 최선책일듯</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-06T20:48:00">10/6 20:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Grok Bot 워크숍이 공식적으로 재개되었습니다.
+
+향후 2주 동안 6회의 라이브 세션이 진행됩니다.
+
+• 10월 6일 — Grok Bot 기초 강좌
+• 10월 7일 — 마케팅용 Grok 봇
+• 10월 8일 — Grok Bot의 새로운 기능
+• 10월 9일 — Grok Bot 201
+• 10월 13일 — Grok Bot을 활용한 영업
+• 10월 15일 — Grok Bot + Cursor를 사용하여 대규모로 코드를 배포하세요
+
+봇 활용 시작부터 마케팅, 영업, 자동화 및 코딩 워크플로우까지 모든 것을 아우르는 완벽한 라인업입니다.
+https://luma.com/cduktxci?utm_campaign=20261005_PROMO_EM_Grok-Bot-Workshops-Luma-Members&amp;utm_content=20261005_PROMO_EM_Grok-Bot-Workshops-Luma-Members&amp;utm_medium=email&amp;utm_source=customerio</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T05:54:00">10/7 05:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">업데이트가 됬네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T05:54:00">10/7 05:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/fofrai/status/2107504488047059073?s=46</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T06:42:00">10/7 06:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://n.news.naver.com/article/138/0002243677</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T12:43:00">10/7 12:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이번주는 일단 계속 달려야 하는것 같아요 ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T12:43:00">10/7 12:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">x에서 게시글을 보고 grok bot에게 내용을 전달하거나 호출할수 있습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T14:32:00">10/7 14:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 그록봇 한길만 파고 있는 이유!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T14:34:00">10/7 14:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">AI씬에서 악명높기로 소문난 현재 최고의 하네스로 거론되고 있는 T3 code의 개발자 테오가 그록봇이 뛰어나다고 오늘 언급했네요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T14:49:00">10/7 14:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어떤 액션을 말하는걸까요?</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:04:00">10/7 15:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">시초가 그록봇입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:04:00">10/7 15:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/GLI-3qHigXE</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:04:00">10/7 15:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 클로드 코드로 넘어왔으니 당분간 클로드 코드 영상좀 많이 올리겠습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:05:00">10/7 15:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">솔직히 말하면 개발자피셜의 이야기들과 해외 유저들의 활용사례를 연구하는것만으로도 남들보다 AI를 10배이상 잘 활용하실수 있으십니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:16:00">10/7 15:16</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">모델이 너무 똑똑해지고 빠르게 모델업데이트가 되니 claude.md도 안만들어도 된다네요 ㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:44:00">10/7 15:44</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">왼쪽 GPT-6.1-sol
+오른쪽 Opus-5.5</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:45:00">10/7 15:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">읔 opus-5.5모델이 이전부터 확실히 디자인쪽에 뛰어난건 인정했는데 모션그래픽으로 넘어오면서 압도적이네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:50:00">10/7 15:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">클코 사용량이 너무 좋습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:51:00">10/7 15:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저는 근데 클로드 코드만 사용하진 않습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T15:55:00">10/7 15:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/F7vNw3NfaWg</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T16:23:00">10/7 16:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금막 발표</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T16:23:00">10/7 16:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">일론머스크가 그록봇에 어떤 회사의 모델도 상관하지 않고 최고의 모델을 사용할것을 약속했습니다.
+openai모델은 제외</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-10-07T17:02:00">10/7 17:02</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">적의적은 동지라는 말이 여기서 나오네요...</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 8건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), 구글드라이브 마크다운 직접 열람 지원 소개</h3><p>Threads 게시물 링크와 함께 구글드라이브의 마크다운 문서 열람 기능을 알림. 실제 .md 파일 공유 링크를 올려 동작을 직접 시연함.</p><p>**구글독스 변환 없이** .md 파일 그대로 열람 가능하며 댓글·공유 기능도 제공. 파일명에 .md 확장자가 붙어 표시되고, &#x27;문서로 열기&#x27; 시도 권장. 기능은 **점진적 오픈** 단계. 별도로 강남 식당가 점심 테이블마다 AI 화제 일색이라는 현장 관찰도 언급.</p><blockquote>이제 구글드라이브에 마크다운 문서도 읽힙니다. (구글독스로 안바꿔도 돼요) 댓글이랑 공유기능 있어서 좋을 듯 합니다. 옵시디언보다 편해질지도...</blockquote><p>.md 기반 노트·문서를 드라이브에서 바로 공유·리뷰하는 경로 등장, **옵시디언** 대체 후보로 부상. 순차 배포라 본인 계정 적용 여부 확인 필요.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(8건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:18:00">10/6 17:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/HyP_MYTdS/</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:19:00">10/6 17:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이제 구글드라이브에 마크다운 문서도 읽힙니다. (구글독스로 안바꿔도 돼요) 댓글이랑 공유기능 있어서 좋을 듯 합니다.
+옵시디언보다 편해질지도...</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:21:00">10/6 17:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://drive.google.com/file/d/1VE_VNDVciGHpJ55URIBcmE7Jlve3AhyC/view?usp=sharing</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:21:00">10/6 17:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이렇게 공유도 가능!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:22:00">10/6 17:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">.md가 붙네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:23:00">10/6 17:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">문서로 열기 해보세요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-06T17:23:00">10/6 17:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">점차적으로 오픈한데요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-10-07T12:52:00">10/7 12:52</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">요즘 강남 식당가는 점심시간 모든 테이블에서 AI 이야기만 하네요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 06 · 샘호트만 · 3건 발언</div><div class="vip-body"><div class="vip-sender">샘호트만 @ai.sam_hottman</div><div class="story"><h3>샘호트만 @ai.sam_hottman, 영상 편집 에이전트와 에이전트용 LLM 벤치마크 링크 공유</h3><p>별도 논의 없이 링크 2건을 한 줄 설명과 함께 연속 공유함. 영상 제작 도구와 에이전트 모델 평가라는 두 갈래의 큐레이션.</p><p>첫째는 **Krea After Effects 플러그인**(krea.ai/plugins/after-effects)으로, 애프터이펙트 안에서 에이전트가 자동으로 고품질 편집을 수행하는 도구로 소개됨. 둘째는 Nous Research 포털의 벤치 페이지(portal.nousresearch.com/bench)로, **Hermes agent** 내 LLM 벤치마크라는 설명. 구체 수치나 모델 순위 언급은 없음.</p><blockquote>애프터이펙트 크레아 플러그인 자동 에이전트 고퀄편집</blockquote><blockquote>Hermes agent 내 llm 벤치마크</blockquote><p>에이전트 하네스 안에서 측정한 LLM 비교 자료라는 점에서 로컬·API 모델 벤치마킹 시 참고 지표 후보. 실제 수치와 대상 모델은 링크 원문 확인 필요.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(3건)</span></summary><ol class="vip-bubble-list" aria-label="샘호트만 @ai.sam_hottman 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-10-06T22:06:00">10/6 22:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">애프터이펙트 크레아 플러그인 자동 에이전트 고퀄편집
+
+https://www.krea.ai/plugins/after-effects</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-10-07T08:40:00">10/7 08:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://portal.nousresearch.com/bench</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-10-07T08:40:00">10/7 08:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">Hermes agent 내 llm 벤치마크</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">6</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 20건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">조남경이 영상 제작용 Claude 스킬을 GitHub로 공유했고, 정승연이 Claude에 깃헙 링크만 전달해 영상이 즉시 생성됨을 확인함.</span></li><li><span class="n"></span><span class="t">김후가 Mistral Large 4 출시를 전하며 AAII 38점으로 모티프(34점, 314B)를 앞섰으나 1T급 규모 대비 아쉬운 수준이라고 평가함.</span></li><li><span class="n"></span><span class="t">이제현이 OpenAI의 수학 연구 진전 공개 글과 github.com/openai/math 저장소를 공유함.</span></li><li><span class="n"></span><span class="t">Claude 사이버 베리피케이션의 국내 KCB 본인인증 연계 처리, Codex 한도 재리셋, astra·GPT 응답의 중국어 혼입 사례 공유됨.</span></li><li><span class="n"></span><span class="t">제214회 AI프렌즈 라이브(10/7 19시)에서 gajae-code 창업자 허예찬이 OmC·OmX에서 가재코드로 이어진 하네스 개발 경험과 BM25 기반 에이전트 메모리 설계를 다룰 예정.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude</span><span class="tag">GPT-6 Astra</span><span class="tag">Qwen</span><span class="tag">openai/math</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 91건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Gemini 저평가 원인 논의에서 허민이 실사용 성능 부진과 Gemini 4 Pro 발표 후 미공개를 지적, 벤치마크 점수보다 실사용 효용이 중요하다는 쪽으로 의견 모임.</span></li><li><span class="n"></span><span class="t">허민의 비교 테스트 결과 영상 제작·모션그래픽은 Opus 5.5가 GPT-6.1-sol 대비 압도적, 편집은 GPT도 무난하다는 평가.</span></li><li><span class="n"></span><span class="t">200달러 요금제 사용량 비교(Claude Max는 Sonnet 12,529달러·Opus 11,726달러 상당, ChatGPT Pro는 2,084달러 상당) 공유와 함께 Claude Code 복귀 흐름 형성.</span></li><li><span class="n"></span><span class="t">Grok Bot 워크숍 재개(10월 6~15일 라이브 세션 6회) 및 OpenAI를 제외한 최고 모델 채택 방침 발표 소식 전달됨.</span></li><li><span class="n"></span><span class="t">Claude Code 2.1.287 Mods 기능 기반 8비트 게임 UI 모드 21종 BITGAME MODS 공개, Nano Banana 2.1 출시 소식도 공유됨.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">Grok Bot</span><span class="tag">Claude Opus 5.5</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 43건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Google Drive의 마크다운(.md) 파일 직접 열람 지원 소식 공유됨, Google Docs 변환 불필요하고 댓글·공유 기능 포함이며 점진적 롤아웃 진행 중.</span></li><li><span class="n"></span><span class="t">Reflection AI의 오픈 웨이트 모델 &#x27;Beam&#x27; 공개 소식 전해짐 — 총 501B 중 활성 23B 파라미터, SWE-bench 80.9, AIME 97.8%, 1M 토큰 컨텍스트, 이번 달 Apache 2.0 가중치 배포 예정.</span></li><li><span class="n"></span><span class="t">Opus 5.5 출시 이후 모델 역할 분담 실사용 사례 공유됨 — 상세 작업은 Opus, 페이블은 오케스트레이션 또는 리뷰어, 아스트라는 의사결정·크로스리뷰 담당 후 루프로 품질 상향하는 구성.</span></li><li><span class="n"></span><span class="t">Codex 사용량 리셋 재차 단행(tibo 공지 인용), 구독 만료 3일 전 리셋권 2개 소진을 위해 풀 아스트라 서브에이전트로 작업 중이던 사용자 사례 언급됨.</span></li><li><span class="n"></span><span class="t">MS·메타의 직원 Claude 사용 축소 및 자체 AI 확대 보도, 올트먼의 AI 위험 감수 발언 등 업계 뉴스 링크 다수 공유됨.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude</span><span class="tag">Grok Bot</span><span class="tag">Claude Opus 5.5</span><span class="tag">GPT-6 Astra</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:짐코딩</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">짐코딩 채널 쇼츠 1건만 게시되어 논의 내용 희소함.</span></li><li><span class="n"></span><span class="t">Claude Code 사용 한도 소진 후에도 FreeLLMAPI로 작업을 이어가는 방법을 다룬 영상임.</span></li><li><span class="n"></span><span class="t">제목 외 세부 설정·성능 수치는 확인되지 않음.</span></li></ol><div class="tags"><span class="tag">Claude Code</span><span class="tag">FreeLLMAPI</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">코드팩토리 채널에 Claude Code Mods 설명과 10가지 사용 사례를 다룬 영상 1건 게시됨.</span></li><li><span class="n"></span><span class="t">수집된 메시지가 제목 1건뿐이라 세부 내용 확인 불가.</span></li></ol><div class="tags"><span class="tag">Claude Code</span><span class="tag">Claude Code Mods</span></div></article><article class="source-card"><div class="src-head"><h3>샘호트만</h3><span class="kind">kakao-open · 35건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">샘호트만이 Krea의 After Effects 플러그인(자동 에이전트 편집)과 Nous Research 포털의 Hermes agent 내 LLM 벤치마크 페이지를 공유함.</span></li><li><span class="n"></span><span class="t">블린이가 아마존 프라임데이 M6 Mac mini 할인가를 공유함 — 24GB/512GB $1,149.99, 16GB/256GB $769.00, 국내 대비 30~40만원 안팎 차이 예상에 컴퓨터류는 관세 0원·부가세 10%만 부담.</span></li><li><span class="n"></span><span class="t">달마가 16GB/256GB 모델 구매를 후회 중이라고 밝힘 — 로컬 LLM 없이도 여러 프로그램 동시 운영 시 부족하다는 실사용 경험.</span></li><li><span class="n"></span><span class="t">드론@frontierloop이 Claude Code·Codex 연동 도구를 다수 소개함 — macOS용 에이전트 브라우저 Rill Browser, 칸반 보드 geckit, OpenBot, AI 인페인팅 오픈소스 에디터 scumble, 모션 영상 편집 EasyCut.</span></li><li><span class="n"></span><span class="t">Galaxy One UI 9.0 업데이트 후 체감 속도 향상 후기와 Codex 초기화(리셋) 기대 언급 있음.</span></li></ol><div class="tags"><span class="tag">Codex</span><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">openai/math</span><span class="tag">Hermes Agent</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Codex</div><div class="ctx">Tibo의 커뮤니티 투표 결과에 따른 코덱스 사용량 리셋 처리 소식 다수 공유.</div></div><span class="freq">6</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Claude</div><div class="ctx">MS·메타의 직원 클로드 사용 축소 뉴스와 Claude 스킬로 유튜브 영상을 제작한 사례 공유.</div></div><span class="freq">6</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">Claude Code</div><div class="ctx">허민의 클로드 코드 전환 선언과 사용량 호평, 2.1.287부터 모드 기능 제공 언급.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">Grok Bot</div><div class="ctx">일론 머스크의 그록봇 최고 모델 채택 약속(OpenAI 모델 제외)과 2주간 6회 라이브 워크숍 재개 소식.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Claude Opus 5.5</div><div class="ctx">영상 제작·모션그래픽에서 opus 5.5가 압도적이라는 평가와 상세 작업은 오퍼스가 확실히 낫다는 의견.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">GPT-6 Astra</div><div class="ctx">아스트라를 의사결정·서브에이전트 풀가동에 쓰는 역할 분담 사례와 한국어 응답 중 중국어 혼입 보고.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Muse</div><div class="ctx">dots 대비 성능에 대한 궁금증과 대기열 미해소 언급.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">Dots</div><div class="ctx">꽤 괜찮다는 사용 평가와 함께 그록봇·muse와 동일 액션 가능 여부 비교 대상으로 언급.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Qwen</div><div class="ctx">오픈소스 AI를 독점하던 중국 모델로 언급, Qwen-Image-2.1 기반 편집 모델 증가와 로컬 모델 CJK 혼입 의심 사례 등장.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Gemini</div><div class="ctx">실사용 성능 불만과 제미나이 4 프로 미공개 아쉬움, 엔터프라이즈 평은 나쁘지 않다는 의견.</div></div><span class="freq">2</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">4</span></div><article class="cross-card"><h3>Codex 사용량 한도 리셋</h3><p class="desc">Codex 사용량 한도 리셋이 네 개 방에서 동시에 화제로 부상함. ai-frontier에서는 리셋 챌린지 형태로, 샘호트만에서는 초기화 기대감으로 언급됨.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Claude Code Mods 게임모드</h3><p class="desc">Claude Code Mods가 게임모드와 사용 사례 중심으로 복수 방에서 거론됨. learning-masters에서는 비트게임 모즈 공개 소식으로 같은 흐름이 공유됨.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:코드팩토리</span></div></article><article class="cross-card"><h3>Claude·AI 영상 제작</h3><p class="desc">Claude 영상 제작 스킬과 Opus 5.5의 영상 제작 성능이 각각 ai-friends와 ai-frontier에서 다뤄짐. 샘호트만에서는 AI 모션 영상 편집 도구로 같은 관심사가 이어짐.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">ai-frontier</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Claude Code·Codex 에이전트 도구 선택</h3><p class="desc">Claude Code와 Codex를 축으로 한 AI 에이전트 도구 선택이 세 개 방의 공통 관심사로 확인됨. ai-frontier에서는 Claude Code로의 전환 흐름이 별도 화제로 등장함.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

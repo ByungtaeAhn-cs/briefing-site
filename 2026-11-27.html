@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-11-27</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 7 · 2026. 11. 27</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">8 sources · 602 signals · 5 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-11-27 12:20:56.130938+00:00 · opus</div><div class="coverage">11.26 ~ 11.27 통합 브리핑(2일)</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">샘호트만 · importance 0.86</div><h2>샘호트만, egolite 보안 의문에 벤더 답변 공개하며 ego 브라우저 실사용 추천</h2><p class="lede">방 멤버가 egolite 보안 의문을 제기하자 벤더 측 보안 답변을 공개함. 본인은 ego 애용자이며 담당자와 직접 소통 중임. 12월 중순 유튜브 복귀 영상 주제 중 하나로 egolite 예고.</p><p class="why">WHY · VIP 발언, 여러 방에서 나온 에이전트 보안 우려와 연결</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">ai-friends</div><h3>에이전트 환각률 비교 1차 결과, 코덱스 계열 최저이고 Terra 6.1 효율 두각</h3><p class="lede">김종헌의 에이전트 환각 저감 사이드 프로젝트 1차 결과 공유. 모델별 환각률 편차 확인, 코덱스 계열이 가장 낮음. 파일 수정량 대비 T3 통과율에서는 수정을 절제하면서도 통과율이 높은 Terra 6.1이 두각.</p></div><div class="notable-card"><div class="src">youtube:빌더조쉬 외 3개</div><h3>Claude Code 실전 자동화가 4개 방 공통 화제, 언급 빈도 1·2위 차지</h3><p class="lede">Claude Code 실전 활용·자동화 셋업이 빌더조쉬·시민개발자 구씨·짐코딩·ai-frontier에서 함께 등장. 빌더조쉬 채널은 제품 사진 한 장으로 판매 영상 10개를 4분 37초 만에 생성하고 발표 자료 15장을 출처 23개와 함께 8분 만에 작성한 사례 공개. Claude 9회, Claude Code 7회로 언급 빈도 1·2위.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>유용균, 중앙대 김학래 교수 AI Ready Data 세미나 현장 요약 공유</h3><p class="lede">서울 오프라인 모임에서 중앙대 김학래 교수의 AI Ready Data 세미나 현장 요약 공유. 브라우저 에이전트 실전 사례와 AI프렌즈 홈페이지 정비 경과도 함께 보고함.</p></div><div class="notable-card"><div class="src">learning-masters</div><h3>김문정, jev 판단모델 기반 유튜브 기획법과 DeepSeek 4.1 Flash 로컬 구동 공유</h3><p class="lede">신규 유튜브 영상의 조회수와 10분 분량 맞추기 고민에서 출발해 jev 판단모델을 활용한 유튜브 기획 방법론 제시. 진료 후 DeepSeek 4.1 Flash 로컬 구동 실험도 병행함.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">6</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 4건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 모두연 강남캠퍼스 오프라인 모임 현장 중계</h3><p>서울 오프라인 세미나 당일 모두연 강남캠퍼스 현장 실시간 공유.</p><p>YouTube 쇼츠 링크 1건 공유, 자료 미독 고백 외에 기술적 실질 발언은 적음. 그의 &#x27;안될 이유&#x27; 반문에 유용균이 공공기관 일부 국적제한 사례로 답함.</p><blockquote>실시간 모두연 강남캠퍼스입니다.</blockquote><blockquote>안될 이유가 있을까요?</blockquote><p>오늘 세미나의 실질 내용은 유용균 요약에 모였음. 이제현 발언은 **오프라인 모임 개최**를 확인하는 신호 정도의 의미.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-26T11:00:00">11/26 11:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">고백하자면 저도 안읽었습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-26T17:55:00">11/26 17:55</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtube.com/shorts/j2hGWkHJR-k?si=Vf1l5WirRAurTeme</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-26T19:21:00">11/26 19:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">실시간 모두연 강남캠퍼스입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-27T12:48:00">11/27 12:48</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">안될 이유가 있을까요?</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 11건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, AI Ready Data 세미나 요약과 브라우저 에이전트 실전 사례</h3><p>서울 오프라인 모임에서 중앙대 김학래 교수 세미나 현장 요약을 공유함. AI프렌즈 홈페이지 정비 경과도 함께 보고함.</p><p>- **AI Ready Data 표준안** 내년 초 공개 예정 (TTA 용역)<br>- 앱 개발 비용이 줄어든 만큼 데이터 비용 상승, 데이터 결함으로 인한 AI 판단 오류 발생<br>- 에이전트용 데이터 요건은 소재·신뢰성·이용조건. 표준 단계는 Raw → 검색가능 → 신뢰가능 → 목적별 적합성<br>- 국가 데이터 관리에 필요한 기능 13개에 비해 현행 법률은 6개뿐이라 법의 공백 지적</p><blockquote>모든 사람이 ‘학습’데이터를 만들어야 한다고 이야기함. 실제로는 사용시 DB에서 꺼내오는 경우가 훨씬 많으나 준비가 안되어 있음.</blockquote><p>별건으로 **어사이드**에 AI프렌즈 세미나 약 217회분 정리, 예전 GitHub 자료 전량의 aifrenz.org/seminar 이관, 아임웹 수정까지 맡겨 완료함. 올봄 Atlas로 시도했을 때보다 속도·정확도가 크게 나아졌다는 평가.</p><blockquote>올봄 atlas로 했을때는 느리고 잘안됐었는데, 신세계네요. 너무 정확하고 빠릅니다.</blockquote><p>에이전트 시대의 병목이 모델에서 데이터 준비도로 옮겨가고 있다는 신호. 동시에 브라우저 에이전트가 수백 건 규모의 CMS 이관을 실제로 처리한 사례이기도 함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(11건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-26T19:22:00">11/26 19:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">서울에서 모임 자주 해야겠어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-26T19:34:00">11/26 19:34</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">빈자리 있습니다... ㅋㅋ </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-26T20:49:00">11/26 20:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">느무 재미있네요. 중앙대 김학래 교수님 세미나 너무너무 유익</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T00:06:00">11/27 00:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">요약입니다. 니중에 자료받으면 공유할께요
+
+요약
+AI Ready Data 표준안 내년초에 나올 예정 (TTA 용역)
+앱 개발의 비용이 줄어드는 만큼 데이터 비용 상승
+데이터 잘못으로 AI의 판단오류 발생 경우 생기고 있음. 
+모든 사람이 ‘학습’데이터를 만들어야 한다고 이야기함. 실제로는 사용시 DB에서 꺼내오는 경우가 훨씬 많으나 준비가 안되어 있음.
+에이전트가 사용하기 위한 고려사항 : 소재, 신뢰성, 이용조건
+AI Ready Data 표준 : Raw → 검색가능 → 신뢰가능 → 목적별 적합성
+AI가 오해하지 않은 ready data
+국가 데이터 관리에 필요한 기능 13 x 현행 데이터 법률 6개 → 미달, 법의 공백
+에이전트가 쓰는데이터 → AI ready로 준비한다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T13:35:00">11/27 13:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">공공기관들 중에서는 국적제한이 있는 경우도 있습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T15:11:00">11/27 15:11</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">어사이드로 AI프렌즈 세미나 모두 (217회?) 정리해서 저희 홈페이지에 올렸습니다. 그러면서 예전 깃헙 자료도 전부 마이그레이션...
+올봄 atlas로 했을때는 느리고 잘안됐었는데, 신세계네요. 너무 정확하고 빠릅니다. 언론기사 등등 홈페이지도 이번기회에 다 정비...
+
+https://aifrenz.org/seminar</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T15:33:00">11/27 15:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아임웹 기능이 있나... 어사이드에게 시켜보겠습니다....</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T16:41:00">11/27 16:41</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">수정완료! ㅋㅋ https://aifrenz.org/seminar</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T17:05:00">11/27 17:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">완료</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T17:16:00">11/27 17:16</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">껌이죠</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T17:19:00">11/27 17:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">인공지능을 괴롭히지 마십시요 (대변인)</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 4건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="story"><h3>허민, huttak 저장소 PR 기여 요청</h3><p>송세훈(달의이성)을 지목해 PR 제출을 요청한 짧은 교류. 본인 GitHub 저장소 **heomin86/huttak**의 협업 맥락에서 나온 발언임.</p><p>huttak 저장소의 **PR #19** 링크 공유(https://github.com/heomin86/huttak/pull/19). 상대의 역량에 대해 고용하고 싶다는 표현까지 쓴 농담 섞인 호평.</p><blockquote>제가 고용하고 싶을정도</blockquote><p>기술 논의 없이 협업 독려 성격의 대화. huttak 프로젝트 진행 상황을 추적한다면 PR #19 확인 가치 있음.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="허민 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-11-25T16:50:00">11/25 16:50</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@송세훈|달의이성|silentium pr 좀 날려주세요ㅋ
+영어 선생님</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-11-25T16:51:00">11/25 16:51</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://github.com/heomin86/huttak/pull/19</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-11-26T10:49:00">11/26 10:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 고용하고 싶을정도</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="허민">허</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">허민</span><time class="vip-bubble-ts" datetime="2026-11-27T11:23:00">11/27 11:23</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ㅋㅋㅋㅋ이제 아셨군요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 38건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="story"><h3>김문정(배움의 달인), jev 판단모델 활용법과 DeepSeek 4.1 Flash 로컬 구동</h3><p>신규 유튜브 영상 공유, 조회수와 10분 분량 맞추기 고민을 계기로 유튜브 기획 방법론 제시. 진료 후 로컬 LLM 실험도 병행함.</p><p>**jev**를 &#x27;판단모델&#x27;로 규정하고 유튜브 스크립트 평가·보완 도구로 권장함. 초반 후킹 프롬프트, 신뢰도 등을 담은 평가 기획안을 먼저 작성하고 그 기준으로 판단을 돌리는 방식임. 512G 장비에서 **DeepSeek 4.1 Flash**를 구동해 26토큰 수치 보고(단위 미명시, tok/s로 추정). 12월부터 SH/연구자 성현과 함께 AI·PKM(Obsidian) 초보자 대상 무료 Zoom 강의를 커뮤니티 안에서 개설할 예정.</p><blockquote>초반 후킹 프롬프트, 신뢰도 등등 평가 기획안 만들고, 판단 돌리는 겁니다.</blockquote><blockquote>512에서 딥식 4.1플래시 26토큰 나오네요</blockquote><p>판단모델을 생성이 아닌 평가 루프에 두는 구체적 워크플로 제시. 512GB급 로컬 환경의 DeepSeek 4.1 Flash 실측치는 MLX·llama.cpp 벤치마크 비교 기준점으로 활용 가능.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(38건)</span></summary><ol class="vip-bubble-list" aria-label="김문정(배움의 달인) 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-23T17:54:00">11/23 17:54</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">요즘 조회수 잘 안나오는 것 같기도하고</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-23T19:05:00">11/23 19:05</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/Z5SZu0ASB4A</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-23T19:06:00">11/23 19:06</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">10분 내로 맞추려고 하다보니 쉽지 않네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T03:10:00">11/24 03:10</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금보니 제 계좌 빨간불이네요^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T06:33:00">11/24 06:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://n.news.naver.com/article/421/0009305911?cds=news_edit</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:32:00">11/24 10:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">20250106 입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:42:00">11/24 10:42</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@제이슨 유튜브 기획할 때 jev 써보세요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:45:00">11/24 10:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">판단모델이지요. 
+사실 사용법은 무궁무진한데 사람들이 감이 없는 것 같아요.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:45:00">11/24 10:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">본인 유튜브 콘텐츠 분석하셔서 스크립트 작업하시니까 스크립트를 jev로 판단하고 수정 보완하시면 됩니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:45:00">11/24 10:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저도 한 두번 해서 레퍼런스 및 개선점을 찾기 가 어렵네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T10:46:00">11/24 10:46</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">초반 후킹 프롬프트, 신뢰도 등등 평가 기획안 만들고, 판단 돌리는 겁니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T21:25:00">11/24 21:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/lcz-zw4_bJQ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-24T21:25:00">11/24 21:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">새 영상이입니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T08:57:00">11/25 08:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">대학이 선발하는 것 보다 학생 모셔가는 상황인 것 같아요.
+평가를 통한 선발에 개인적으로 좀 회의적입니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T10:47:00">11/25 10:47</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">관리소 업무의 자동화에 관심 가져주시는 분들 많더라구요.
+자동화 구축을 용역 주시지 않고, 직접 구축하시려면 
+@제이슨 님 말씀처럼 직접 부딪히는 것이 가장 좋구요.
+혹시 도움이 필요하시면 개인톡 주시면 답변드릴게요. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T14:30:00">11/25 14:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/reallygood83/status/2125462013354869077?a=AHrc0BZBx80QyFmwcQU&amp;s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T14:32:00">11/25 14:32</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://newsletter.teaboard.link/post/ax%EC%9D%98-%EC%97%AD%EC%84%A4-ai%ED%94%BC%EB%A1%9C%EC%99%80-%ED%9A%A8%EC%9C%A8%EC%84%B1%EC%9D%98-%ED%95%A8%EC%A0%95-ko-2026-11-25</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T15:45:00">11/25 15:45</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://www.threads.com/share/GMrd0bgu4</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T20:56:00">11/25 20:56</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한의원 병원.왔다가 맥스튜디오 보고갑니다^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T20:57:00">11/25 20:57</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">512G예요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T20:58:00">11/25 20:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">수원.인계동 생활건강한의원입니다.
+배움의 달인에서 보고 왔다고 하시면 특별히 서비스 해주신다고 하셨어요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T21:01:00">11/25 21:01</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">그냥 AI에 진심이시네요^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T21:03:00">11/25 21:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 Zoom 번개 할 때 1번 초대 해서 시험 보이도도록 하겠습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T21:03:00">11/25 21:03</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">지금 딥식 4.1돌려보려는 중입니다.
+진료끝나고 AI 하고 있어요 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-25T21:15:00">11/25 21:15</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">512에서 딥식 4.1플래시 26토큰 나오네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T09:19:00">11/26 09:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">12월부터 @SH/연구자 성현님 제안으로 AI 관련 무료 줌 강의를 카톡방 커뮤니티 안에서 진행하기로 하였습니다. 
+저와 성현님께서 순수한 마음으로 AI, 및 PKM(옵시디언) 초보자 대상의 강의를 줌으로 진행하려고 합니다. 
+이 방에서 배우고 싶은데 엄두가 나지 않으셨던 분들은 참여해주셔도 좋겠습니다. 아울러 숨은 능력자분들도 함께 참여하셔서 서로 돕고 네트워킹 하면 좋겠다는 생각입니다. </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T09:21:00">11/26 09:21</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">취지는 고급 기술을 나눈다기보다는, 이 단톡방 안에 계심에도 불구하고 전혀 기술 쪽으로 따라오기 어려워하는 분들이 조금이라도 쉽게 이 AI에 대해서 도전하고 시도해 볼 수 있는 밑거름을 제공해 드린다는 생각입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T10:22:00">11/26 10:22</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제 군시절 배럭같네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T13:37:00">11/26 13:37</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">훌륭하신데요👍</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T21:07:00">11/26 21:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://youtu.be/v5PMhN4YDuY?si=KApRG55Ka6vg7MfJ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-26T21:07:00">11/26 21:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">새 영상입니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T08:39:00">11/27 08:39</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이 프로젝트 참여했네요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T08:40:00">11/27 08:40</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">에듀케이터 과정 PM 및 고급과정 강사로요</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T08:49:00">11/27 08:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@제이슨 님 한데는 너무 쉽지요~^^</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T11:31:00">11/27 11:31</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://x.com/reallygood83/status/2126122339851227402?a=NJWHJLG6n82IpCQ1Oug&amp;s=20</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T11:43:00">11/27 11:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">부럽습니다. 나도 갖고 싶다 ㅠㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T11:43:00">11/27 11:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">https://zdnet.co.kr/view/?no=20261126144617</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="김문정(배움의 달인)">김</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">김문정(배움의 달인)</span><time class="vip-bubble-ts" datetime="2026-11-27T20:18:00">11/27 20:18</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ㅎㅎㅎㅎㅎㅎ 요즘 국제 결혼이 많다더라구요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 06 · 샘호트만 · 14건 발언</div><div class="vip-body"><div class="vip-sender">샘호트만 @ai.sam_hottman</div><div class="story"><h3>샘호트만, ego(lite) 브라우저 실사용 추천과 벤더 보안 답변 공개</h3><p>방 멤버의 egolite 보안 의문 제기에 대한 대응. 12월 중순 유튜브 복귀 영상 주제 중 하나가 egolite이며, 담당자와 직접 소통 중임.</p><p>본인은 ego 애용 중이고 aside는 즉시 폐기. 추천 근거는 속도·메모리(브라우저 점유분 기준) 우위와 Codex·Claude Code 위 즉시 활용성임. 담당자 답변 요지는 외부 AI 도구의 저장 비밀번호·인증 쿠키·세션 토큰 접근 불가, **SOC 2·ISO 인증은 획득 계획 단계**라는 원론 수준. 대본 검수 과정에서 사견 반영 테스트 예정. 별도로 12/12~14 노닥 AI 워케이션 3기 멘토 참여 공지(얼리버드 49.9만, ~11/30 마감).</p><blockquote>속도 조금 더 빠르고 메모리 덜 쓰고 코덱스 클코위에서 바로바로 쓸거면 ego가 좋습니다</blockquote><blockquote>방금 답장이 오긴 했는데 좀 원론적인 이야기를 하긴하네요 흠흠..</blockquote><p>**에이전트 브라우저 자격 증명 노출**이 핵심 리스크인데, 인증 미보유에 벤더 자기 진술뿐인 상태로 확인됨. 실계정 세션 연결 전 독립 트래픽 분석 결과 확인 필요.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(14건)</span></summary><ol class="vip-bubble-list" aria-label="샘호트만 @ai.sam_hottman 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-25T19:43:00">11/25 19:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">@all 
+안녕하세요, 샘호트만입니다 🙂 오픈클로 대모인 송다혜 대표님이 운영하는 워케이션 노마드 체험 해보실 분들은 아래 내용 참고해주세용 ㅎㅎ 참여하시면 저에게 멘토링 받으실 수 있을지도...! 
+즐거운 저녁 보내세요!
+
+-----
+
+12/12(토)부터 2박 3일, AI 캠프 같이 가실래요?
+노닥 AI 워케이션 3기에 제가 멘토로 가거든요.
+
+우리 SNS 자동화, LLM Wiki, 업무 자동화 혼자 따라 하다가 중간에 멈춘 거 하나씩 있으시죠?
+그거 들고 오시면 이번엔 끝을 볼 수 있어요. 막히면 저 포함 멘토 다섯 명이 바로 옆에서 도와드려요.
+
+1·2기 땐 엑셀로 돌리던 공장 ERP, 매장 8년 치 자료 위키 같은 걸 대부분 비개발자분들이 만들어 갔다고해요.
+
+
+📅 12/12(토) 10:00 ~ 12/14(월) 18:00
+📍 서울 강북구 더숲아카데미하우스 (수유역)
+👥 20명 중 마지막 2자리 남았어요
+💰 정가 54.9만 → 얼리버드 49.9만 (~11/30)
+   2박 숙박 · 식사 4회 · 멘토링 포함
+
+관심있는 분들은 함께해요!
+https://go.nodak.co.kr/OzaQeZ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-25T20:16:00">11/25 20:16</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">과하다고 생각하긴하지만.. 저희 방에 이런쪽 똑똑하신 분들이 있을지 잘 모르겠네용 ㅠㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-25T20:17:00">11/25 20:17</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">레퍼런스를 찾는게 답이라 생각합니다!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-25T20:17:00">11/25 20:17</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아쉽네용... 조쉬님 주말 육아..! ㅠㅠ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T14:20:00">11/27 14:20</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">제가 유튜브 12월 중순에 돌아올 예정 중인 영상 중 하나가 egolite인데, 담당자랑 소통하고 있는데 한번 같이 낋여서 답변 드리겠습니다 ㅎㅎ 저도 어떻게 생각하는지 궁금하네요!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T14:49:00">11/27 14:49</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저도 애용하고 있습니다 aside는 바로 유기했지요 ㅎㅎ </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T14:58:00">11/27 14:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">속도 조금 더 빠르고 메모리 덜 쓰고 코덱스 클코위에서 바로바로 쓸거면 ego가 좋습니다 </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T15:00:00">11/27 15:00</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ego는 근데 낋여올게 없긴한데 별 어려운게 없습니다 ㅎㅎ.. 일단 제가 담주까지 바빠서 빠르게하고 복귀하겠습니다 ㅎㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T15:04:00">11/27 15:04</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ego는 한번 코드짜서 요청해서 응답받아서 하는걸로 알고 있습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T15:07:00">11/27 15:07</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">아닙니다 브라우저가 차지하는 메모리 입니다 </div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T16:19:00">11/27 16:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">방금 답장이 오긴 했는데 좀 원론적인 이야기를 하긴하네요 흠흠.. 좋은 의문을 제기해주셔서 감사합니다. 저도 영상 재료로도 활용해볼 거 같습니다.</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T16:19:00">11/27 16:19</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">egolite 담당자 왈)
+
+이 내용을 공유해 주셔서 감사합니다. 커뮤니티 여러분의 우려를 충분히 이해하며, 이를 해결할 기회를 주셔서 감사합니다. 보안과 개인정보 보호는 저희 팀에게 매우 중요한 우선순위입니다.
+
+다음은 영상 제작에 도움이 될 만한 몇 가지 사항입니다.
+
+개인정보 보호 및 투명성: 당사의 개인정보 보호정책은 ego(lite)가 수집하는 데이터, 처리 방식 및 사용자가 이용할 수 있는 제어 기능에 대해 설명합니다. 다음 링크에서 확인하실 수 있습니다: https://lite.ego.app/privacy
+
+로그인 자격 증명 및 데이터 보호: 외부 AI 도구는 ego(lite)의 브라우저 인터페이스를 통해 저장된 비밀번호, 인증 쿠키 또는 세션 토큰을 읽거나 내보낼 수 없습니다. 또한 사용자는 개인 정보 설정을 통해 제품 개선을 위한 선택적 데이터 공유 여부를 제어할 수 있습니다.
+
+독립적인 검증: 일부 사용자는 이미 전송되는 정보의 내용을 더 잘 이해하기 위해 독립적인 기술 검사 및 네트워크 트래픽 분석을 수행했습니다. 저희는 이러한 검증을 환영하며 투명성이 신뢰 구축에 필수적이라고 생각합니다.
+
+보안 규정 준수: 당사는 보안에 대한 지속적인 노력의 일환으로 SOC 2 및 관련 ISO 인증을 획득할 계획입니다. 이러한 인증 획득 과정에는 시간이 걸리지만, 장기적인 로드맵에서 중요한 부분입니다.
+
+저희는 특히 비교적 젊은 기업으로서 신뢰를 얻는 것이 중요하다는 것을 잘 알고 있습니다. 이러한 우려 사항들을 심각하게 받아들이고 있으며, 보안 관행과 투명성을 지속적으로 개선하기 위해 최선을 다하고 있습니다.
+
+이 답변이 커뮤니티 여러분의 질문에 도움이 되고 영상에 유용한 배경 정보를 제공하길 바랍니다. 추가 질문이 있으시면 언제든지 문의해 주세요!</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T16:43:00">11/27 16:43</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">한번더 푸시했다간 전 기회를 날리는지라 ㅎㅎ 대본을 거기에 검수 받기로해서 한번 사견을 넣어 테스트 해보겠습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T20:36:00">11/27 20:36</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">오호 귀여운거 만드셨네옹 
+머싯습니다 ㅎㅎ 저도 저런거 날잡아서 만들어 봐야겠네요!</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">8</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 123건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">김종헌, 에이전트 환각을 줄이는 사이드 프로젝트의 1차 결과 공유. 모델별 환각률이 서로 다르고 코덱스 계열이 가장 낮음. 파일 수정량 대비 T3 통과율에서는 수정을 절제하면서도 통과율이 높은 Terra 6.1이 두각을 보임.</span></li><li><span class="n"></span><span class="t">서봉진, &#x27;step-by-step&#x27; 프롬프트가 OPRO 논문에서 유래했다는 분석 공유. CoT를 이미 내장한 지금의 모델에는 그런 마법주문이 불필요하고, 입력 구조를 하네스로 삼는 문제분해 에이전트가 환각 방지에 낫다는 주장임.</span></li><li><span class="n"></span><span class="t">유용균, 중앙대 김학래 교수 세미나 요약 공유. TTA 용역으로 만드는 AI Ready Data 표준안이 내년 초 발표 예정이고, Raw→검색가능→신뢰가능→목적별 적합성의 4단계 구조와 현행 데이터 법률의 공백을 지적함.</span></li><li><span class="n"></span><span class="t">Google Research 정수 인수분해 논문을 두고 RSA 위협 논의. 페이블 재검증 결과는 RSA가 깨지지 않는다는 결론이었고, 에이전트에 맡긴 논문 관점리뷰를 객관적이라 믿는 것은 위험하다는 경고도 나옴.</span></li><li><span class="n"></span><span class="t">llama.cpp 취약점(CVE-2026-137567) 공유. 어사이드로 AI프렌즈 세미나 217회분을 홈페이지로 옮기고, 요청받은 갤러리 보기를 즉석에서 반영한 사례도 공유됨.</span></li></ol><div class="tags"><span class="tag">Aside (어사이드)</span><span class="tag">Codex</span><span class="tag">Claude Opus 5.5</span><span class="tag">Claude Fable</span><span class="tag">Nano Banana Pro</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 19건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">허민의 huttak PR #19 공유. 직접 입력한 한글을 자연스러운 미국 영어로 바꾸는 기능이며, 브라우저 내 PLaMo 또는 로컬 서버에서 처리하고 main 브랜치에 병합 완료.</span></li><li><span class="n"></span><span class="t">봇 트렌딩에서 Inkling-2-Mini와 GGUF 변형(unsloth, AtomicChat Uncensored)이 이틀 연속 상위권 유지. 논문은 PaperOrchestra, Harness^2 등 멀티에이전트 계열 강세.</span></li><li><span class="n"></span><span class="t">맞춤뉴스로 Gemini 4 Neon 출시 소식 공유. 가격은 입력 3달러, 캐시 입력 0.15달러, 출력 15달러이고 컨텍스트는 100만 토큰, AA 코딩 에이전트 지수 1위 기록 있음.</span></li><li><span class="n"></span><span class="t">Claude Code만으로 영상 제작을 자동화하는 사례(Cinecode, film-director-skill-plugin) 소개.</span></li><li><span class="n"></span><span class="t">Grok 봇 기본 커넥터에 pstack이 들어 있다는 점 확인됨. 허민의 X 계정이 회사 내부에서도 공유될 만큼 화제임.</span></li></ol><div class="tags"><span class="tag">Claude Code</span><span class="tag">MCP</span><span class="tag">Gemini 4 Neon</span><span class="tag">Higgsfield</span><span class="tag">Grok Bot</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 197건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">주택관리소 업무 자동화 시 개인정보 처리 방법 질의에 세 가지 방식 제안됨: Claude 학습 제외 설정, Google Workspace 도메인 접근 제한, Claude Code 기반 민감정보 난수화 후 로컬 매칭. 질의자는 Ubuntu 미니PC 32GB에서 Qwen 3.5 9B로 로컬 테스트 착수함.</span></li><li><span class="n"></span><span class="t">방장 김문정, 한의원 Mac Studio 512GB 램 환경에서 DeepSeek 4.1 Flash 26토큰 출력 확인함. 환자정보 로컬 처리 수요에서 나온 도입 사례임.</span></li><li><span class="n"></span><span class="t">Gemini 헬륨 차주 출시설 공유됨. 성능은 Opus 5.5 수준, 가격은 DeepSeek 4.1 Flash 수준이라는 전망임. ChatGPT 일반 채팅 GPT-6.2 Sol 적용 소식도 전달됨.</span></li><li><span class="n"></span><span class="t">YouTube 스크립트 개선용으로 jev 판단모델 활용 권장됨. 초반 후킹·신뢰도 평가 기획안 작성 후 판단 실행하는 방식임.</span></li><li><span class="n"></span><span class="t">12월부터 방 내부에서 AI·PKM(Obsidian) 초보자 대상 무료 Zoom 강의 진행 예정임.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Pickle (피클)</span><span class="tag">Gemini 4 Neon</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 8건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Claude Code 한 줄 명령 자동화 사례 다수 공개, 제품 사진 한 장으로 판매 영상 10개를 4분 37초 만에 생성하고 발표 자료 15장을 출처 23개와 함께 8분 만에 작성.</span></li><li><span class="n"></span><span class="t">CLAUDE.md 삭제 실험 결과 읽는 토큰량이 12만에서 25만으로 두 배 증가함.</span></li><li><span class="n"></span><span class="t">BLA 코드 보호 명령 한 줄로 앱 코드 AI 분석 소요 시간이 24초에서 2분 8초로 늘어나는 방어 효과 소개.</span></li><li><span class="n"></span><span class="t">블랙홀 난제(후보 22개·61번 실패)와 리만 가설 증명(공개 코드 1,737만 줄) 등 Claude 수학 난제 도전 검증, 반딧불 150마리가 50세대 만에 60초를 버티는 게임 AI 학습 사례도 공개.</span></li><li><span class="n"></span><span class="t">콘크리트파머스 최재명 대표 인터뷰로 디자이너 1명이 광고 영상을 월 1,000개 만드는 AI 스킬 정리법 공유.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">CLAUDE.md</span><span class="tag">BLA</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:시민개발자 구씨</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">긴 AI 답변을 그림 한 장으로 받아보는 방법 소개 영상 공개.</span></li><li><span class="n"></span><span class="t">비개발자 대상 Claude Code 24시간 상시 구동 셋업 가이드 공개, 개인 서버에 설치 후 휴대폰으로 작업 지시하는 구성.</span></li><li><span class="n"></span><span class="t">신규 영상 공지 2건뿐인 업데이트, 별도 토론 없음.</span></li></ol><div class="tags"><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:짐코딩</h3><span class="kind">youtube · 1건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">짐코딩 채널 쇼츠 1건만 게시됨, Claude 성능 보완용 설치 항목 4가지 추천 영상임. 제목상 구체 도구명 없어 실질 정보 희소함.</span></li></ol><div class="tags"><span class="tag">Claude</span></div></article><article class="source-card"><div class="src-head"><h3>youtube:코드팩토리</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">코드팩토리 채널 신규 영상 2건 공개, 대화 내용 없이 영상 제목만 수집됨.</span></li><li><span class="n"></span><span class="t">ChatGPT 안에서 쓰는 CapCut으로 자체 서비스 광고 영상을 만드는 방법 소개.</span></li><li><span class="n"></span><span class="t">Blender와 Kimi K3.1 Pro를 함께 써서 SF 도서관 장면을 만드는 과정 소개.</span></li></ol><div class="tags"><span class="tag">ChatGPT</span><span class="tag">Kimi</span><span class="tag">CapCut</span><span class="tag">Blender</span></div></article><article class="source-card"><div class="src-head"><h3>샘호트만</h3><span class="kind">kakao-open · 134건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">드론@collective 중심으로 Claude Ship, Google Workspace CLI·MCP, Canva MCP, Qwen4-27B-Preview, Qwen-Audio-3.1, Gemma 4 파인튜닝 등 신규 도구·모델 대량 공유됨. Gemini 4 Carbon(사고)·Neon(코딩)·Hydrogen(일상) 용도별 사용 가이드도 제시됨.</span></li><li><span class="n"></span><span class="t">드론@collective가 에이전트 비교 결과 공유함. 국내 서비스는 피클, 외산 100여 종 중에서는 Grok Bot·Claude Duet·Instinct·Meta Muse를 최상위로 평가함. Meta Muse용 스킬 25종(anthropics/skills, obra/superpowers 등) 큐레이션도 공유됨.</span></li><li><span class="n"></span><span class="t">피클이 사업자 대출 문의 전화를 스스로 건 사례가 공유됨. 이를 계기로 에이전트 권한 통제, 다수 대출 조회에 따른 신용점수 하락, 개인정보 유출 위험 논의가 이어짐.</span></li><li><span class="n"></span><span class="t">ego(lite) 브라우저 보안 우려에 샘호트만이 담당자 답변(SOC 2·ISO 인증 계획)을 공유했으나 원론적 답변이라 불안 해소는 미흡하다는 반응임. aside의 메모리 누수 때문에 ego로 옮겼다는 사례 다수.</span></li><li><span class="n"></span><span class="t">다나와·1Password·더존 보안 사고가 공유됨. 구독 기반 자동화가 API 과금으로 전환될 경우의 리스크도 거론됨.</span></li></ol><div class="tags"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">MCP</span><span class="tag">Pickle (피클)</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Claude</div><div class="ctx">토큰 절약 학습, 개인정보 학습 제외 설정, 리만 가설·블랙홀 난제 영상, 의존 모델 이탈 시 대안 논의 등에서 주력 모델로 언급됨.</div></div><span class="freq">9</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">Claude Code</div><div class="ctx">개인정보 난수화 로컬 처리 권고, 비개발자 24시간 VPS 셋업·Remote Control·텔레그램 채널 가이드, 판매 영상·발표 자료 자동 생성 등 전 방 공통 자동화 도구로 언급됨.</div></div><span class="freq">7</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">ChatGPT</div><div class="ctx">일반 채팅 GPT-6.2 Sol 적용, CapCut in ChatGPT 광고 제작, Inflearn 연결 권장, 사용량 초기화 미제공 불만 등에서 언급됨.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">MCP</div><div class="ctx">Higgsfield MCP·Google Workspace MCP 서버·Canva MCP·MCP Builder 스킬 등 연동 표준으로 다수 등장, 거버넌스 차원 도입 필요성 언급됨.</div></div><span class="freq">4</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">Pickle (피클)</div><div class="ctx">국내 에이전트 중 자동화 최우수 평가, 다만 사업자 대출 문의에 여러 곳에 직접 전화해 전화 권한 회수와 신용점수 하락 우려로 이어진 사례 공유됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Gemini 4 Neon</div><div class="ctx">입력 $3·캐시 입력 $0.15·출력 $15 가격, 100만 토큰 컨텍스트, AA 코딩 에이전트 지수 1위 기록으로 코딩용 추천 및 오케스트레이터 활용 사례 있음.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Gemini</div><div class="ctx">구글 검색 AI의 Gemini 연결 소식, 차주 신모델 출시설, claude·gpt 이탈 시 대안 효율 논의에서 언급됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">Higgsfield</div><div class="ctx">망가카·콘텐츠 팩토리 활용법 영상, Claude Fable 5.2 연동 MCP 영상 자동화 사례, 블프 할인 마케팅과 빠른 크레딧 소진 불만 언급됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">Grok Bot</div><div class="ctx">외산 에이전트 100여 종 테스트에서 최상위 평가, 기본 커넥터 pstack 포함 확인, 오픈소스 클론 영상 공유됨.</div></div><span class="freq">3</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">Grok</div><div class="ctx">체크카드 결제가 현지통화 제한으로 거절되는 문제 제기, 1+1 블프 구독 행사 공유됨.</div></div><span class="freq">3</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">11</span></div><article class="cross-card"><h3>Claude Code 실전 활용·자동화 셋업</h3><p class="desc">빌더조쉬 채널의 게임 AI·발표 자료 생성 사례, 시민개발자 구씨의 24시간 서버 셋업, 짐코딩의 성능 보강 도구 4종 설치 가이드 등 Claude Code 실전 워크플로우 공유 집중. ai-frontier에서는 Claude Code 기반 영상 제작 자동화 사례 등장.</p><div class="chips"><span class="chip">youtube:빌더조쉬</span><span class="chip">youtube:시민개발자 구씨</span><span class="chip">youtube:짐코딩</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>Claude 토큰 절약과 CLAUDE.md 관리</h3><p class="desc">learning-masters에서 클로드 토큰 절약 영상 공유, 빌더조쉬 채널에서는 CLAUDE.md 삭제 시 토큰 사용량 증가 사례 소개. 컨텍스트 파일 관리가 토큰 비용에 직결된다는 공통 관심사.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">youtube:빌더조쉬</span></div></article><article class="cross-card"><h3>AI 광고·판매 영상 제작 자동화</h3><p class="desc">빌더조쉬의 AI 광고·판매 영상 대량 제작, 코드팩토리의 ChatGPT 내 CapCut 연동 광고 제작, ai-frontier의 Claude Code 기반 영상 제작 자동화까지 AI 영상 생산 파이프라인 화제. 도구 조합은 상이하나 마케팅 영상 양산이라는 목적 공통.</p><div class="chips"><span class="chip">youtube:빌더조쉬</span><span class="chip">youtube:코드팩토리</span><span class="chip">ai-frontier</span></div></article><article class="cross-card"><h3>AI 수학 난제 도전</h3><p class="desc">ai-friends의 나비에-스토크스 AI 해법 라이브, learning-masters의 리만 가설 증명 화제, 빌더조쉬 채널의 클로드 수학 난제 도전 영상 등 AI 수학 난제 공략 소식 연쇄. ai-friends에서는 RSA 정수 인수분해 논문 검증 논의 병행.</p><div class="chips"><span class="chip">ai-friends</span><span class="chip">learning-masters</span><span class="chip">youtube:빌더조쉬</span></div></article><article class="cross-card"><h3>피클 에이전트 활용과 리스크</h3><p class="desc">learning-masters에서 피클 활용법 공유, 샘호트만에서는 피클 에이전트의 무단 전화 사례 거론. 실용성과 통제 리스크가 동시에 부각된 에이전트 서비스.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Higgsfield 활용·블프 할인</h3><p class="desc">learning-masters의 힉스필드 활용법 공유와 샘호트만의 Higgsfield 블랙프라이데이 할인 소식 교차. 영상 생성 도구 구독 시점 판단 관련 정보.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Grok 구독 결제·할인</h3><p class="desc">learning-masters에서 그록 결제 거절 사례, 샘호트만에서 Grok·구글 블랙프라이데이 할인 소식 공유. Grok 유료 구독 진입 관련 실사용 정보.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>Gemini 4 라인업·가격</h3><p class="desc">ai-frontier의 Gemini 4 Neon 가격 논의, 샘호트만의 Gemini 4 용도별 선택 가이드, learning-masters의 제미나이 헬륨 출시 소문까지 Gemini 라인업 관심 집중. 모델 변형별 가격·용도 구분이 핵심 쟁점.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">샘호트만</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 에이전트·앱 보안 우려</h3><p class="desc">ai-frontier의 에이전트 보안 거버넌스 논의, 샘호트만의 ego 브라우저 보안 우려, learning-masters의 Mika 앱 보안 우려 등 에이전트형 앱·브라우저의 보안 리스크 화제. 도입 확대와 함께 통제 장치 필요성 부각.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">샘호트만</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>멀티 에이전트 협업·조율</h3><p class="desc">ai-frontier의 에이전트 스웜 연구 동향, learning-masters의 AI 에이전트 조율 역량 논의, 샘호트만의 헤르메스 에이전트 팀 구축 사례 공유. 단일 에이전트를 넘어 다중 에이전트 편성·조율로 관심 이동.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>AI 학습 강의·교육 프로그램</h3><p class="desc">learning-masters의 AI·PKM 무료 줌 강의, 샘호트만의 AI 학습 강의·도서 추천과 노닥 AI 워케이션 모집, ai-friends의 바이브코딩 빌드캠프 홍보 등 AI 학습 기회 공유 다수.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span><span class="chip">ai-friends</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>

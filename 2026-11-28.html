@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>오늘의 지식캐쳐 — 2026-11-28</title>
+<style>
+/* ── Light default (Arctic Minimal Premium) ── */
+:root {
+  --bg: #FAFBFC;
+  --panel: #FFFFFF;
+  --panel-2: #F3F5F9;
+  --panel-3: #EEF1F6;
+  --line: #E6E9F0;
+  --line-strong: #D1D6E0;
+  --text: #1A1D26;
+  --text-dim: #363B48;
+  --text-mute: #525866;
+  --text-faint: #7B8293;
+  --accent: #4F46E5;
+  --accent-ink: #3730A3;
+  --accent-tint: #EEF0FE;
+  --warn: #B45309;
+  --warn-tint: rgba(180, 83, 9, 0.08);
+  color-scheme: light;
+}
+
+/* ── Dark opt-in (Dark Editorial Premium) ── */
+[data-theme="dark"] {
+  --bg: #0A0E1A;
+  --panel: #0F1424;
+  --panel-2: #151B2E;
+  --panel-3: #1A2138;
+  --line: #20273B;
+  --line-strong: #2C354D;
+  --text: #E8E6DF;
+  --text-dim: #C8C7C0;
+  --text-mute: #A8AEC1;
+  --text-faint: #7E869C;
+  --accent: #818CF8;
+  --accent-ink: #C7D2FE;
+  --accent-tint: #1E2145;
+  --warn: #F59E0B;
+  --warn-tint: rgba(245, 158, 11, 0.10);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 18px 64px;
+}
+a { color: var(--accent); }
+.eyebrow {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 40px 0 18px;
+}
+.section-label .title {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text);
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.section-label .right {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* Header masthead */
+header.masthead {
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--line-strong);
+}
+header.masthead .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+header.masthead h1 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+  color: var(--text);
+}
+header.masthead h1 .sub {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--text-mute);
+}
+header.masthead .submeta {
+  margin-top: 10px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+}
+header.masthead .coverage {
+  margin-top: 6px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--accent-ink);
+}
+
+/* Degraded banner (amber) */
+.banner-warn {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.banner-warn strong { font-weight: 700; }
+
+/* LEAD card */
+.lead {
+  border-left: 4px solid var(--accent);
+  background: var(--panel-2);
+  padding: 22px 20px;
+  border-radius: 0 8px 8px 0;
+}
+.lead .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-mute);
+  margin-bottom: 10px;
+}
+.lead h2 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.22;
+  margin: 0;
+  color: var(--text);
+}
+.lead .lede {
+  margin-top: 14px;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.66;
+  color: var(--text-dim);
+}
+.lead .why {
+  margin-top: 14px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-mute);
+}
+
+/* ALSO NOTABLE cards */
+.notable-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.notable-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px 16px;
+}
+.notable-card .src {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
+.notable-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 0;
+  color: var(--text);
+}
+.notable-card .lede {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+/* VIP cards */
+.vip-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.vip-card .vip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.vip-card .vip-body { padding: 20px 18px; }
+.vip-card .vip-sender {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.vip-card .story {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.vip-card .story h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  color: var(--text);
+  margin: 0 0 12px;
+}
+.vip-card .story p { margin: 0 0 12px; }
+.vip-card .story blockquote {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  border-left: 2px solid var(--line-strong);
+  color: var(--text);
+  font-style: italic;
+}
+.vip-card .muted {
+  color: var(--text-mute);
+  font-size: 13px;
+  font-style: italic;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+}
+
+/* VIP source-messages accordion (원문 보기) */
+.vip-originals {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.vip-originals summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-3);
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--text-dim);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  list-style: none;
+}
+.vip-originals summary::-webkit-details-marker { display: none; }
+.vip-originals summary::marker { display: none; }
+.vip-originals summary .count { color: var(--text-faint); margin-left: 2px; }
+.vip-bubble-list {
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: var(--panel-3);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  list-style: none;
+}
+.vip-bubble-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  align-items: flex-start;
+}
+.vip-bubble-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+.vip-bubble-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+.vip-bubble-speaker {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+.vip-bubble-ts {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+.vip-bubble-text {
+  display: inline-block;
+  max-width: 100%;
+  padding: 8px 12px;
+  border-radius: 2px 10px 10px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Source summary cards */
+.source-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.source-card .src-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid var(--line);
+}
+.source-card .src-head h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin: 0;
+}
+.source-card .src-head .kind {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10.5px;
+  color: var(--text-mute);
+  letter-spacing: 0.4px;
+}
+.source-card ol.three-line {
+  margin: 0;
+  padding: 12px 16px 6px;
+  list-style: none;
+  counter-reset: tl;
+}
+.source-card ol.three-line li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.source-card ol.three-line li:last-child { border-bottom: none; }
+.source-card ol.three-line li .n {
+  counter-increment: tl;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 10px;
+  color: var(--text-faint);
+  padding-top: 4px;
+}
+.source-card ol.three-line li .n::before {
+  content: counter(tl, decimal-leading-zero);
+}
+.source-card ol.three-line li .t {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.source-card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 16px 14px;
+}
+.source-card .tags .tag {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  color: var(--accent-ink);
+  padding: 3px 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--accent-tint);
+}
+
+/* Tech mentions table */
+.tech-table {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.tech-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 56px;
+  gap: 10px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.tech-row:last-child { border-bottom: none; }
+.tech-row .rank {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.tech-row .name {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.tech-row .ctx {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin-top: 3px;
+}
+.tech-row .freq {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  text-align: right;
+}
+
+/* Cross topic cards */
+.cross-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 18px;
+  margin-bottom: 12px;
+}
+.cross-card h3 {
+  font-family: 'Apple SD Gothic Neo', 'Nanum Myeongjo', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+.cross-card .desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  margin: 0 0 12px;
+}
+.cross-card .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cross-card .chip {
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+footer.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Theme toggle button — top-right of masthead */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: var(--panel-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 6px 11px;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 12px;
+  color: var(--text-mute);
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.15s, color 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--panel-3);
+  color: var(--text);
+}
+</style>
+<script>(function(){
+  var LS_KEY='briefing-theme';
+  var html=document.documentElement;
+  var saved=localStorage.getItem(LS_KEY);
+  if(saved==='dark'){html.dataset.theme='dark';}
+  function _sync(btn){
+    var dark=html.dataset.theme==='dark';
+    btn.textContent=dark?'☀️ 라이트':'🌙 다크';
+    btn.title=dark?'라이트 모드로 전환':'다크 모드로 전환';
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    var btn=document.getElementById('theme-toggle');
+    if(!btn)return;
+    _sync(btn);
+    btn.addEventListener('click',function(){
+      var dark=html.dataset.theme==='dark';
+      if(dark){delete html.dataset.theme;}else{html.dataset.theme='dark';}
+      localStorage.setItem(LS_KEY,html.dataset.theme||'light');
+      _sync(btn);
+    });
+  });
+}());</script>
+</head>
+<body>
+<div class="wrap">
+<header class="masthead"><button id="theme-toggle" class="theme-toggle" type="button">🌙 다크</button><div class="meta"><span class="eyebrow">Vol. 8 · 2026. 11. 28</span><span class="rule" style="flex:1;height:1px;background:var(--line)"></span><span class="eyebrow">5 sources · 153 signals · 3 VIPs</span></div><h1>오늘의 지식캐쳐 <span class="sub">Daily Brief</span></h1><div class="submeta">생성 2026-11-28 05:09:36.276577+00:00 · opus</div></header>
+<div class="section-label"><span class="title">오늘의 LEAD</span><span class="rule"></span><span class="right">system-ranked</span></div><div class="lead"><div class="src">learning-masters 외 1개 · importance 0.88</div><h2>머스크의 계층형 멀티 에이전트 구상, GrokBot 월 최대 $5,000 요금제 예고</h2><p class="lede">일론 머스크가 &#x27;전문 봇 + 매니저 봇&#x27; 계층형 멀티 에이전트 구조를 제시하고 GrokBot 월 $2,000~5,000 요금제(기존 최고 $200)를 예고함. 이 구조가 토큰 소비를 크게 늘리고 PCIe 6세대 eSSD 같은 메모리 수요를 키운다는 분석도 함께 공유됨. Grok Bot 요금제·활용 테스트는 샘호트만 방에서도 다뤄진 교차 화제임.</p><p class="why">WHY · 2개 방 교차 화제 + 요금 상한 10배 이상 상향 신호</p></div>
+<div class="section-label"><span class="title">ALSO NOTABLE</span><span class="rule"></span><span class="right">4</span></div><div class="notable-grid"><div class="notable-card"><div class="src">샘호트만</div><h3>Claude Opus 5.6 제작 슬라이드 아티팩트 공유, 5.5 대비 큰 격차 평가</h3><p class="lede">Claude Opus 5.6으로 만들었다는 슬라이드 아티팩트가 공유되어 방 반응 집중됨. 샘호트만은 5.5와의 격차가 매우 크다고 평가함. Claude Opus는 ai-frontier 방에서도 언급된 모델임.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>NPU 약점은 하드웨어 아닌 소프트웨어, 포팅보다 정량 지표 최적화가 관건</h3><p class="lede">구글의 TorchXLA→TorchTPU 선회 사례와 함께, 현업에서는 포팅은 되지만 지연·규모 같은 정량 지표를 맞추는 최적화가 어렵다는 진단 나옴. 원자력연구원 유용균은 바이브코딩 확산으로 코드 포팅 장벽이 낮아졌다는 전언을 남김. 이영빈의 tensor2silicon-lab 자료와 모두콘 세션 2건도 공유됨.</p></div><div class="notable-card"><div class="src">ai-friends</div><h3>삼성전자 직원별 AI 예산 최대 22배 격차 보도, 차등 구조 자기 점검 화두</h3><p class="lede">KIST 이제현이 매일경제 기사 「직원마다 다른 AI 예산…삼성전자 최대 22배 차이」를 공유하며 화두 제기. 삼성전자 내부 직원별 AI 예산 격차가 최대 22배에 달한다는 보도를 바탕으로 한 직원별 AI 예산 차등 구조 자기 점검임.</p></div><div class="notable-card"><div class="src">샘호트만</div><h3>Claude 응답 읽기 병목 줄이는 /tldr 스킬 소개, 블랙프라이데이 AI 할인 정리</h3><p class="lede">샘호트만이 2026 블랙프라이데이 시즌 AI 서비스 할인정보와 함께 Claude 응답 읽기 병목을 줄이는 /tldr 스킬 워크플로 소개. Claude Code 훅·스킬 워크플로우는 youtube:빌더조쉬 방에서도 다뤄진 교차 화제임.</p></div></div>
+<div class="section-label"><span class="title">VIP 다이제스트</span><span class="rule"></span><span class="right">6</span></div><article class="vip-card"><div class="vip-meta">VIP 01 · ai-friends · 3건 발언</div><div class="vip-body"><div class="vip-sender">KIST 이제현</div><div class="story"><h3>KIST 이제현, 직원별 AI 예산 차등 구조에 대한 자기 점검</h3><p>매일경제 기사 「직원마다 다른 AI 예산…삼성전자 최대 22배 차이」 공유로 시작된 화두.</p><p>삼성전자 내부 직원별 **AI 예산** 격차가 최대 **22배**에 달한다는 보도 소개. 소속 조직도 의도적 설계가 아니라 자연스럽게 비슷한 차등 구조로 운영 중이라는 언급과 함께, 그 방식이 최선인지에 대한 의문 제기.</p><blockquote>저희가 이렇게 하고 있는데 (의도적이었다기보다 자연스럽게) 이게 최선인가 싶긴 합니다</blockquote><p>대기업과 연구기관 모두 AI 도구 예산이 개인별 차등 구조로 수렴하는 흐름 확인. 균등 배분과 수요 기반 배분 중 어느 쪽이 나은가라는 운영 정책 쟁점이 실무자 사이에서 공개 논의되기 시작한 사례.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(3건)</span></summary><ol class="vip-bubble-list" aria-label="KIST 이제현 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-28T09:58:00">11/28 09:58</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">여기 달린 댓글중에 &quot;에렌 예거?&quot; 보고 뿜었습니다 ㅎ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-28T12:29:00">11/28 12:29</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">직원마다 다른 AI 예산…삼성전자 최대 22배 차이
+출처 : 매일경제 | 네이버
+ - https://naver.me/G3vCrfF1</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="KIST 이제현">K</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">KIST 이제현</span><time class="vip-bubble-ts" datetime="2026-11-28T12:30:00">11/28 12:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">저희가 이렇게 하고 있는데 (의도적이었다기보다 자연스럽게) 이게 최선인가 싶긴 합니다</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 02 · ai-friends · 4건 발언</div><div class="vip-body"><div class="vip-sender">원자력연구원 유용균</div><div class="story"><h3>원자력연구원 유용균, 바이브코딩으로 포팅 장벽이 낮아졌다는 전언</h3><p>트리 구조를 시각적으로 표현한 유튜브 쇼츠 공유로 시작된 가벼운 대화 흐름. 방 관리 차원의 신고 가리기 처리 기록도 있음.</p><p>핵심은 **바이브코딩** 확산으로 코드 **포팅** 부담이 줄었다는 주변 이야기 소개. 직접 경험이 아닌 전해 들은 내용이며, 구체적인 도구명이나 대상 언어·플랫폼 언급은 없음.</p><blockquote>바이브코딩 덕분에 포팅에 어려움이 적어졌다고도 하던데요</blockquote><p>AI 코딩으로 언어·플랫폼 이전 작업의 진입 장벽이 낮아지고 있다는 현장 체감 신호. 레거시 코드 이전을 미뤄온 경우 재검토 근거 정도로 참고할 만함.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="원자력연구원 유용균 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T23:24:00">11/27 23:24</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">멋져서 공유... https://youtube.com/shorts/oIikjQfKL38?si=cYbBEhMG27gwa7PX</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-27T23:30:00">11/27 23:30</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 트리구조는 다 저렇게 표현할 수 있나요 ㅋㅋㅋㅋ</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-28T08:25:00">11/28 08:25</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">신고가리기 했습니다</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="원자력연구원 유용균">원</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">원자력연구원 유용균</span><time class="vip-bubble-ts" datetime="2026-11-28T11:33:00">11/28 11:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">바이브코딩 덕분에 포팅에 어려움이 적어졌다고도 하던데요</div></div></li></ol></details></div></article><article class="vip-card"><div class="vip-meta">VIP 03 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">허민</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 04 · ai-frontier · 0건 발언</div><div class="vip-body"><div class="vip-sender">네루</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 05 · learning-masters · 0건 발언</div><div class="vip-body"><div class="vip-sender">김문정(배움의 달인)</div><div class="muted">이 VIP는 오늘 집계된 발언이 없습니다.</div></div></article><article class="vip-card"><div class="vip-meta">VIP 06 · 샘호트만 · 4건 발언</div><div class="vip-body"><div class="vip-sender">샘호트만 @ai.sam_hottman</div><div class="story"><h3>샘호트만 @ai.sam_hottman, Claude용 /tldr 스킬과 블랙프라이데이 AI 할인 정리</h3><p>2026 블랙프라이데이 시즌 AI 서비스 할인정보 공유와 함께 Claude 응답 읽기 병목을 줄이는 워크플로 소개.</p><p>핵심은 **/tldr skill**. 작업을 끝까지 수행한 뒤 응답 끝에 10초 안에 읽을 결론 섹션을 덧붙이는 방식. 마지막 섹션은 산출물, 바꿀 판단, 실패·미검증 항목, 필요한 결정·다음 행동으로 분리하는 구조. 그 밖에 고급 TTS 용도로 **ElevenLabs** 추천(제휴 링크 포함), 5.6과 5.5 버전 간 성능 격차에 대한 감탄 기록.</p><blockquote>/tldr skill은 작업을 충분히 수행한 뒤, 10초 안에 읽을 결론을 응답 끝에 추가</blockquote><blockquote>5.6이랑 5.5차이가 넘심한데용ㅋㅋㅋ어마어마하네용</blockquote><p>긴 Claude 산출물을 검토하는 부담을 줄이는 구조화 요약 패턴으로, 독자의 Claude 작업 흐름과 브리핑 설계에 바로 적용할 수 있는 아이디어임. 5.6/5.5 격차 발언은 대상 모델이 특정되지 않아 후속 확인 필요.</p></div><details class="vip-originals"><summary>원문 보기 <span class="count">(4건)</span></summary><ol class="vip-bubble-list" aria-label="샘호트만 @ai.sam_hottman 원문 메시지"><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T22:33:00">11/27 22:33</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">2026 블랙프라이데이 AI 할인정보
+https://m.cafe.naver.com/ca-fe/web/cafes/31191837/articles/1489</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-27T22:35:00">11/27 22:35</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">이런게 있긴하네용 tts 좀 고급스럽게 하고싶으시다면 일레븐랩스 괜찮죵
+잠시 틈새 링크 (공지)
+
+- Hostinger : https://hostinger.com/aisamhottman 
+
+(10% 할인 쿠폰 코드 : AISAMHOTTMAN )
+
+- ElevenLabs : https://try.elevenlabs.io/cqlgkikhe39x</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-28T00:12:00">11/28 00:12</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">5.6이랑 5.5차이가 넘심한데용ㅋㅋㅋ어마어마하네용</div></div></li><li class="vip-bubble-item"><div class="vip-bubble-avatar" title="샘호트만 @ai.sam_hottman">샘</div><div style='flex:1;min-width:0'><div class="vip-bubble-meta"><span class="vip-bubble-speaker">샘호트만 @ai.sam_hottman</span><time class="vip-bubble-ts" datetime="2026-11-28T11:14:00">11/28 11:14</time></div><div class="vip-bubble-text" style="background:var(--panel-2);border:1px solid var(--line);">[AI 답변 읽기 병목을 줄이는 /tldr workflow]
+
+1. Claude가 전략·채용·재무 같은 긴 산출물을 쌓으면, 요약을 더 읽느라 결정이 늦어지는 문제
+2. /tldr skill은 작업을 충분히 수행한 뒤, 10초 안에 읽을 결론을 응답 끝에 추가
+3. 새 Claude chat에서 skill을 설치·선택하고 /tldr로 시작해 목표·대상·현재 맥락·완료 기준 입력
+4. 마지막 섹션은 산출물, 바꿀 판단, 실패·미검증 항목, 필요한 결정과 다음 행동을 분리
+5. 응답을 짧게만 만들기보다 전체 결과와 빠른 검토 구간을 나눠 반복 업무의 읽기 부담 완화
+
+https://www.linkedin.com/feed/update/urn:li:ugcPost:7531992752654336000</div></div></li></ol></details></div></article>
+<div class="section-label"><span class="title">소스별 요약</span><span class="rule"></span><span class="right">5</span></div><article class="source-card"><div class="src-head"><h3>ai-friends</h3><span class="kind">kakao-open · 70건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">NPU의 약점은 하드웨어보다 소프트웨어라는 논의가 중심임. 구글의 TorchXLA→TorchTPU 선회 사례와 함께, 현업에서는 포팅은 되지만 지연·규모 같은 정량 지표를 맞추는 최적화가 어렵다는 진단이 나옴. 이영빈의 tensor2silicon-lab 자료와 모두콘 세션 2건도 공유됨.</span></li><li><span class="n"></span><span class="t">리벨리온과 SKT의 리벨-100 서버 40대 공급 본계약(200억원대 후반, 서버당 약 7억원) 공유됨. 국내 NPU 업체 상황이 몇 년 전 GPU 업체와 비슷하다는 평가와 함께, 내년에 GPU+NPU 조합 서비스 시장이 열릴 것이라는 전망 나옴.</span></li><li><span class="n"></span><span class="t">중국 AI가 미국 칩으로 학습했다는 사실이 확인되면서 화웨이 칩 활용론이 연막이었다는 해석 나옴. 테라팹으로 HBM을 만들려는 일론의 시도와, 추론에서 엔비디아를 이기려는 NPU 스타트업 중 어느 쪽이 유력한지 논쟁도 있었음.</span></li><li><span class="n"></span><span class="t">Runner 서봉진의 문제분해 에이전트 &#x27;등고선&#x27; 소개. 카드는 지금까지 43개이고 목표는 10만 개임. 2D/3D 등고선으로 사람의 순차 작업과 기계의 병렬 작업을 비교하는 구상이 공유됨.</span></li><li><span class="n"></span><span class="t">공공기관의 보안 SW 발주가 느리다는 지적이 나옴. 선정되지 않은 제안서가 보관되는 점과, 공모전 서류가 동의 없이 외부 AI에 입력되는 데 따른 정보 유출 위험도 문제로 제기됨.</span></li></ol><div class="tags"><span class="tag">CUDA</span><span class="tag">TorchTPU</span><span class="tag">TorchXLA</span><span class="tag">REBEL-100</span><span class="tag">tensor2silicon-lab</span></div></article><article class="source-card"><div class="src-head"><h3>ai-frontier</h3><span class="kind">kakao-open · 3건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">봇 일일 인사이트에서 Qwen·Inkling-2-Mini 기반 이미지 편집·Face Swap과 MiniMax H3 영상 생성 스튜디오 등 멀티모달 모델 서비스화 추세 정리됨.</span></li><li><span class="n"></span><span class="t">1,000개 단위 에이전트 Swarm 제어와 전용 벤치마크(Agent Memory, Coding Agent Harness) 부상, 루프 트랜스포머·Kandinsky ImageSR 2.0·투기적 디코딩 중심의 효율 최적화 흐름 언급됨.</span></li><li><span class="n"></span><span class="t">Hugging Face 트렌딩 모델은 thinkingmachines/Inkling-2-Mini, unsloth/Inkling-2-Mini-GGUF, SulphurAI/Sulphur-3 순이고, 트렌딩 논문은 PaperOrchestra·OS-Omni·Unlimited OCR Works임.</span></li><li><span class="n"></span><span class="t">전 메시지가 루루야봇 자동 게시로, 참여자 간 논의는 없음.</span></li></ol><div class="tags"><span class="tag">Claude Opus</span><span class="tag">GrokBot</span><span class="tag">Gemini</span></div></article><article class="source-card"><div class="src-head"><h3>learning-masters</h3><span class="kind">kakao-open · 26건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">일론 머스크가 &#x27;전문 봇 + 매니저 봇&#x27; 계층형 멀티 에이전트 구조를 제시했고 GrokBot 월 $2,000~5,000 요금제(기존 최고 $200)도 예고함. 이 구조가 토큰 소비를 크게 늘리고 PCIe 6세대 eSSD 같은 메모리 수요를 키운다는 분석이 함께 공유됨.</span></li><li><span class="n"></span><span class="t">Gemini 이미지 로고와 촬영·생성 메타데이터를 지우는 무료 웹 도구가 공개됨. NotebookLM 슬라이드 로고 제거는 한 장씩 처리해야 한다는 답변이 있었음.</span></li><li><span class="n"></span><span class="t">래블업 에이아이고 2.0 출시, 알리바바 글·이미지 분류 모델 정식 제공, ChatGPT 일반 대화와 업무 기능 한 화면 통합 등 그날의 AI 뉴스가 공유됨.</span></li><li><span class="n"></span><span class="t">서울대 2027학년도 수시의 AI 부정행위 방지 조치(일회용 가운 지급) 소식이 올라옴. 코스피·나스닥 시황 이야기도 함께 오감.</span></li></ol></article><article class="source-card"><div class="src-head"><h3>youtube:빌더조쉬</h3><span class="kind">youtube · 2건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">광고 영상 제작 비용을 3만 원에서 300원 수준으로 낮추는 방법 소개.</span></li><li><span class="n"></span><span class="t">Claude Code 훅 시리즈 2편 공개, 규칙 통과율이 3/5에서 5/5로 개선된 결과 제시됨.</span></li><li><span class="n"></span><span class="t">훅으로 잘못된 작업을 감지해 에이전트가 스스로 다시 고치는 흐름 강조됨.</span></li><li><span class="n"></span><span class="t">업로드 2건뿐이고 영상 제목 수준 정보만 있음.</span></li></ol><div class="tags"><span class="tag">Claude Code</span></div></article><article class="source-card"><div class="src-head"><h3>샘호트만</h3><span class="kind">kakao-open · 30건</span></div><ol class="three-line"><li><span class="n"></span><span class="t">Claude Opus 5.6으로 만들었다는 슬라이드 아티팩트가 공유되어 방 반응이 집중됨. 샘호트만은 5.5와의 격차가 매우 크다고 평가함.</span></li><li><span class="n"></span><span class="t">샘호트만이 Claude /tldr skill 워크플로를 소개함. 긴 산출물 끝에 10초 안에 읽을 결론 섹션(산출물·바꿀 판단·미검증 항목·다음 행동)을 붙여 읽기 병목을 줄이는 방식임.</span></li><li><span class="n"></span><span class="t">Tripo Studio MCP 출시와 Grok Bot HyperFrames 테스트 결과가 공유됨. Recollect·Pally·depost.ai 같은 신규 도구 링크도 다수 공유됨.</span></li><li><span class="n"></span><span class="t">블랙프라이데이 AI 할인 정보와 Jump Desktop 35% 할인이 공유되고 TTS 용도로 ElevenLabs 추천이 나옴. Upstage 크레딧 $300·$100 수령 사례도 언급됨.</span></li></ol><div class="tags"><span class="tag">Claude Opus</span><span class="tag">GrokBot</span><span class="tag">Gemini</span><span class="tag">ElevenLabs</span><span class="tag">HyperFrames</span></div></article>
+<div class="section-label"><span class="title">오늘의 기술 언급</span><span class="rule"></span><span class="right">Top 10</span></div><div class="tech-table"><div class="tech-row"><span class="rank">01</span><div><div class="name">Claude Opus</div><div class="ctx">Claude Opus 5.6으로 만든 슬라이드가 공유되며 5.5 대비 격차가 크다는 반응이 나왔고, 그록봇이 외부 라우팅 모델로 쓰는 사례로도 언급됨.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">02</span><div><div class="name">GrokBot</div><div class="ctx">일론 머스크가 전문 봇과 매니저 봇의 계층형 구조 원칙, 월 $2,000~5,000 요금제 신설을 밝혔고 HyperFrames 연동 테스트 결과도 공유됨.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">03</span><div><div class="name">CUDA</div><div class="ctx">CUDA 생태계가 너무 커서 NPU 포팅은 가능하지만 최적화는 어렵다는 현장 의견.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">04</span><div><div class="name">TorchTPU</div><div class="ctx">구글이 TorchXLA 대신 TorchTPU로 방향을 바꾼 사례로 NPU 소프트웨어 격차를 설명함.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">05</span><div><div class="name">TorchXLA</div><div class="ctx">구글이 밀다가 접은 가속기용 PyTorch 스택으로 언급됨.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">06</span><div><div class="name">Gemini</div><div class="ctx">Gemini 생성 이미지의 별 로고와 메타데이터를 지우는 무료 도구가 공유됐고, 제미나이만 쓰는 사용자 사례도 나옴.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">07</span><div><div class="name">Claude Code</div><div class="ctx">클로드 코드 훅으로 규칙 통과율을 3/5에서 5/5로 올리고 틀린 작업을 스스로 고치게 한 사례 영상.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">08</span><div><div class="name">REBEL-100</div><div class="ctx">리벨리온과 SK텔레콤의 리벨-100 서버 40대 본계약 소식으로, 서버당 약 7억원 추정치에서 NPU 가격 논의가 이어짐.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">09</span><div><div class="name">tensor2silicon-lab</div><div class="ctx">AI 가속기의 실전 서비스 지표와 계산법을 정리한 LAB 자료가 공유되고 현장 최적화 영역이라는 호평을 받음.</div></div><span class="freq">1</span></div><div class="tech-row"><span class="rank">10</span><div><div class="name">FuriosaAI</div><div class="ctx">국내 NPU 기업 사례로 언급됐으나 아직 GPU를 따라잡기는 쉽지 않다는 평가.</div></div><span class="freq">1</span></div></div>
+<div class="section-label"><span class="title">교차 주제</span><span class="rule"></span><span class="right">4</span></div><article class="cross-card"><h3>Grok Bot 요금제·활용 테스트</h3><p class="desc">Grok Bot이 두 방에서 다뤄짐. learning-masters는 고가 요금제가 화제였고, 샘호트만은 HyperFrames 연동 테스트를 공유함.</p><div class="chips"><span class="chip">learning-masters</span><span class="chip">샘호트만</span></div></article><article class="cross-card"><h3>멀티 에이전트 구조 설계</h3><p class="desc">여러 에이전트를 조직하는 구조가 공통 관심사였음. ai-frontier는 에이전트 군집과 벤치마크 고도화를, learning-masters는 계층형 멀티 에이전트 구조를 논의함.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span></div></article><article class="cross-card"><h3>AI 영상 생성 서비스·제작 비용</h3><p class="desc">AI 영상 생성이 세 방에 걸쳐 등장함. ai-frontier는 멀티모달 이미지·영상 생성의 서비스화, learning-masters는 Higgsfield 울트라플랜의 영상 생성량, youtube:빌더조쉬는 AI 광고 영상을 저비용으로 만드는 방법을 다룸.</p><div class="chips"><span class="chip">ai-frontier</span><span class="chip">learning-masters</span><span class="chip">youtube:빌더조쉬</span></div></article><article class="cross-card"><h3>Claude Code 훅·스킬 워크플로우</h3><p class="desc">Claude Code를 사용자에 맞게 고치는 방법이 공통 주제였음. youtube:빌더조쉬는 훅을 이용한 자가 수정을, 샘호트만은 /tldr 스킬 기반 워크플로우를 소개함.</p><div class="chips"><span class="chip">youtube:빌더조쉬</span><span class="chip">샘호트만</span></div></article>
+<footer class="fin">— FIN · 지식캐쳐 —</footer>
+</div>
+</body>
+</html>
